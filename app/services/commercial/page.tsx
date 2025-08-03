@@ -1,0 +1,364 @@
+"use client"
+
+import Image from "next/image"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
+import { Building2, Clock, Star, CheckCircle, Shield, Calendar, Phone, Mail, MapPin, Briefcase } from "lucide-react"
+import SharedHeader from "@/components/shared-header"
+
+export default function CommercialServicesPage() {
+  const services = [
+    {
+      title: "Office Cleaning",
+      description: "Daily, weekly, or monthly office cleaning to maintain a professional workspace.",
+      price: "From $129",
+      duration: "2-6 hours",
+      features: ["Desk & surface cleaning", "Restroom sanitization", "Floor care", "Trash removal"],
+      image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=300&fit=crop",
+    },
+    {
+      title: "Retail Space Cleaning",
+      description: "Specialized cleaning for retail stores, boutiques, and customer-facing spaces.",
+      price: "From $179",
+      duration: "3-8 hours",
+      features: ["Display area cleaning", "Customer area focus", "Window cleaning", "Floor maintenance"],
+      image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=300&fit=crop",
+    },
+    {
+      title: "Medical Office Cleaning",
+      description: "Specialized sanitization for medical and dental offices with strict hygiene standards.",
+      price: "From $199",
+      duration: "2-5 hours",
+      features: ["Medical-grade sanitization", "Biohazard disposal", "Waiting area cleaning", "Equipment cleaning"],
+      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=300&fit=crop",
+    },
+  ]
+
+  const teamMembers = [
+    {
+      name: "Michael Thompson",
+      role: "Commercial Team Lead",
+      experience: "10 years",
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face",
+      uniform: "Navy HouseKeeping PRO polo shirt with company logo",
+    },
+    {
+      name: "Lisa Rodriguez",
+      role: "Senior Commercial Cleaner",
+      experience: "7 years",
+      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=300&fit=crop&crop=face",
+      uniform: "Navy HouseKeeping PRO polo shirt with company logo",
+    },
+    {
+      name: "David Kim",
+      role: "Quality Supervisor",
+      experience: "8 years",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face",
+      uniform: "Navy HouseKeeping PRO polo shirt with company logo",
+    },
+  ]
+
+  const reviews = [
+    {
+      name: "Amanda Foster",
+      company: "Foster & Associates Law Firm",
+      location: "Barrie, ON",
+      rating: 5,
+      text: "HouseKeeping PRO has been cleaning our law office for 4 years. They're professional, reliable, and work around our schedule perfectly.",
+      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face",
+      serviceImage: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=300&fit=crop",
+    },
+    {
+      name: "Dr. James Wilson",
+      company: "Wilson Dental Clinic",
+      location: "Orillia, ON",
+      rating: 5,
+      text: "Their medical office cleaning is exceptional. They understand the strict hygiene requirements and always exceed our expectations.",
+      image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=100&h=100&fit=crop&crop=face",
+      serviceImage: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=300&fit=crop",
+    },
+  ]
+
+  return (
+    <div className="min-h-screen bg-white">
+      <SharedHeader currentPage="services" />
+
+      {/* Hero Section */}
+      <section className="relative py-20 bg-gradient-to-r from-[#012E71] to-blue-800 text-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">Commercial Cleaning Services</h1>
+            <p className="text-xl md:text-2xl mb-8 opacity-90">
+              Professional commercial cleaning services for offices, retail spaces, and medical facilities across Simcoe
+              County.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="bg-white text-[#012E71] hover:bg-gray-100">
+                <Calendar className="w-5 h-5 mr-2" />
+                Book Commercial Service
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-white text-white hover:bg-white hover:text-[#012E71] bg-transparent"
+              >
+                <Phone className="w-5 h-5 mr-2" />
+                Get Business Quote
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Grid */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#012E71] mb-4">Our Commercial Services</h2>
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+              Specialized cleaning solutions for businesses of all sizes across Simcoe County.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <Card
+                key={index}
+                className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border-0 shadow-lg overflow-hidden"
+              >
+                <div className="relative overflow-hidden">
+                  <Image
+                    src={service.image || "/placeholder.svg"}
+                    alt={service.title}
+                    width={400}
+                    height={300}
+                    className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#012E71]/70 to-transparent" />
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <h3 className="text-xl font-bold">{service.title}</h3>
+                    <p className="text-sm opacity-90">{service.price}</p>
+                  </div>
+                  <div className="absolute top-4 right-4">
+                    <Building2 className="w-8 h-8 text-white bg-[#012E71]/50 p-1 rounded" />
+                  </div>
+                </div>
+                <CardContent className="p-6">
+                  <p className="text-gray-600 mb-4">{service.description}</p>
+                  <div className="flex items-center text-sm text-gray-600 mb-4">
+                    <Clock className="w-4 h-4 mr-2 text-[#012E71]" />
+                    Duration: {service.duration}
+                  </div>
+                  <ul className="space-y-2 mb-6">
+                    {service.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-center text-sm text-gray-600">
+                        <CheckCircle className="w-4 h-4 mr-2 text-green-500" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  <Button className="w-full bg-[#012E71] hover:bg-blue-800 text-white">Get Quote</Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#012E71] mb-4">Meet Our Commercial Team</h2>
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+              Our commercial cleaning specialists wear professional HouseKeeping PRO uniforms and are trained for
+              business environments.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {teamMembers.map((member, index) => (
+              <Card
+                key={index}
+                className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg overflow-hidden"
+              >
+                <div className="relative overflow-hidden">
+                  <Image
+                    src={member.image || "/placeholder.svg"}
+                    alt={member.name}
+                    width={300}
+                    height={300}
+                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#012E71]/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="flex items-center mb-2">
+                      <Briefcase className="w-4 h-4 mr-2" />
+                      <span className="text-sm">{member.experience} experience</span>
+                    </div>
+                  </div>
+                </div>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold text-[#012E71] mb-2">{member.name}</h3>
+                  <p className="text-gray-600 font-medium mb-2">{member.role}</p>
+                  <p className="text-sm text-gray-600 mb-3">{member.uniform}</p>
+                  <div className="flex items-center text-sm text-gray-600">
+                    <Shield className="w-4 h-4 mr-2 text-green-500" />
+                    Commercial Certified & Bonded
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Client Reviews */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#012E71] mb-4">What Our Business Clients Say</h2>
+            <p className="text-xl text-gray-700 max-w-2xl mx-auto">Real reviews from businesses across Simcoe County</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {reviews.map((review, index) => (
+              <Card key={index} className="shadow-xl border-0 overflow-hidden">
+                <div className="grid md:grid-cols-2">
+                  <div className="relative">
+                    <Image
+                      src={review.serviceImage || "/placeholder.svg"}
+                      alt="Commercial service in progress"
+                      width={400}
+                      height={300}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute top-4 left-4">
+                      <Image
+                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-08-02%20at%2020.55.30_d31d3cc8.jpg-ltfbL4qxNsZJM19pu8YgBkJBiRmUlE.jpeg"
+                        alt="HouseKeeping PRO Logo"
+                        width={80}
+                        height={30}
+                        className="h-8 w-auto bg-white/90 p-1 rounded"
+                      />
+                    </div>
+                  </div>
+                  <CardContent className="p-6">
+                    <div className="flex mb-4">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                      ))}
+                    </div>
+                    <p className="text-gray-700 mb-4 italic">"{review.text}"</p>
+                    <div className="flex items-center">
+                      <Image
+                        src={review.image || "/placeholder.svg"}
+                        alt={review.name}
+                        width={50}
+                        height={50}
+                        className="rounded-full mr-3"
+                      />
+                      <div>
+                        <h4 className="font-bold text-[#012E71]">{review.name}</h4>
+                        <p className="text-gray-600 text-sm">{review.company}</p>
+                        <p className="text-gray-600 text-sm flex items-center">
+                          <MapPin className="w-3 h-3 mr-1" />
+                          {review.location}
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-[#012E71] text-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready for Professional Commercial Cleaning?</h2>
+            <p className="text-xl mb-8 opacity-90">
+              Join dozens of businesses across Simcoe County who trust HouseKeeping PRO for their commercial cleaning
+              needs.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="bg-white text-[#012E71] hover:bg-gray-100 px-8 py-4">
+                <Calendar className="w-5 h-5 mr-2" />
+                Schedule Commercial Service
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-white text-white hover:bg-white hover:text-[#012E71] px-8 py-4 bg-transparent"
+              >
+                <Phone className="w-5 h-5 mr-2" />
+                Call (705) 555-0123
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-black text-white py-16">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-4 gap-8">
+            <div>
+              <Image
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-08-02%20at%2020.55.30_d31d3cc8.jpg-ltfbL4qxNsZJM19pu8YgBkJBiRmUlE.jpeg"
+                alt="HouseKeeping PRO Logo"
+                width={180}
+                height={60}
+                className="h-12 w-auto mb-4 brightness-0 invert"
+              />
+              <p className="text-gray-300 mb-4">
+                Professional commercial cleaning services across Simcoe County for 26 years.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Commercial Services</h3>
+              <ul className="space-y-2 text-gray-300">
+                <li>Office Cleaning</li>
+                <li>Retail Space Cleaning</li>
+                <li>Medical Office Cleaning</li>
+                <li>Post-Construction</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Service Areas</h3>
+              <ul className="space-y-2 text-gray-300">
+                <li>Barrie</li>
+                <li>Orillia</li>
+                <li>Midland</li>
+                <li>Oro-Medonte</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Contact</h3>
+              <div className="space-y-2 text-gray-300">
+                <div className="flex items-center">
+                  <Phone className="w-4 h-4 mr-2" />
+                  (705) 555-0123
+                </div>
+                <div className="flex items-center">
+                  <Mail className="w-4 h-4 mr-2" />
+                  info@housekeepingpro.ca
+                </div>
+                <div className="flex items-center">
+                  <MapPin className="w-4 h-4 mr-2" />
+                  Simcoe County, ON
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
+            <p>&copy; 2024 HouseKeeping PRO. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  )
+}
