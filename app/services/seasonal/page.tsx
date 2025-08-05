@@ -25,7 +25,7 @@ import Spaicaladsons from "@/components/comman/Spaicaladsons";
 export default function SeasonalCleaningServicesPage(): JSX.Element {
   return (
     <div className="min-h-screen bg-white">
-      <SharedHeader currentPage="services" />
+    
 
       {/* Hero Section */}
       <Hero/>
