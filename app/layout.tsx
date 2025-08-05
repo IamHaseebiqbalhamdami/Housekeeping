@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     "Professional residential, commercial, and Airbnb cleaning services across Simcoe County. 26 years of trusted service in Barrie, Orillia, Midland and surrounding areas.",
   keywords:
     "house cleaning, commercial cleaning, Airbnb cleaning, Barrie, Orillia, Midland, Simcoe County, professional cleaning services",
-    generator: 'v0.dev'
+   
 }
 
 export default function RootLayout({

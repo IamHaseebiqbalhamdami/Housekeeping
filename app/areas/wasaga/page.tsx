@@ -3,59 +3,58 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { MapPin, Star, Shield, Calendar, Phone, Mail, Award, Home, Building2 } from "lucide-react"
-import SharedHeader from "@/components/shared-header"
+import { MapPin, Star, Shield, Calendar, Phone, Award, Home, Building2 } from "lucide-react"
 
-export default function BarrieAreaPage() {
+export default function WasagaAreaPage() {
   const neighborhoods = [
-    "Downtown Barrie",
-    "Allandale",
-    "Cundles East",
-    "Georgian College Area",
-    "Painswick",
-    "South Barrie",
-    "Bayfield",
-    "Holly",
+    "Beach Area 1",
+    "Wasaga Beach Provincial Park",
+    "Allenwood Beach",
+    "Shore Lane",
+    "River Road East",
+    "Mosley Street",
+    "Sunshine Park",
+    "Georgian Sands",
   ]
 
   const reviews = [
     {
-      name: "Jennifer Thompson",
-      neighborhood: "Downtown Barrie",
+      name: "Emma Johnson",
+      neighborhood: "Beach Area 1",
       rating: 5,
-      text: "HouseKeeping PRO has been cleaning our downtown condo for 3 years. They're always professional and reliable. The team knows our building well and works efficiently.",
+      text: "Fantastic service! Our cottage was spotless after their deep clean. Perfect for vacation homes in Wasaga.",
       image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face",
-      serviceImage: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400&h=300&fit=crop",
+      serviceImage: "https://images.unsplash.com/photo-1616594039964-76b38e229a3c?w=400&h=300&fit=crop",
     },
     {
-      name: "Robert Chen",
-      neighborhood: "South Barrie",
+      name: "Daniel Parker",
+      neighborhood: "Mosley Street",
       rating: 5,
-      text: "Excellent service! They cleaned our 4-bedroom house before we moved in. Every room was spotless and they even cleaned inside all the appliances. Highly recommend!",
+      text: "We book them every summer for our rental property. Always on time and leave the place looking amazing.",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
-      serviceImage: "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=400&h=300&fit=crop",
+      serviceImage: "https://images.unsplash.com/photo-1564540583246-934409427776?w=400&h=300&fit=crop",
     },
     {
-      name: "Sarah Wilson",
-      neighborhood: "Allandale",
+      name: "Sophia Lee",
+      neighborhood: "Allenwood Beach",
       rating: 5,
-      text: "The monthly cleaning service is fantastic. The team arrives on time, works quietly while I work from home, and leaves everything perfect. Great value for money!",
+      text: "Professional, friendly team! They handled our Airbnb turnover perfectly, even during peak season.",
       image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
-      serviceImage: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&h=300&fit=crop",
+      serviceImage: "https://images.unsplash.com/photo-1584433144859-1fc3ab64a6f6?w=400&h=300&fit=crop",
     },
   ]
 
   const teamMembers = [
     {
-      name: "Margaret Thompson",
-      role: "Barrie Area Manager",
-      experience: "26 years",
+      name: "Olivia Brown",
+      role: "Wasaga Area Manager",
+      experience: "15 years",
       image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=300&fit=crop&crop=face",
     },
     {
-      name: "David Rodriguez",
-      role: "Senior Team Lead",
-      experience: "12 years",
+      name: "Liam Walker",
+      role: "Vacation Property Specialist",
+      experience: "8 years",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face",
     },
   ]
@@ -67,23 +66,22 @@ export default function BarrieAreaPage() {
       <section className="relative py-20 bg-gradient-to-r from-[#012E71] to-blue-800 text-white">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1200&h=800&fit=crop"
-            alt="Barrie cityscape"
+            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&h=800&fit=crop"
+            alt="Wasaga Beach view"
             fill
             className="object-cover opacity-20"
           />
         </div>
         <div className="relative z-10 container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">Cleaning Services in Barrie</h1>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">Cleaning Services in Wasaga Beach</h1>
             <p className="text-xl md:text-2xl mb-8 opacity-90">
-              Our main service hub serving Barrie and surrounding areas for 26 years. Professional cleaning services for
-              homes and businesses throughout the city.
+              Trusted cleaning experts for homes, cottages, and vacation rentals in Wasaga Beach.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-white text-[#012E71] hover:bg-gray-100">
                 <Calendar className="w-5 h-5 mr-2" />
-                Book in Barrie
+                Book in Wasaga
               </Button>
               <Button
                 size="lg"
@@ -91,7 +89,7 @@ export default function BarrieAreaPage() {
                 className="border-white text-white hover:bg-white hover:text-[#012E71] bg-transparent"
               >
                 <Phone className="w-5 h-5 mr-2" />
-                Call (705) 555-0123
+                Call (705) 555-0188
               </Button>
             </div>
           </div>
@@ -103,32 +101,32 @@ export default function BarrieAreaPage() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-4xl font-bold text-[#012E71] mb-2">26</div>
-              <p className="text-gray-700">Years in Barrie</p>
+              <div className="text-4xl font-bold text-[#012E71] mb-2">15</div>
+              <p className="text-gray-700">Years in Wasaga</p>
             </div>
             <div>
-              <div className="text-4xl font-bold text-[#012E71] mb-2">500+</div>
-              <p className="text-gray-700">Regular Clients</p>
+              <div className="text-4xl font-bold text-[#012E71] mb-2">300+</div>
+              <p className="text-gray-700">Vacation Homes</p>
             </div>
             <div>
-              <div className="text-4xl font-bold text-[#012E71] mb-2">98%</div>
+              <div className="text-4xl font-bold text-[#012E71] mb-2">99%</div>
               <p className="text-gray-700">Satisfaction Rate</p>
             </div>
             <div>
-              <div className="text-4xl font-bold text-[#012E71] mb-2">15+</div>
-              <p className="text-gray-700">Team Members</p>
+              <div className="text-4xl font-bold text-[#012E71] mb-2">12+</div>
+              <p className="text-gray-700">Expert Cleaners</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Neighborhoods Served */}
+      {/* Neighborhoods */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-[#012E71] mb-4">Neighborhoods We Serve</h2>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-              Professional cleaning services throughout all Barrie neighborhoods and surrounding areas.
+              Complete coverage across Wasaga Beach for homes, cottages, and rental properties.
             </p>
           </div>
 
@@ -145,13 +143,13 @@ export default function BarrieAreaPage() {
         </div>
       </section>
 
-      {/* Team Section */}
+      {/* Team */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#012E71] mb-4">Our Barrie Team</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-[#012E71] mb-4">Our Wasaga Team</h2>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-              Meet the experienced professionals who have been serving Barrie for decades.
+              A team of experts who specialize in cleaning vacation homes and cottages in Wasaga.
             </p>
           </div>
 
@@ -191,13 +189,13 @@ export default function BarrieAreaPage() {
         </div>
       </section>
 
-      {/* Client Reviews */}
+      {/* Reviews */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#012E71] mb-4">What Barrie Clients Say</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-[#012E71] mb-4">What Wasaga Clients Say</h2>
             <p className="text-xl text-gray-700 max-w-2xl mx-auto">
-              Real reviews from satisfied customers throughout Barrie
+              Here’s what vacation homeowners and residents think about our services.
             </p>
           </div>
 
@@ -207,20 +205,11 @@ export default function BarrieAreaPage() {
                 <div className="relative">
                   <Image
                     src={review.serviceImage || "/placeholder.svg"}
-                    alt="Cleaning service in Barrie"
+                    alt="Cleaning service in Wasaga"
                     width={400}
                     height={200}
                     className="w-full h-48 object-cover"
                   />
-                  <div className="absolute top-4 left-4">
-                    <Image
-                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-08-02%20at%2020.55.30_d31d3cc8.jpg-ltfbL4qxNsZJM19pu8YgBkJBiRmUlE.jpeg"
-                      alt="HouseKeeping PRO Logo"
-                      width={80}
-                      height={30}
-                      className="h-6 w-auto bg-white/90 p-1 rounded"
-                    />
-                  </div>
                 </div>
                 <CardContent className="p-6">
                   <div className="flex mb-4">
@@ -252,48 +241,48 @@ export default function BarrieAreaPage() {
         </div>
       </section>
 
-      {/* Services Available */}
+      {/* Services */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#012E71] mb-4">Services Available in Barrie</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-[#012E71] mb-4">Services in Wasaga Beach</h2>
             <p className="text-xl text-gray-700 max-w-2xl mx-auto">
-              Complete range of cleaning services available throughout Barrie
+              Expert services for vacation homes, cottages, and full residential cleaning.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <Card className="text-center p-6 hover:shadow-lg transition-all duration-300">
               <Home className="w-12 h-12 text-[#012E71] mx-auto mb-4" />
-              <h3 className="text-xl font-bold text-[#012E71] mb-2">Residential Cleaning</h3>
-              <p className="text-gray-600">Regular and deep cleaning for homes and condos</p>
+              <h3 className="text-xl font-bold text-[#012E71] mb-2">Cottage Cleaning</h3>
+              <p className="text-gray-600">Deep cleaning for seasonal homes and vacation cottages.</p>
             </Card>
             <Card className="text-center p-6 hover:shadow-lg transition-all duration-300">
               <Building2 className="w-12 h-12 text-[#012E71] mx-auto mb-4" />
-              <h3 className="text-xl font-bold text-[#012E71] mb-2">Commercial Cleaning</h3>
-              <p className="text-gray-600">Office and retail space cleaning services</p>
+              <h3 className="text-xl font-bold text-[#012E71] mb-2">Rental Property Cleaning</h3>
+              <p className="text-gray-600">Perfect turnovers for Airbnbs and short-term rentals.</p>
             </Card>
             <Card className="text-center p-6 hover:shadow-lg transition-all duration-300">
               <Home className="w-12 h-12 text-[#012E71] mx-auto mb-4" />
-              <h3 className="text-xl font-bold text-[#012E71] mb-2">Airbnb Cleaning</h3>
-              <p className="text-gray-600">Turnover cleaning for short-term rentals</p>
+              <h3 className="text-xl font-bold text-[#012E71] mb-2">Residential Cleaning</h3>
+              <p className="text-gray-600">Keep your Wasaga home fresh and spotless year-round.</p>
             </Card>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA */}
       <section className="py-20 bg-[#012E71] text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Book in Barrie?</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Book in Wasaga?</h2>
             <p className="text-xl mb-8 opacity-90">
-              Join 500+ satisfied clients throughout Barrie who trust HouseKeeping PRO for their cleaning needs.
+              Trust our experienced team to keep your property vacation-ready all year.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-white text-[#012E71] hover:bg-gray-100 px-8 py-4">
                 <Calendar className="w-5 h-5 mr-2" />
-                Book Barrie Service
+                Book Wasaga Service
               </Button>
               <Button
                 size="lg"
@@ -301,68 +290,12 @@ export default function BarrieAreaPage() {
                 className="border-white text-white hover:bg-white hover:text-[#012E71] px-8 py-4 bg-transparent"
               >
                 <Phone className="w-5 h-5 mr-2" />
-                Call (705) 555-0123
+                Call (705) 555-0188
               </Button>
             </div>
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-black text-white py-16">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-08-02%20at%2020.55.30_d31d3cc8.jpg-ltfbL4qxNsZJM19pu8YgBkJBiRmUlE.jpeg"
-                alt="HouseKeeping PRO Logo"
-                width={180}
-                height={60}
-                className="h-12 w-auto mb-4 brightness-0 invert"
-              />
-              <p className="text-gray-300 mb-4">Serving Barrie for 26 years with professional cleaning services.</p>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Barrie Services</h3>
-              <ul className="space-y-2 text-gray-300">
-                <li>Residential Cleaning</li>
-                <li>Commercial Cleaning</li>
-                <li>Airbnb Cleaning</li>
-                <li>Deep Cleaning</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Neighborhoods</h3>
-              <ul className="space-y-2 text-gray-300">
-                <li>Downtown Barrie</li>
-                <li>Allandale</li>
-                <li>South Barrie</li>
-                <li>All Barrie Areas</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Contact</h3>
-              <div className="space-y-2 text-gray-300">
-                <div className="flex items-center">
-                  <Phone className="w-4 h-4 mr-2" />
-                  (705) 555-0123
-                </div>
-                <div className="flex items-center">
-                  <Mail className="w-4 h-4 mr-2" />
-                  barrie@housekeepingpro.ca
-                </div>
-                <div className="flex items-center">
-                  <MapPin className="w-4 h-4 mr-2" />
-                  Barrie, Ontario
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 HouseKeeping PRO. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   )
 }
