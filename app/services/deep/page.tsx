@@ -14,7 +14,7 @@ import SpecialOffers from "@/components/deep/Spaicaloffers"
 export default function DeepCleaningServicesPage() {
   return (
     <div className="min-h-screen bg-white">
-      <SharedHeader currentPage="services" />
+      
 
       {/* Hero Section */}
       <Deephero/>

@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
+import SharedHeader from "@/components/shared-header"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -21,6 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <SharedHeader currentPage="services" />
       <body className={inter.className}>{children}</body>
     </html>
   )
