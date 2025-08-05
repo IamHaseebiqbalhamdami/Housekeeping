@@ -1,18 +1,4 @@
 "use client";
-
-import { Button } from "@/components/ui/button";
-import {
-  Calendar,
-  Phone,
-  Sun,
-  Leaf,
-  Snowflake,
-  Flower,
-  CheckCircle,
-} from "lucide-react";
-import SharedHeader from "@/components/shared-header";
-import Seasonalpackeges from "@/components/comman/Seasonalpackeges";
-import Spaicaladsonce from "@/components/comman/spaicaladsonce";
 import Riview from "@/components/comman/Riview";
 import Pricing from "@/components/comman/Pricing";
 import Faqs from "@/components/comman/Faqs";
@@ -21,7 +7,7 @@ import Whyseasonal from "@/components/comman/Whyseasonal";
 import Calltoaction from "@/components/comman/Calltoaction";
 import Tips from "@/components/comman/Tips";
 import Spaicaladsons from "@/components/comman/Spaicaladsons";
-
+import SeasonalBenefits from "@/components/comman/Seasonalpackeges";
 export default function SeasonalCleaningServicesPage(): JSX.Element {
   return (
     <div className="min-h-screen bg-white">
@@ -34,7 +20,7 @@ export default function SeasonalCleaningServicesPage(): JSX.Element {
 
       {/* Seasonal Packages */}
      
-<Seasonalpackeges/>
+<SeasonalBenefits/>
       {/* ✅ NEW SECTION: Special Add-Ons */}
      {/* <Spaicaladsonce/> */}
 <Spaicaladsons/>
