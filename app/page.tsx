@@ -22,8 +22,20 @@ import {
   ArrowRight,
   ChevronLeft,
   ChevronRight,
+  CheckCircle,
+  Zap,
+  Heart,
+  TrendingUp,
+  Target,
+  Lightbulb,
+  Truck,
+  Clock3,
+  ThumbsUp,
 } from "lucide-react"
 import SharedHeader from "@/components/shared-header"
+import InteractiveCompanyTimeline from "@/components/interactivetim"
+import InteractiveCleaningCalculator from "@/components/interactivecal"
+import InnovativeShowcase from "@/components/innovative-showcase"
 
 // Hero Slider Component
 function HeroSlider() {
@@ -203,25 +215,25 @@ export default function HomePage() {
 
   const testimonials = [
     {
-      name: "Jennifer Thompson",
+      name: "Boby Chain",
       location: "Barrie, ON",
       text: "HouseKeeping PRO has been cleaning our home for 3 years now. Their attention to detail is incredible and the team is so professional and reliable. I can't imagine using anyone else!",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face",
+      image: "https://plus.unsplash.com/premium_photo-1689977807477-a579eda91fa2?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHByb2ZpbGV8ZW58MHx8MHx8fDA%3D",
     },
     {
-      name: "David Chen",
+      name: "David Thomson",
       location: "Orillia, ON",
       text: "As an Airbnb host, I depend on quick turnaround cleaning. HouseKeeping PRO never disappoints - my guests always comment on how spotless everything is. Best investment I've made!",
       rating: 5,
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
     },
     {
-      name: "Sarah Wilson",
+      name: "Sara khan",
       location: "Midland, ON",
       text: "Their monthly contract rates are very reasonable and the service is consistently excellent. After 26 years in business, they really know what they're doing. Highly recommend!",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
+      image: "https://plus.unsplash.com/premium_photo-1688740375397-34605b6abe48?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZSUyMHBpY3xlbnwwfHwwfHx8MA%3D%3D",
     },
   ]
 
@@ -355,6 +367,258 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Interactive Company Timeline */}
+      <InteractiveCompanyTimeline />
+
+
+      {/* Innovative Showcase */}
+      <InnovativeShowcase />
+
+      {/* Process & Methodology Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#012E71] mb-4">Our Proven Process</h2>
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+              A systematic approach that ensures consistent, high-quality results every time
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center group">
+              <div className="relative mb-6">
+                <div className="w-20 h-20 bg-[#012E71] rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-500">
+                  <Target className="w-10 h-10 text-white" />
+                </div>
+                <div className="absolute -top-2 -right-2 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center text-sm font-bold text-[#012E71]">
+                  1
+                </div>
+              </div>
+              <h3 className="text-xl font-bold text-[#012E71] mb-4">Assessment</h3>
+              <p className="text-gray-600 leading-relaxed">
+                We evaluate your space and discuss your specific needs to create a customized cleaning plan.
+              </p>
+            </div>
+
+            <div className="text-center group">
+              <div className="relative mb-6">
+                <div className="w-20 h-20 bg-[#012E71] rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-500">
+                  <Lightbulb className="w-10 h-10 text-white" />
+                </div>
+                <div className="absolute -top-2 -right-2 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center text-sm font-bold text-[#012E71]">
+                  2
+                </div>
+              </div>
+              <h3 className="text-xl font-bold text-[#012E71] mb-4">Planning</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Our team develops a detailed cleaning strategy using professional-grade equipment and products.
+              </p>
+            </div>
+
+            <div className="text-center group">
+              <div className="relative mb-6">
+                <div className="w-20 h-20 bg-[#012E71] rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-500">
+                  <Truck className="w-10 h-10 text-white" />
+                </div>
+                <div className="absolute -top-2 -right-2 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center text-sm font-bold text-[#012E71]">
+                  3
+                </div>
+              </div>
+              <h3 className="text-xl font-bold text-[#012E71] mb-4">Execution</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Trained professionals arrive on time and complete the job with attention to every detail.
+              </p>
+            </div>
+
+            <div className="text-center group">
+              <div className="relative mb-6">
+                <div className="w-20 h-20 bg-[#012E71] rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-500">
+                  <CheckCircle className="w-10 h-10 text-white" />
+                </div>
+                <div className="absolute -top-2 -right-2 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center text-sm font-bold text-[#012E71]">
+                  4
+                </div>
+              </div>
+              <h3 className="text-xl font-bold text-[#012E71] mb-4">Quality Check</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Final inspection ensures everything meets our high standards before we leave your property.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Technology & Innovation Section */}
+      <section className="py-20 bg-gradient-to-br from-[#012E71] to-blue-900 text-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Advanced Technology & Innovation</h2>
+            <p className="text-xl opacity-90 max-w-3xl mx-auto">
+              We combine cutting-edge cleaning technology with eco-friendly practices for superior results
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="bg-white/10 backdrop-blur-sm border-white/20 p-8 hover:bg-white/20 transition-all duration-500 hover:-translate-y-2">
+              <Zap className="w-16 h-16 text-white-400 mx-auto mb-6" />
+              <h3 className="text-xl font-bold mb-4 text-center">HEPA Filtration Systems</h3>
+              <p className="text-white/90 leading-relaxed text-center">
+                Advanced air purification technology removes 99.97% of airborne particles, ensuring cleaner, healthier indoor air.
+              </p>
+            </Card>
+
+            <Card className="bg-white/10 backdrop-blur-sm border-white/20 p-8 hover:bg-white/20 transition-all duration-500 hover:-translate-y-2">
+              <Heart className="w-16 h-16 text-white-400 mx-auto mb-6" />
+              <h3 className="text-xl font-bold mb-4 text-center">Eco-Friendly Products</h3>
+              <p className="text-white/90 leading-relaxed text-center">
+                Certified green cleaning products that are safe for your family, pets, and the environment while delivering exceptional results.
+              </p>
+            </Card>
+
+            <Card className="bg-white/10 backdrop-blur-sm border-white/20 p-8 hover:bg-white/20 transition-all duration-500 hover:-translate-y-2">
+              <TrendingUp className="w-16 h-16 text-white mx-auto mb-6" />
+              <h3 className="text-xl font-bold mb-4 text-center">Smart Scheduling</h3>
+              <p className="text-white/90 leading-relaxed text-center">
+                AI-powered scheduling system ensures optimal timing and route planning for maximum efficiency and reliability.
+              </p>
+            </Card>
+          </div>
+
+          <div className="mt-12 text-center">
+            <div className="inline-flex items-center space-x-8 bg-white/10 backdrop-blur-sm rounded-full px-8 py-4">
+              <div className="flex items-center space-x-2">
+                <Clock3 className="w-5 h-5 text-yellow-400" />
+                <span className="text-sm">Real-time Tracking</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <ThumbsUp className="w-5 h-5 text-green-400" />
+                <span className="text-sm">Quality Guarantee</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Shield className="w-5 h-5 text-blue-400" />
+                <span className="text-sm">100% Secure</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Special Offers & Promotions Section */}
+      {/* <section className="py-20 bg-gradient-to-r from-yellow-50 to-orange-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#012E71] mb-4">Special Offers & Promotions</h2>
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+              Take advantage of our limited-time offers and seasonal promotions
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="relative overflow-hidden group hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border-0 shadow-lg">
+              <div className="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold z-10">
+                Limited Time
+              </div>
+              <div className="p-8">
+                <div className="text-center mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Sparkles className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-[#012E71] mb-2">New Client Special</h3>
+                  <div className="text-4xl font-bold text-red-500 mb-2">20% OFF</div>
+                  <p className="text-gray-600">First cleaning service</p>
+                </div>
+                <ul className="space-y-3 mb-6">
+                  <li className="flex items-center text-gray-700">
+                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                    <span>Full home cleaning</span>
+                  </li>
+                  <li className="flex items-center text-gray-700">
+                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                    <span>Eco-friendly products</span>
+                  </li>
+                  <li className="flex items-center text-gray-700">
+                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                    <span>Satisfaction guarantee</span>
+                  </li>
+                </ul>
+                <Button className="w-full bg-[#012E71] hover:bg-blue-800 text-white group-hover:scale-105 transition-transform duration-300">
+                  Claim Offer
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+              </div>
+            </Card>
+
+            <Card className="relative overflow-hidden group hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border-0 shadow-lg">
+              <div className="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold z-10">
+                Popular
+              </div>
+              <div className="p-8">
+                <div className="text-center mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Calendar className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-[#012E71] mb-2">Monthly Contract</h3>
+                  <div className="text-4xl font-bold text-green-500 mb-2">15% OFF</div>
+                  <p className="text-gray-600">Regular cleaning schedule</p>
+                </div>
+                <ul className="space-y-3 mb-6">
+                  <li className="flex items-center text-gray-700">
+                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                    <span>Weekly or bi-weekly</span>
+                  </li>
+                  <li className="flex items-center text-gray-700">
+                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                    <span>Priority scheduling</span>
+                  </li>
+                  <li className="flex items-center text-gray-700">
+                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                    <span>Flexible cancellation</span>
+                  </li>
+                </ul>
+                <Button className="w-full bg-[#012E71] hover:bg-blue-800 text-white group-hover:scale-105 transition-transform duration-300">
+                  Get Started
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+              </div>
+            </Card>
+
+            <Card className="relative overflow-hidden group hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border-0 shadow-lg">
+              <div className="absolute top-4 right-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-bold z-10">
+                Seasonal
+              </div>
+              <div className="p-8">
+                <div className="text-center mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Leaf className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-[#012E71] mb-2">Spring Cleaning</h3>
+                  <div className="text-4xl font-bold text-blue-500 mb-2">25% OFF</div>
+                  <p className="text-gray-600">Deep cleaning package</p>
+                </div>
+                <ul className="space-y-3 mb-6">
+                  <li className="flex items-center text-gray-700">
+                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                    <span>Complete home refresh</span>
+                  </li>
+                  <li className="flex items-center text-gray-700">
+                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                    <span>Window cleaning included</span>
+                  </li>
+                  <li className="flex items-center text-gray-700">
+                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                    <span>Organizing services</span>
+                  </li>
+                </ul>
+                <Button className="w-full bg-[#012E71] hover:bg-blue-800 text-white group-hover:scale-105 transition-transform duration-300">
+                  Book Now
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </section> */}
+
       {/* Service Areas Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
@@ -471,11 +735,11 @@ export default function HomePage() {
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-08-02%20at%2020.55.30_d31d3cc8.jpg-ltfbL4qxNsZJM19pu8YgBkJBiRmUlE.jpeg"
+                src="/images/logo.png"
                 alt="HouseKeeping PRO Logo"
                 width={180}
                 height={60}
-                className="h-12 w-auto mb-4 brightness-0 invert"
+                className="h-16 w-auto mb-4 invert"
               />
               <p className="text-gray-300 mb-4">
                 Canadian owned and operated cleaning services serving Simcoe County for 26 years.

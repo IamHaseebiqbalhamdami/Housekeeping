@@ -66,17 +66,17 @@ export default function SharedHeader({ currentPage }: { currentPage: string }) {
   ]
 
   return (
-    <header className="bg-white/95 backdrop-blur-sm shadow-sm border-b border-gray-200 sticky top-0 z-50">
+    <header className="bg-white backdrop-blur-sm shadow-sm border-b border-gray-200 sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <Link href="/">
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-08-02%20at%2020.55.30_d31d3cc8.jpg-ltfbL4qxNsZJM19pu8YgBkJBiRmUlE.jpeg"
+                src="/images/logo.png"
                 alt="HouseKeeping PRO Logo"
-                width={180}
-                height={60}
-                className="h-12 w-auto"
+                width={240}
+                height={120}
+                className="h-24 w-auto"
               />
             </Link>
           </div>

@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Clock, Home, Building2, Sparkles, CheckCircle, Phone, Calendar, Star } from "lucide-react"
 import SharedHeader from "@/components/shared-header"
-
+import InteractiveCleaningCalculator from "@/components/interactivecal"
 export default function PricingPage() {
   const pricingPlans = [
     {
@@ -182,6 +182,7 @@ export default function PricingPage() {
         </div>
       </section>
 
+
       {/* Commercial Pricing */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -331,7 +332,9 @@ export default function PricingPage() {
             </div>
           </div>
         </div>
+      
       </section>
+          <InteractiveCleaningCalculator />
 
       {/* CTA Section */}
       <section className="py-20 bg-[#012E71] text-white">

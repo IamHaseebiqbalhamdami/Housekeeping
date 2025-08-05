@@ -18,6 +18,7 @@ import {
   Leaf,
 } from "lucide-react"
 import SharedHeader from "@/components/shared-header"
+import CompanyStory from "@/components/company-story"
 
 export default function AboutPage() {
   const teamMembers = [
@@ -25,29 +26,85 @@ export default function AboutPage() {
       name: "Margaret Thompson",
       role: "Founder & CEO",
       experience: "26 years",
-      image: "/images/team/margaret-thompson.png",
+      image: "/team/freepik__the-style-is-candid-image-photography-with-natural__91137.png",
       bio: "Founded HouseKeeping PRO in 1998 with a vision to provide exceptional cleaning services across Simcoe County.",
     },
     {
       name: "David Rodriguez",
-      role: "Operations Manager",
+      role: "CTO & Operations Manager",
       experience: "15 years",
-      image: "/images/team/david-rodriguez.png",
+      image: "/team/freepik__the-style-is-candid-image-photography-with-natural__91136.png",
       bio: "Oversees daily operations and ensures our high standards are maintained across all service areas.",
     },
     {
       name: "Sarah Wilson",
       role: "Quality Assurance Director",
       experience: "12 years",
-      image: "/images/team/sarah-wilson.png",
+      image: "/team/freepik__the-style-is-candid-image-photography-with-natural__91135.png",
       bio: "Leads our quality control initiatives and training programs for all cleaning professionals.",
     },
     {
       name: "Michael Chen",
       role: "Customer Relations Manager",
       experience: "8 years",
-      image: "/images/team/michael-chen.png",
+      image: "/team/freepik__the-style-is-candid-image-photography-with-natural__91134.png",
       bio: "Ensures exceptional customer service and manages client relationships across all service areas.",
+    },
+    {
+      name: "Emily Johnson",
+      role: "Senior Cleaning Specialist",
+      experience: "10 years",
+      image: "/team/freepik__the-style-is-candid-image-photography-with-natural__91133.png",
+      bio: "Expert in deep cleaning and specialized residential services with exceptional attention to detail.",
+    },
+    {
+      name: "Robert Martinez",
+      role: "Commercial Team Lead",
+      experience: "9 years",
+      image: "/team/freepik__the-style-is-candid-image-photography-with-natural__91131.png",
+      bio: "Leads our commercial cleaning team with expertise in office and retail facility maintenance.",
+    },
+    {
+      name: "Lisa Anderson",
+      role: "Eco-Friendly Specialist",
+      experience: "7 years",
+      image: "/team/freepik__the-style-is-candid-image-photography-with-natural__85731.png",
+      bio: "Specializes in green cleaning practices and eco-friendly product implementation.",
+    },
+    {
+      name: "James Wilson",
+      role: "Equipment Manager",
+      experience: "11 years",
+      image: "/team/freepik__the-style-is-candid-image-photography-with-natural__85730.png",
+      bio: "Manages all cleaning equipment and ensures proper maintenance of professional tools.",
+    },
+    {
+      name: "Maria Garcia",
+      role: "Residential Team Lead",
+      experience: "8 years",
+      image: "/team/freepik__the-style-is-candid-image-photography-with-natural__85729.png",
+      bio: "Leads our residential cleaning team with focus on customer satisfaction and quality service.",
+    },
+    {
+      name: "Thomas Brown",
+      role: "Safety Coordinator",
+      experience: "6 years",
+      image: "/team/freepik__the-style-is-candid-image-photography-with-natural__85728.png",
+      bio: "Ensures all safety protocols are followed and maintains workplace safety standards.",
+    },
+    {
+      name: "Jennifer Lee",
+      role: "Training Coordinator",
+      experience: "9 years",
+      image: "/team/freepik__the-style-is-candid-image-photography-with-natural__85726.png",
+      bio: "Develops and implements training programs for all cleaning professionals.",
+    },
+    {
+      name: "Christopher Davis",
+      role: "Quality Control Specialist",
+      experience: "7 years",
+      image: "/team/freepik__the-style-is-candid-image-photography-with-natural__35067.png",
+      bio: "Conducts quality inspections and ensures service standards are consistently met.",
     },
   ]
 
@@ -158,6 +215,9 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Interactive Company Story */}
+      <CompanyStory />
+
       {/* Company Stats */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -221,11 +281,11 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16">
             {teamMembers.map((member, index) => (
               <Card
                 key={index}
-                className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg overflow-hidden"
+                className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg overflow-hidden cursor-pointer"
               >
                 <div className="relative overflow-hidden">
                   <Image
@@ -235,18 +295,22 @@ export default function AboutPage() {
                     height={300}
                     className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#012E71]/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="flex items-center">
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#012E71]/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500" />
+                  <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
+                    <div className="flex items-center mb-2">
                       <Award className="w-4 h-4 mr-2" />
-                      <span className="text-sm">{member.experience}</span>
+                      <span className="text-sm font-medium">{member.experience}</span>
                     </div>
+                    <h3 className="text-lg font-bold mb-1">{member.name}</h3>
+                    <p className="text-sm opacity-90">{member.role}</p>
                   </div>
                 </div>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold text-[#012E71] mb-2">{member.name}</h3>
-                  <p className="text-gray-600 font-medium mb-3">{member.role}</p>
-                  <p className="text-sm text-gray-600 leading-relaxed">{member.bio}</p>
+                <CardContent className="p-4">
+                  <h3 className="text-lg font-bold text-[#012E71] mb-1">{member.name}</h3>
+                  <p className="text-sm text-gray-600 font-medium">{member.role}</p>
+                  <div className="mt-3 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
+                    <p className="text-xs text-gray-600 leading-relaxed">{member.bio}</p>
+                  </div>
                 </CardContent>
               </Card>
             ))}
@@ -257,7 +321,7 @@ export default function AboutPage() {
             <Card className="overflow-hidden shadow-lg">
               <div className="relative">
                 <Image
-                  src="/images/team/residential-team.png"
+                  src="https://images.unsplash.com/photo-1563453392212-326f5e854473?w=600&h=400&fit=crop"
                   alt="Residential Cleaning Team"
                   width={600}
                   height={400}
@@ -281,7 +345,7 @@ export default function AboutPage() {
             <Card className="overflow-hidden shadow-lg">
               <div className="relative">
                 <Image
-                  src="/images/team/commercial-team.png"
+                  src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop"
                   alt="Commercial Cleaning Team"
                   width={600}
                   height={400}

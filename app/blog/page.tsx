@@ -21,6 +21,8 @@ import {
   MapPin,
 } from "lucide-react"
 import SharedHeader from "@/components/shared-header"
+import BlogShowcase from "@/components/blog-showcase"
+import UseCasesShowcase from "@/components/use-cases-showcase"
 
 export default function BlogPage() {
   const featuredPost = {
@@ -433,6 +435,13 @@ export default function BlogPage() {
       </section>
 
       {/* CTA Section */}
+      
+
+      {/* Blog Showcase Component */}
+      <BlogShowcase />
+
+      {/* Use Cases Showcase Component */}
+      <UseCasesShowcase />
       <section className="py-20 bg-[#012E71] text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
@@ -464,7 +473,7 @@ export default function BlogPage() {
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-08-02%20at%2020.55.30_d31d3cc8.jpg-ltfbL4qxNsZJM19pu8YgBkJBiRmUlE.jpeg"
+                src="/images/logo.png"
                 alt="HouseKeeping PRO Logo"
                 width={180}
                 height={60}
