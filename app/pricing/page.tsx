@@ -108,7 +108,7 @@ export default function PricingPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <SharedHeader currentPage="pricing" />
+      {/* <SharedHeader currentPage="pricing" /> */}
 
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-r from-[#012E71] to-blue-800 text-white">

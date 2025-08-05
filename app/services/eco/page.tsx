@@ -6,7 +6,7 @@ import SharedHeader from "@/components/shared-header"
 export default function EcoFriendlyServicesPage() {
   return (
     <div className="min-h-screen bg-white">
-      <SharedHeader currentPage="services" />
+      
 
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-r from-green-700 to-green-600 text-white">

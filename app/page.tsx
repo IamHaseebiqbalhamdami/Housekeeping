@@ -36,6 +36,12 @@ import SharedHeader from "@/components/shared-header"
 import InteractiveCompanyTimeline from "@/components/interactivetim"
 import InteractiveCleaningCalculator from "@/components/interactivecal"
 import InnovativeShowcase from "@/components/innovative-showcase"
+import SplashScreen from "@/components/splash-screen"
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay, Navigation, Pagination } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
 
 // Hero Slider Component
 function HeroSlider() {
@@ -168,12 +174,18 @@ function HeroSlider() {
 }
 
 export default function HomePage() {
+  const [showSplash, setShowSplash] = useState(true)
+
+  const handleSplashComplete = () => {
+    setShowSplash(false)
+  }
+
   const services = [
     {
       title: "Residential Cleaning",
       description: "Professional home cleaning services for houses, condos, and apartments across Simcoe County.",
       icon: Home,
-      image: "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=400&h=300&fit=crop",
+      image: '/images/resi.png',
       link: "/services/residential",
     },
     {
@@ -201,7 +213,7 @@ export default function HomePage() {
       title: "Eco-Friendly Cleaning",
       description: "Green cleaning services using 100% non-toxic, biodegradable products safe for your family.",
       icon: Leaf,
-      image: "https://images.unsplash.com/photo-1563453392212-326f5e854473?w=400&h=300&fit=crop",
+      image: '/images/eco.png',
       link: "/services/eco",
     },
     {
@@ -248,8 +260,7 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <SharedHeader currentPage="home" />
+      {showSplash && <SplashScreen onComplete={handleSplashComplete} />}
 
       {/* Hero Slider Section */}
       <HeroSlider />
@@ -305,7 +316,7 @@ export default function HomePage() {
                     alt={service.title}
                     width={400}
                     height={300}
-                    className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-64 object-fitwidth group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#012E71]/70 to-transparent" />
                   <div className="absolute bottom-4 left-4 text-white">
@@ -503,121 +514,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Special Offers & Promotions Section */}
-      {/* <section className="py-20 bg-gradient-to-r from-yellow-50 to-orange-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#012E71] mb-4">Special Offers & Promotions</h2>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-              Take advantage of our limited-time offers and seasonal promotions
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="relative overflow-hidden group hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border-0 shadow-lg">
-              <div className="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold z-10">
-                Limited Time
-              </div>
-              <div className="p-8">
-                <div className="text-center mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Sparkles className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-[#012E71] mb-2">New Client Special</h3>
-                  <div className="text-4xl font-bold text-red-500 mb-2">20% OFF</div>
-                  <p className="text-gray-600">First cleaning service</p>
-                </div>
-                <ul className="space-y-3 mb-6">
-                  <li className="flex items-center text-gray-700">
-                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                    <span>Full home cleaning</span>
-                  </li>
-                  <li className="flex items-center text-gray-700">
-                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                    <span>Eco-friendly products</span>
-                  </li>
-                  <li className="flex items-center text-gray-700">
-                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                    <span>Satisfaction guarantee</span>
-                  </li>
-                </ul>
-                <Button className="w-full bg-[#012E71] hover:bg-blue-800 text-white group-hover:scale-105 transition-transform duration-300">
-                  Claim Offer
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
-              </div>
-            </Card>
-
-            <Card className="relative overflow-hidden group hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border-0 shadow-lg">
-              <div className="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold z-10">
-                Popular
-              </div>
-              <div className="p-8">
-                <div className="text-center mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Calendar className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-[#012E71] mb-2">Monthly Contract</h3>
-                  <div className="text-4xl font-bold text-green-500 mb-2">15% OFF</div>
-                  <p className="text-gray-600">Regular cleaning schedule</p>
-                </div>
-                <ul className="space-y-3 mb-6">
-                  <li className="flex items-center text-gray-700">
-                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                    <span>Weekly or bi-weekly</span>
-                  </li>
-                  <li className="flex items-center text-gray-700">
-                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                    <span>Priority scheduling</span>
-                  </li>
-                  <li className="flex items-center text-gray-700">
-                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                    <span>Flexible cancellation</span>
-                  </li>
-                </ul>
-                <Button className="w-full bg-[#012E71] hover:bg-blue-800 text-white group-hover:scale-105 transition-transform duration-300">
-                  Get Started
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
-              </div>
-            </Card>
-
-            <Card className="relative overflow-hidden group hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border-0 shadow-lg">
-              <div className="absolute top-4 right-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-bold z-10">
-                Seasonal
-              </div>
-              <div className="p-8">
-                <div className="text-center mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Leaf className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-[#012E71] mb-2">Spring Cleaning</h3>
-                  <div className="text-4xl font-bold text-blue-500 mb-2">25% OFF</div>
-                  <p className="text-gray-600">Deep cleaning package</p>
-                </div>
-                <ul className="space-y-3 mb-6">
-                  <li className="flex items-center text-gray-700">
-                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                    <span>Complete home refresh</span>
-                  </li>
-                  <li className="flex items-center text-gray-700">
-                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                    <span>Window cleaning included</span>
-                  </li>
-                  <li className="flex items-center text-gray-700">
-                    <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
-                    <span>Organizing services</span>
-                  </li>
-                </ul>
-                <Button className="w-full bg-[#012E71] hover:bg-blue-800 text-white group-hover:scale-105 transition-transform duration-300">
-                  Book Now
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
-              </div>
-            </Card>
-          </div>
-        </div>
-      </section> */}
+     
 
       {/* Service Areas Section */}
       <section className="py-20 bg-white">
@@ -643,6 +540,207 @@ export default function HomePage() {
                 </Card>
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Professional Equipment Showcase */}
+      <section className="py-20 bg-gradient-to-br from-[#012E71] to-blue-800 text-white relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-20 w-40 h-40 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-20 w-60 h-60 bg-blue-400/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/3 w-32 h-32 bg-gray-400/10 rounded-full blur-3xl animate-pulse delay-2000"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Professional Equipment</h2>
+            <p className="text-xl opacity-90 max-w-2xl mx-auto">
+              State-of-the-art cleaning tools and equipment for exceptional results
+            </p>
+          </div>
+
+          <div className="max-w-6xl mx-auto">
+            <Swiper
+              modules={[Autoplay, Navigation, Pagination]}
+              spaceBetween={30}
+              slidesPerView={1}
+              breakpoints={{
+                640: {
+                  slidesPerView: 2,
+                },
+                768: {
+                  slidesPerView: 3,
+                },
+                1024: {
+                  slidesPerView: 4,
+                },
+              }}
+              autoplay={{
+                delay: 3000,
+                disableOnInteraction: false,
+              }}
+              loop={true}
+              navigation={true}
+              pagination={{ clickable: true }}
+              className="professional-equipment-swiper"
+            >
+              <SwiperSlide>
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 group">
+                  <div className="relative overflow-hidden rounded-xl mb-4">
+                    <Image
+                      src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&h=300&fit=crop"
+                      alt="Professional Vacuum Cleaner"
+                      width={400}
+                      height={300}
+                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                  </div>
+                  <h3 className="text-lg font-bold mb-2">HEPA Vacuum Systems</h3>
+                  <p className="text-sm opacity-90">Advanced filtration for allergen-free cleaning</p>
+                </div>
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 group">
+                  <div className="relative overflow-hidden rounded-xl mb-4">
+                    <Image
+                      src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop"
+                      alt="Steam Cleaning Equipment"
+                      width={400}
+                      height={300}
+                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                  </div>
+                  <h3 className="text-lg font-bold mb-2">Steam Cleaners</h3>
+                  <p className="text-sm opacity-90">Chemical-free sanitization at high temperatures</p>
+                </div>
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 group">
+                  <div className="relative overflow-hidden rounded-xl mb-4">
+                    <Image
+                      src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=400&h=300&fit=crop"
+                      alt="Floor Polishing Equipment"
+                      width={400}
+                      height={300}
+                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                  </div>
+                  <h3 className="text-lg font-bold mb-2">Floor Polishers</h3>
+                  <p className="text-sm opacity-90">Professional floor restoration and maintenance</p>
+                </div>
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 group">
+                  <div className="relative overflow-hidden rounded-xl mb-4">
+                    <Image
+                      src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=300&fit=crop"
+                      alt="Carpet Cleaning Equipment"
+                      width={400}
+                      height={300}
+                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                  </div>
+                  <h3 className="text-lg font-bold mb-2">Carpet Cleaners</h3>
+                  <p className="text-sm opacity-90">Deep carpet cleaning and stain removal</p>
+                </div>
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 group">
+                  <div className="relative overflow-hidden rounded-xl mb-4">
+                    <Image
+                      src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&h=300&fit=crop"
+                      alt="Window Cleaning Tools"
+                      width={400}
+                      height={300}
+                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                  </div>
+                  <h3 className="text-lg font-bold mb-2">Window Cleaning Tools</h3>
+                  <p className="text-sm opacity-90">Streak-free window and glass cleaning</p>
+                </div>
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 group">
+                  <div className="relative overflow-hidden rounded-xl mb-4">
+                    <Image
+                      src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop"
+                      alt="Eco-Friendly Products"
+                      width={400}
+                      height={300}
+                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                  </div>
+                  <h3 className="text-lg font-bold mb-2">Eco-Friendly Products</h3>
+                  <p className="text-sm opacity-90">Non-toxic, biodegradable cleaning solutions</p>
+                </div>
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 group">
+                  <div className="relative overflow-hidden rounded-xl mb-4">
+                    <Image
+                      src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=400&h=300&fit=crop"
+                      alt="Microfiber Technology"
+                      width={400}
+                      height={300}
+                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                  </div>
+                  <h3 className="text-lg font-bold mb-2">Microfiber Technology</h3>
+                  <p className="text-sm opacity-90">Ultra-absorbent cloths for superior cleaning</p>
+                </div>
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 group">
+                  <div className="relative overflow-hidden rounded-xl mb-4">
+                    <Image
+                      src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=300&fit=crop"
+                      alt="UV Sanitization"
+                      width={400}
+                      height={300}
+                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                  </div>
+                  <h3 className="text-lg font-bold mb-2">UV Sanitization</h3>
+                  <p className="text-sm opacity-90">Advanced germ elimination technology</p>
+                </div>
+              </SwiperSlide>
+            </Swiper>
+
+            <div className="text-center mt-12">
+              <p className="text-lg opacity-90 mb-4">
+                Professional-grade equipment ensures thorough, efficient, and safe cleaning
+              </p>
+              <div className="flex items-center justify-center space-x-8 text-sm opacity-75">
+                <div className="flex items-center">
+                  <Shield className="w-4 h-4 mr-2" />
+                  <span>Certified Equipment</span>
+                </div>
+                <div className="flex items-center">
+                  <Leaf className="w-4 h-4 mr-2" />
+                  <span>Eco-Friendly</span>
+                </div>
+                <div className="flex items-center">
+                  <Award className="w-4 h-4 mr-2" />
+                  <span>Professional Grade</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -729,17 +827,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Footer */}
+      {/* Footer
       <footer className="bg-black text-white py-16">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <Image
-                src="/images/logo.png"
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-08-02%20at%2020.55.30_d31d3cc8.jpg-ltfbL4qxNsZJM19pu8YgBkJBiRmUlE.jpeg"
                 alt="HouseKeeping PRO Logo"
                 width={180}
                 height={60}
-                className="h-16 w-auto mb-4 invert"
+                className="h-12 w-auto mb-4 brightness-0 invert"
               />
               <p className="text-gray-300 mb-4">
                 Canadian owned and operated cleaning services serving Simcoe County for 26 years.
@@ -823,7 +921,7 @@ export default function HomePage() {
             <p>&copy; 2024 HouseKeeping PRO. All rights reserved. | 26 Years Serving Simcoe County</p>
           </div>
         </div>
-      </footer>
+      </footer> */}
     </div>
   )
 }

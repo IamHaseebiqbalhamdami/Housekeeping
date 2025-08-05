@@ -53,6 +53,7 @@ export default function SharedHeader({ currentPage }: { currentPage: string }) {
     { name: "Airbnb Cleaning", href: "/services/airbnb", description: "Turnover cleaning for short-term rentals" },
     { name: "Office Spaces", href: "/services/office", description: "Professional office cleaning services" },
     { name: "Deep Cleaning", href: "/services/deep", description: "Comprehensive deep cleaning services" },
+    { name: "Seaosonal Cleaning", href: "/services/seasonal", description: "Comprehensive Seaosonal cleaning services" },
     { name: "Eco-Friendly", href: "/services/eco", description: "Green cleaning with safe products" },
   ]
 

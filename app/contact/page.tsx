@@ -34,7 +34,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <SharedHeader currentPage="contact" />
+      {/* <SharedHeader currentPage="contact" /> */}
 
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-r from-[#012E71] to-blue-800 text-white">

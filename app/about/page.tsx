@@ -142,7 +142,7 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <SharedHeader currentPage="about" />
+    
 
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-r from-[#012E71] to-blue-800 text-white">
@@ -454,7 +454,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Footer */}
+      {/* Footer
       <footer className="bg-black text-white py-16">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8">
@@ -521,7 +521,7 @@ export default function AboutPage() {
             <p>&copy; 2024 HouseKeeping PRO. All rights reserved.</p>
           </div>
         </div>
-      </footer>
+      </footer> */}
     </div>
   )
 }
