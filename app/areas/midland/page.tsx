@@ -4,58 +4,57 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { MapPin, Star, Shield, Calendar, Phone, Mail, Award, Home, Building2 } from "lucide-react"
-import SharedHeader from "@/components/shared-header"
 
-export default function BarrieAreaPage() {
+export default function MidlandAreaPage() {
   const neighborhoods = [
-    "Downtown Barrie",
-    "Allandale",
-    "Cundles East",
-    "Georgian College Area",
-    "Painswick",
-    "South Barrie",
-    "Bayfield",
-    "Holly",
+    "Downtown Midland",
+    "East End",
+    "West End",
+    "Little Lake Area",
+    "Tiffin",
+    "Bayport",
+    "Midland Point",
+    "Huronia District",
   ]
 
   const reviews = [
     {
-      name: "Jennifer Thompson",
-      neighborhood: "Downtown Barrie",
+      name: "Emily Carter",
+      neighborhood: "Downtown Midland",
       rating: 5,
-      text: "HouseKeeping PRO has been cleaning our downtown condo for 3 years. They're always professional and reliable. The team knows our building well and works efficiently.",
+      text: "HouseKeeping PRO has been amazing for our condo in downtown Midland. Always punctual, reliable, and they leave everything spotless.",
       image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face",
-      serviceImage: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400&h=300&fit=crop",
+      serviceImage: "https://images.unsplash.com/photo-1587560699334-cc4ff3d64d15?w=400&h=300&fit=crop",
     },
     {
-      name: "Robert Chen",
-      neighborhood: "South Barrie",
+      name: "Liam Thompson",
+      neighborhood: "Midland Point",
       rating: 5,
-      text: "Excellent service! They cleaned our 4-bedroom house before we moved in. Every room was spotless and they even cleaned inside all the appliances. Highly recommend!",
+      text: "We used their deep cleaning service before moving into our new home. Absolutely impressed! They even cleaned inside the cabinets and appliances.",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
-      serviceImage: "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=400&h=300&fit=crop",
+      serviceImage: "https://images.unsplash.com/photo-1598300042247-464d39dfed9c?w=400&h=300&fit=crop",
     },
     {
-      name: "Sarah Wilson",
-      neighborhood: "Allandale",
+      name: "Sophia Martinez",
+      neighborhood: "East End",
       rating: 5,
-      text: "The monthly cleaning service is fantastic. The team arrives on time, works quietly while I work from home, and leaves everything perfect. Great value for money!",
+      text: "I book weekly cleaning for my Airbnb property. The team is professional and reliable, and my guests always compliment the cleanliness.",
       image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
-      serviceImage: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&h=300&fit=crop",
+      serviceImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&h=300&fit=crop",
     },
   ]
 
   const teamMembers = [
     {
-      name: "Margaret Thompson",
-      role: "Barrie Area Manager",
-      experience: "26 years",
+      name: "Olivia Johnson",
+      role: "Midland Area Manager",
+      experience: "20 years",
       image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=300&fit=crop&crop=face",
     },
     {
-      name: "David Rodriguez",
-      role: "Senior Team Lead",
-      experience: "12 years",
+      name: "Ethan Williams",
+      role: "Senior Cleaning Specialist",
+      experience: "10 years",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face",
     },
   ]
@@ -67,23 +66,23 @@ export default function BarrieAreaPage() {
       <section className="relative py-20 bg-gradient-to-r from-[#012E71] to-blue-800 text-white">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1200&h=800&fit=crop"
-            alt="Barrie cityscape"
+            src="https://images.unsplash.com/photo-1543342386-1f1a8cfed31f?w=1200&h=800&fit=crop"
+            alt="Midland cityscape"
             fill
             className="object-cover opacity-20"
           />
         </div>
         <div className="relative z-10 container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">Cleaning Services in Barrie</h1>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">Cleaning Services in Midland</h1>
             <p className="text-xl md:text-2xl mb-8 opacity-90">
-              Our main service hub serving Barrie and surrounding areas for 26 years. Professional cleaning services for
-              homes and businesses throughout the city.
+              Serving Midland and surrounding communities with premium cleaning services for over 20 years.
+              Trusted by homeowners and businesses for reliable and detailed cleaning.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-white text-[#012E71] hover:bg-gray-100">
                 <Calendar className="w-5 h-5 mr-2" />
-                Book in Barrie
+                Book in Midland
               </Button>
               <Button
                 size="lg"
@@ -91,7 +90,7 @@ export default function BarrieAreaPage() {
                 className="border-white text-white hover:bg-white hover:text-[#012E71] bg-transparent"
               >
                 <Phone className="w-5 h-5 mr-2" />
-                Call (705) 555-0123
+                Call (705) 555-0199
               </Button>
             </div>
           </div>
@@ -103,19 +102,19 @@ export default function BarrieAreaPage() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-4xl font-bold text-[#012E71] mb-2">26</div>
-              <p className="text-gray-700">Years in Barrie</p>
+              <div className="text-4xl font-bold text-[#012E71] mb-2">20</div>
+              <p className="text-gray-700">Years in Midland</p>
             </div>
             <div>
-              <div className="text-4xl font-bold text-[#012E71] mb-2">500+</div>
+              <div className="text-4xl font-bold text-[#012E71] mb-2">300+</div>
               <p className="text-gray-700">Regular Clients</p>
             </div>
             <div>
-              <div className="text-4xl font-bold text-[#012E71] mb-2">98%</div>
+              <div className="text-4xl font-bold text-[#012E71] mb-2">99%</div>
               <p className="text-gray-700">Satisfaction Rate</p>
             </div>
             <div>
-              <div className="text-4xl font-bold text-[#012E71] mb-2">15+</div>
+              <div className="text-4xl font-bold text-[#012E71] mb-2">12+</div>
               <p className="text-gray-700">Team Members</p>
             </div>
           </div>
@@ -128,7 +127,7 @@ export default function BarrieAreaPage() {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-[#012E71] mb-4">Neighborhoods We Serve</h2>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-              Professional cleaning services throughout all Barrie neighborhoods and surrounding areas.
+              Reliable cleaning services across all Midland neighborhoods and nearby areas.
             </p>
           </div>
 
@@ -149,9 +148,9 @@ export default function BarrieAreaPage() {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#012E71] mb-4">Our Barrie Team</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-[#012E71] mb-4">Our Midland Team</h2>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-              Meet the experienced professionals who have been serving Barrie for decades.
+              Experienced professionals dedicated to providing the best cleaning services in Midland.
             </p>
           </div>
 
@@ -195,9 +194,9 @@ export default function BarrieAreaPage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#012E71] mb-4">What Barrie Clients Say</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-[#012E71] mb-4">What Midland Clients Say</h2>
             <p className="text-xl text-gray-700 max-w-2xl mx-auto">
-              Real reviews from satisfied customers throughout Barrie
+              Hear from our satisfied customers in the Midland area.
             </p>
           </div>
 
@@ -207,7 +206,7 @@ export default function BarrieAreaPage() {
                 <div className="relative">
                   <Image
                     src={review.serviceImage || "/placeholder.svg"}
-                    alt="Cleaning service in Barrie"
+                    alt="Cleaning service in Midland"
                     width={400}
                     height={200}
                     className="w-full h-48 object-cover"
@@ -256,9 +255,9 @@ export default function BarrieAreaPage() {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#012E71] mb-4">Services Available in Barrie</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-[#012E71] mb-4">Services Available in Midland</h2>
             <p className="text-xl text-gray-700 max-w-2xl mx-auto">
-              Complete range of cleaning services available throughout Barrie
+              Comprehensive cleaning services for homes, businesses, and rentals across Midland.
             </p>
           </div>
 
@@ -266,17 +265,17 @@ export default function BarrieAreaPage() {
             <Card className="text-center p-6 hover:shadow-lg transition-all duration-300">
               <Home className="w-12 h-12 text-[#012E71] mx-auto mb-4" />
               <h3 className="text-xl font-bold text-[#012E71] mb-2">Residential Cleaning</h3>
-              <p className="text-gray-600">Regular and deep cleaning for homes and condos</p>
+              <p className="text-gray-600">Regular and deep cleaning for homes and apartments</p>
             </Card>
             <Card className="text-center p-6 hover:shadow-lg transition-all duration-300">
               <Building2 className="w-12 h-12 text-[#012E71] mx-auto mb-4" />
               <h3 className="text-xl font-bold text-[#012E71] mb-2">Commercial Cleaning</h3>
-              <p className="text-gray-600">Office and retail space cleaning services</p>
+              <p className="text-gray-600">Detailed cleaning for offices and businesses</p>
             </Card>
             <Card className="text-center p-6 hover:shadow-lg transition-all duration-300">
               <Home className="w-12 h-12 text-[#012E71] mx-auto mb-4" />
               <h3 className="text-xl font-bold text-[#012E71] mb-2">Airbnb Cleaning</h3>
-              <p className="text-gray-600">Turnover cleaning for short-term rentals</p>
+              <p className="text-gray-600">Professional turnover cleaning for short-term rentals</p>
             </Card>
           </div>
         </div>
@@ -286,14 +285,14 @@ export default function BarrieAreaPage() {
       <section className="py-20 bg-[#012E71] text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Book in Barrie?</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Book in Midland?</h2>
             <p className="text-xl mb-8 opacity-90">
-              Join 500+ satisfied clients throughout Barrie who trust HouseKeeping PRO for their cleaning needs.
+              Join hundreds of satisfied clients in Midland who trust HouseKeeping PRO for their cleaning needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-white text-[#012E71] hover:bg-gray-100 px-8 py-4">
                 <Calendar className="w-5 h-5 mr-2" />
-                Book Barrie Service
+                Book Midland Service
               </Button>
               <Button
                 size="lg"
@@ -301,68 +300,12 @@ export default function BarrieAreaPage() {
                 className="border-white text-white hover:bg-white hover:text-[#012E71] px-8 py-4 bg-transparent"
               >
                 <Phone className="w-5 h-5 mr-2" />
-                Call (705) 555-0123
+                Call (705) 555-0199
               </Button>
             </div>
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-black text-white py-16">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-08-02%20at%2020.55.30_d31d3cc8.jpg-ltfbL4qxNsZJM19pu8YgBkJBiRmUlE.jpeg"
-                alt="HouseKeeping PRO Logo"
-                width={180}
-                height={60}
-                className="h-12 w-auto mb-4 brightness-0 invert"
-              />
-              <p className="text-gray-300 mb-4">Serving Barrie for 26 years with professional cleaning services.</p>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Barrie Services</h3>
-              <ul className="space-y-2 text-gray-300">
-                <li>Residential Cleaning</li>
-                <li>Commercial Cleaning</li>
-                <li>Airbnb Cleaning</li>
-                <li>Deep Cleaning</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Neighborhoods</h3>
-              <ul className="space-y-2 text-gray-300">
-                <li>Downtown Barrie</li>
-                <li>Allandale</li>
-                <li>South Barrie</li>
-                <li>All Barrie Areas</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Contact</h3>
-              <div className="space-y-2 text-gray-300">
-                <div className="flex items-center">
-                  <Phone className="w-4 h-4 mr-2" />
-                  (705) 555-0123
-                </div>
-                <div className="flex items-center">
-                  <Mail className="w-4 h-4 mr-2" />
-                  barrie@housekeepingpro.ca
-                </div>
-                <div className="flex items-center">
-                  <MapPin className="w-4 h-4 mr-2" />
-                  Barrie, Ontario
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 HouseKeeping PRO. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   )
 }

@@ -14,15 +14,21 @@ function NavigationDropdown({
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <div className="relative" onMouseEnter={() => setIsOpen(true)} onMouseLeave={() => setIsOpen(false)}>
+    <div
+      className="relative"
+      onMouseEnter={() => setIsOpen(true)}
+      onMouseLeave={() => setIsOpen(false)}
+    >
       <button className="flex items-center text-gray-700 hover:text-[#012E71] transition-colors">
         {title}
         <ChevronDown className={`w-4 h-4 ml-1 transition-transform ${isOpen ? "rotate-180" : ""}`} />
       </button>
 
       {isOpen && (
-        <div className="absolute top-full left-0 mt-2 w-80 bg-white rounded-lg shadow-xl border border-gray-200 z-50 animate-in slide-in-from-top-2">
-          <div className="p-4">
+        <div
+          className="absolute top-full left-0 mt-2 w-80 bg-white rounded-lg shadow-xl border border-gray-200 z-50 transition-all duration-200"
+        >
+          <div className="max-h-64 overflow-y-auto p-2">
             {items.map((item, index) => (
               <Link
                 key={index}
@@ -39,6 +45,7 @@ function NavigationDropdown({
     </div>
   )
 }
+
 
 export default function SharedHeader({ currentPage }: { currentPage: string }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -64,6 +71,7 @@ export default function SharedHeader({ currentPage }: { currentPage: string }) {
     { name: "Simcoe County", href: "/areas/simcoe", description: "All communities in Simcoe County" },
     { name: "Wasaga Beach", href: "/areas/wasaga", description: "Seasonal and year-round properties" },
     { name: "All Areas", href: "/areas", description: "View complete service area map" },
+    { name: "All LOcation", href: "/areas/location", description: "View complete locations where we serve service " },
   ]
 
   return (
