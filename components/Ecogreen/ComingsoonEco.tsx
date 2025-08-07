@@ -1,5 +1,6 @@
 import { CheckCircle, Leaf, Phone } from 'lucide-react'
 import React from 'react'
+import Link from 'next/link'
 import { Button } from '../ui/button'
 
 function ComingsoonEco() {
@@ -43,17 +44,21 @@ function ComingsoonEco() {
           and commercial services.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white">
-            <Phone className="w-5 h-5 mr-2" />
-            Contact Us
-          </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="border-green-600 text-green-600 hover:bg-green-600 hover:text-white bg-transparent"
-          >
-            View Current Services
-          </Button>
+          <Link href="/contact">
+            <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white">
+              <Phone className="w-5 h-5 mr-2" />
+              Contact Us
+            </Button>
+          </Link>
+          <Link href="/services">
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-green-600 text-green-600 hover:bg-green-600 hover:text-white bg-transparent"
+            >
+              View Current Services
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

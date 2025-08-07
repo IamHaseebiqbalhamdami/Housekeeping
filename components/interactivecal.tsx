@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState, useEffect } from "react"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import {
@@ -255,14 +256,18 @@ export default function InteractiveCleaningCalculator() {
                       </div>
                       {totalPrice > 0 && (
                         <div className="pt-4 space-y-2">
-                          <Button className="w-full bg-[#012E71] text-white hover:bg-blue-800 text-lg font-bold py-3">
-                            <Calendar className="w-5 h-5 mr-2" />
-                            Book This Service
-                          </Button>
-                          <Button variant="outline" className="w-full border-white text-white hover:bg-white hover:text-[#012E71]">
-                            <Phone className="w-5 h-5 mr-2" />
-                            Discuss Custom Options
-                          </Button>
+                          <Link href="/contact">
+                            <Button className="w-full bg-[#012E71] text-white hover:bg-blue-800 text-lg font-bold py-3">
+                              <Calendar className="w-5 h-5 mr-2" />
+                              Book This Service
+                            </Button>
+                          </Link>
+                          <Link href="/contact">
+                            <Button variant="outline" className="w-full border-white text-white hover:bg-white hover:text-[#012E71]">
+                              <Phone className="w-5 h-5 mr-2" />
+                              Discuss Custom Options
+                            </Button>
+                          </Link>
                         </div>
                       )}
                     </div>
