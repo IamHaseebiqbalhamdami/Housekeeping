@@ -6,8 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Phone, Mail, MapPin, Clock, Facebook, Instagram } from "lucide-react"
-import SharedHeader from "@/components/shared-header"
+import { Phone, Mail, MapPin, Clock, Facebook, Instagram } from 'lucide-react'
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -20,9 +19,7 @@ export default function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-
     console.log("Form submitted:", formData)
-
     try {
       await fetch("http://localhost:5000/send-email", {
         method: "POST",
@@ -31,7 +28,6 @@ export default function ContactPage() {
         },
         body: JSON.stringify(formData),
       })
-
       setFormData({ name: "", email: "", phone: "", service: "", message: "" })
       alert("Email sent successfully!")
     } catch (error) {
@@ -39,7 +35,9 @@ export default function ContactPage() {
     }
   }
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -49,71 +47,79 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-r from-[#012E71] to-blue-800 text-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">Contact HouseKeeping PRO</h1>
-            <p className="text-xl md:text-2xl mb-8 opacity-90">
-              Ready to experience 26 years of cleaning excellence? Get in touch with Simcoe County's most trusted
-              cleaning service.
-            </p>
-          </div>
+      <section className="relative min-h-[50vh] sm:min-h-[60vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#012E71] to-blue-800 text-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
+            Contact HouseKeeping PRO
+          </h1>
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 opacity-90 max-w-3xl mx-auto leading-relaxed">
+            Ready to experience 26 years of cleaning excellence? Get in touch with Simcoe County's most trusted cleaning service.
+          </p>
         </div>
       </section>
 
       {/* Contact Information */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+            
             {/* Contact Form */}
-            <div>
-              <h2 className="text-3xl font-bold text-[#012E71] mb-8">Get Your Free Quote</h2>
+            <div className="w-full">
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#012E71] mb-6 sm:mb-8 text-center lg:text-left">
+                Get Your Free Quote
+              </h2>
               <Card className="shadow-lg border-0">
-                <CardContent className="p-8">
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid md:grid-cols-2 gap-4">
+                <CardContent className="p-4 sm:p-6 lg:p-8">
+                  <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
-                        <Input
-                          type="text"
-                          name="name"
-                          value={formData.name}
-                          onChange={handleChange}
-                          required
-                          className="w-full"
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Full Name
+                        </label>
+                        <Input 
+                          name="name" 
+                          value={formData.name} 
+                          onChange={handleChange} 
+                          required 
+                          className="h-10 sm:h-11"
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
-                        <Input
-                          type="tel"
-                          name="phone"
-                          value={formData.phone}
-                          onChange={handleChange}
-                          required
-                          className="w-full"
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Phone Number
+                        </label>
+                        <Input 
+                          name="phone" 
+                          value={formData.phone} 
+                          onChange={handleChange} 
+                          required 
+                          className="h-10 sm:h-11"
                         />
                       </div>
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
-                      <Input
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Email Address
+                      </label>
+                      <Input 
+                        name="email" 
                         type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        className="w-full"
+                        value={formData.email} 
+                        onChange={handleChange} 
+                        required 
+                        className="h-10 sm:h-11"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Service Needed</label>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Service Needed
+                      </label>
                       <select
                         name="service"
                         value={formData.service}
                         onChange={handleChange}
-                        className="w-full p-3 border border-gray-300 rounded-md focus:ring-[#012E71] focus:border-[#012E71]"
                         required
+                        className="w-full h-10 sm:h-11 p-2 sm:p-3 border border-gray-300 rounded-md focus:ring-[#012E71] focus:border-[#012E71] text-sm sm:text-base"
                       >
                         <option value="">Select a service</option>
                         <option value="residential">Residential Cleaning</option>
@@ -125,17 +131,22 @@ export default function ContactPage() {
                       </select>
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Message
+                      </label>
                       <Textarea
                         name="message"
                         value={formData.message}
                         onChange={handleChange}
                         rows={4}
-                        className="w-full"
                         placeholder="Tell us about your cleaning needs..."
+                        className="resize-none"
                       />
                     </div>
-                    <Button type="submit" className="w-full bg-[#012E71] hover:bg-blue-800 text-white py-3">
+                    <Button 
+                      type="submit" 
+                      className="w-full bg-[#012E71] hover:bg-blue-800 text-white text-base sm:text-lg py-2.5 sm:py-3 h-auto"
+                    >
                       Get Free Quote
                     </Button>
                   </form>
@@ -143,79 +154,129 @@ export default function ContactPage() {
               </Card>
             </div>
 
-            {/* Contact Information */}
-            <div>
-              <h2 className="text-3xl font-bold text-[#012E71] mb-8">Get In Touch</h2>
-              <div className="space-y-6">
-                <Card className="shadow-lg border-0">
-                  <CardContent className="p-6">
-                    <div className="flex items-center mb-4">
-                      <Phone className="w-6 h-6 text-[#012E71] mr-3" />
-                      <h3 className="text-lg font-semibold text-gray-900">Phone</h3>
-                    </div>
-                    <p className="text-gray-600 mb-2">(705) 555-0123</p>
-                    <p className="text-sm text-gray-500">Mon-Fri: 8:00 AM - 6:00 PM</p>
-                  </CardContent>
-                </Card>
-
-                <Card className="shadow-lg border-0">
-                  <CardContent className="p-6">
-                    <div className="flex items-center mb-4">
-                      <Mail className="w-6 h-6 text-[#012E71] mr-3" />
-                      <h3 className="text-lg font-semibold text-gray-900">Email</h3>
-                    </div>
-                    <p className="text-gray-600 mb-2">info@housekeepingpro.ca</p>
-                    <p className="text-sm text-gray-500">We respond within 24 hours</p>
-                  </CardContent>
-                </Card>
-
-                <Card className="shadow-lg border-0">
-                  <CardContent className="p-6">
-                    <div className="flex items-center mb-4">
-                      <MapPin className="w-6 h-6 text-[#012E71] mr-3" />
-                      <h3 className="text-lg font-semibold text-gray-900">Service Area</h3>
-                    </div>
-                    <p className="text-gray-600 mb-2">Barrie, Ontario (Main Hub)</p>
-                    <p className="text-sm text-gray-500">Serving all of Simcoe County</p>
-                  </CardContent>
-                </Card>
-
-                <Card className="shadow-lg border-0">
-                  <CardContent className="p-6">
-                    <div className="flex items-center mb-4">
-                      <Clock className="w-6 h-6 text-[#012E71] mr-3" />
-                      <h3 className="text-lg font-semibold text-gray-900">Business Hours</h3>
-                    </div>
-                    <div className="text-gray-600 space-y-1">
-                      <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
-                      <p>Saturday: 9:00 AM - 4:00 PM</p>
-                      <p>Sunday: By appointment only</p>
+            {/* Contact Information Cards */}
+            <div className="w-full">
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#012E71] mb-6 sm:mb-8 text-center lg:text-left">
+                Get In Touch
+              </h2>
+              <div className="space-y-4 sm:space-y-6">
+                
+                {/* Phone Card */}
+                <Card className="shadow-md hover:shadow-lg transition-shadow">
+                  <CardContent className="p-4 sm:p-6">
+                    <div className="flex items-start space-x-4">
+                      <div className="flex-shrink-0">
+                        <Phone className="w-6 h-6 sm:w-8 sm:h-8 text-[#012E71]" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">
+                          Phone
+                        </h3>
+                        <p className="text-sm sm:text-base text-gray-600 mb-2">
+                          Call us for immediate assistance
+                        </p>
+                        <a 
+                          href="tel:+17055550123" 
+                          className="text-[#012E71] hover:text-blue-800 font-medium text-sm sm:text-base break-all"
+                        >
+                          (705) 555-0123
+                        </a>
+                      </div>
                     </div>
                   </CardContent>
                 </Card>
 
-                {/* Social Media Links */}
-                <div className="mt-8">
-                  <h3 className="text-xl font-semibold text-[#012E71] mb-4">Follow Us</h3>
-                  <div className="flex space-x-4">
-                    <a
-                      href="https://www.facebook.com/share/1CyDBAFJhR/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-3 rounded-full bg-gray-100 hover:bg-[#012E71] hover:text-white transition"
-                    >
-                      <Facebook className="w-5 h-5" />
-                    </a>
-                    <a
-                      href="https://www.instagram.com/house_keeping49?igsh=MXkxdnQ3bTBubDgwaA=="
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-3 rounded-full bg-gray-100 hover:bg-[#012E71] hover:text-white transition"
-                    >
-                      <Instagram className="w-5 h-5" />
-                    </a>
-                  </div>
-                </div>
+                {/* Email Card */}
+                <Card className="shadow-md hover:shadow-lg transition-shadow">
+                  <CardContent className="p-4 sm:p-6">
+                    <div className="flex items-start space-x-4">
+                      <div className="flex-shrink-0">
+                        <Mail className="w-6 h-6 sm:w-8 sm:h-8 text-[#012E71]" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">
+                          Email
+                        </h3>
+                        <p className="text-sm sm:text-base text-gray-600 mb-2">
+                          Send us a detailed message
+                        </p>
+                        <a 
+                          href="mailto:info@housekeepingpro.ca" 
+                          className="text-[#012E71] hover:text-blue-800 font-medium text-sm sm:text-base break-all"
+                        >
+                          info@housekeepingpro.ca
+                        </a>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Location Card */}
+                <Card className="shadow-md hover:shadow-lg transition-shadow">
+                  <CardContent className="p-4 sm:p-6">
+                    <div className="flex items-start space-x-4">
+                      <div className="flex-shrink-0">
+                        <MapPin className="w-6 h-6 sm:w-8 sm:h-8 text-[#012E71]" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">
+                          Service Area
+                        </h3>
+                        <p className="text-sm sm:text-base text-gray-600 mb-2">
+                          We serve all of Simcoe County
+                        </p>
+                        <p className="text-[#012E71] font-medium text-sm sm:text-base">
+                          Barrie, Orillia, Collingwood & Surrounding Areas
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Hours Card */}
+                <Card className="shadow-md hover:shadow-lg transition-shadow">
+                  <CardContent className="p-4 sm:p-6">
+                    <div className="flex items-start space-x-4">
+                      <div className="flex-shrink-0">
+                        <Clock className="w-6 h-6 sm:w-8 sm:h-8 text-[#012E71]" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">
+                          Business Hours
+                        </h3>
+                        <div className="text-sm sm:text-base text-gray-600 space-y-1">
+                          <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+                          <p>Saturday: 9:00 AM - 4:00 PM</p>
+                          <p>Sunday: Emergency calls only</p>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Social Media Card */}
+                <Card className="shadow-md hover:shadow-lg transition-shadow">
+                  <CardContent className="p-4 sm:p-6">
+                    <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4">
+                      Follow Us
+                    </h3>
+                    <div className="flex space-x-4">
+                      <a 
+                        href="#" 
+                        className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-[#012E71] text-white rounded-full hover:bg-blue-800 transition-colors"
+                      >
+                        <Facebook className="w-5 h-5 sm:w-6 sm:h-6" />
+                      </a>
+                      <a 
+                        href="#" 
+                        className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-[#012E71] text-white rounded-full hover:bg-blue-800 transition-colors"
+                      >
+                        <Instagram className="w-5 h-5 sm:w-6 sm:h-6" />
+                      </a>
+                    </div>
+                  </CardContent>
+                </Card>
+
               </div>
             </div>
           </div>
@@ -223,14 +284,19 @@ export default function ContactPage() {
       </section>
 
       {/* Emergency Contact */}
-      <section className="py-16 bg-[#012E71] text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">Need Emergency Cleaning?</h2>
-          <p className="text-xl mb-8 opacity-90">
+      <section className="py-12 sm:py-16 lg:py-20 bg-[#012E71] text-white">
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4">
+            Need Emergency Cleaning?
+          </h2>
+          <p className="text-base sm:text-lg lg:text-xl mb-6 sm:mb-8 opacity-90 max-w-2xl mx-auto">
             We offer emergency cleaning services for urgent situations across Simcoe County.
           </p>
-          <Button size="lg" className="bg-white text-[#012E71] hover:bg-gray-100">
-            <Phone className="w-5 h-5 mr-2" />
+          <Button 
+            size="lg" 
+            className="bg-white text-[#012E71] hover:bg-gray-100 text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 h-auto"
+          >
+            <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
             Call Emergency Line: (705) 555-0911
           </Button>
         </div>
