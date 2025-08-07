@@ -1,4 +1,5 @@
 "use client"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Clock, Home, Building2, Sparkles, CheckCircle, Phone, Calendar, Star } from "lucide-react"
@@ -345,18 +346,22 @@ export default function PricingPage() {
               Get your free quote today and experience 26 years of cleaning excellence across Simcoe County.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-[#012E71] hover:bg-gray-100 px-8 py-4">
-                <Calendar className="w-5 h-5 mr-2" />
-                Get Free Quote
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-[#012E71] px-8 py-4 bg-transparent"
-              >
-                <Phone className="w-5 h-5 mr-2" />
-                Call (705) 555-0123
-              </Button>
+              <Link href="/contact">
+                <Button size="lg" className="bg-white text-[#012E71] hover:bg-gray-100 px-8 py-4">
+                  <Calendar className="w-5 h-5 mr-2" />
+                  Get Free Quote
+                </Button>
+              </Link>
+              <Link href="/contact">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-white text-white hover:bg-white hover:text-[#012E71] px-8 py-4 bg-transparent"
+                >
+                  <Phone className="w-5 h-5 mr-2" />
+                  Call (705) 555-0123
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

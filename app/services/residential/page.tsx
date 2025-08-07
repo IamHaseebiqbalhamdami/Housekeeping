@@ -39,21 +39,21 @@ export default function ResidentialServicesPage() {
       name: "Sarah Johnson",
       role: "Residential Team Lead",
       experience: "8 years",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=300&fit=crop&crop=face",
+      image: '/team/freepik__the-style-is-candid-image-photography-with-natural__91135.png',
       uniform: "Blue HouseKeeping PRO polo shirt with company logo",
     },
     {
       name: "Maria Garcia",
       role: "Senior Cleaner",
       experience: "6 years",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face",
+      image: "/team/freepik__the-style-is-candid-image-photography-with-natural__85731.png",
       uniform: "Blue HouseKeeping PRO polo shirt with company logo",
     },
     {
       name: "Jennifer Lee",
       role: "Quality Inspector",
       experience: "5 years",
-      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=300&h=300&fit=crop&crop=face",
+      image: "/team/freepik__the-style-is-candid-image-photography-with-natural__91134.png",
       uniform: "Blue HouseKeeping PRO polo shirt with company logo",
     },
   ]
@@ -182,7 +182,7 @@ export default function ResidentialServicesPage() {
                     alt={member.name}
                     width={300}
                     height={300}
-                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-64 object-contain group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#012E71]/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -295,7 +295,7 @@ export default function ResidentialServicesPage() {
         </div>
       </section>
 
-      {/* Footer */}
+      {/* Footer
       <footer className="bg-black text-white py-16">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8">
@@ -351,7 +351,7 @@ export default function ResidentialServicesPage() {
             <p>&copy; 2024 HouseKeeping PRO. All rights reserved.</p>
           </div>
         </div>
-      </footer>
+      </footer> */}
     </div>
   )
 }

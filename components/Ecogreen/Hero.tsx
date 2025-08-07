@@ -1,5 +1,6 @@
 import { Calendar, Phone } from 'lucide-react'
 import React from 'react'
+import Link from 'next/link'
 import { Button } from '../ui/button'
 
 const Hero = () => {
@@ -13,18 +14,22 @@ const Hero = () => {
           environment across Simcoe County.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" className="bg-white text-green-700 hover:bg-gray-100">
-            <Calendar className="w-5 h-5 mr-2" />
-            Book Green Cleaning
-          </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="border-white text-white hover:bg-white hover:text-green-700 bg-transparent"
-          >
-            <Phone className="w-5 h-5 mr-2" />
-            Get Eco Quote
-          </Button>
+          <Link href="/contact">
+            <Button size="lg" className="bg-white text-green-700 hover:bg-gray-100">
+              <Calendar className="w-5 h-5 mr-2" />
+              Book Green Cleaning
+            </Button>
+          </Link>
+          <Link href="/contact">
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white text-white hover:bg-white hover:text-green-700 bg-transparent"
+            >
+              <Phone className="w-5 h-5 mr-2" />
+              Get Eco Quote
+            </Button>
+          </Link>
         </div>
       </div>
     </div>
