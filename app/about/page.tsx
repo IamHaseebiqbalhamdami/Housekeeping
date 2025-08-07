@@ -281,7 +281,7 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12 mb-16">
             {teamMembers.map((member, index) => (
               <Card
                 key={index}
@@ -293,7 +293,7 @@ export default function AboutPage() {
                     alt={member.name}
                     width={300}
                     height={300}
-                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-64 object-fitwidth group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#012E71]/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500" />
                   <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
@@ -454,7 +454,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Footer */}
+      {/* Footer
       <footer className="bg-black text-white py-16">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8">
@@ -521,7 +521,7 @@ export default function AboutPage() {
             <p>&copy; 2024 HouseKeeping PRO. All rights reserved.</p>
           </div>
         </div>
-      </footer>
+      </footer> */}
     </div>
   )
 }

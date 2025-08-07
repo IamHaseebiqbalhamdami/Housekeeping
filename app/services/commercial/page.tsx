@@ -22,7 +22,7 @@ export default function CommercialServicesPage() {
       price: "From $179",
       duration: "3-8 hours",
       features: ["Display area cleaning", "Customer area focus", "Window cleaning", "Floor maintenance"],
-      image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=300&fit=crop",
+      image: "/team/freepik__the-style-is-candid-image-photography-with-natural__85730.png",
     },
     {
       title: "Medical Office Cleaning",

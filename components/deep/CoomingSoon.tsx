@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import { Button } from '../ui/button'
 import { CheckCircle, Phone, Sparkles } from 'lucide-react'
 
@@ -42,17 +43,21 @@ function CoomingSoon() {
           In the meantime, please contact us for residential or commercial cleaning services.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" className="bg-[#012E71] hover:bg-blue-800 text-white">
-            <Phone className="w-5 h-5 mr-2" />
-            Contact Us
-          </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="border-[#012E71] text-[#012E71] hover:bg-[#012E71] hover:text-white bg-transparent"
-          >
-            View Residential Services
-          </Button>
+          <Link href="/contact">
+            <Button size="lg" className="bg-[#012E71] hover:bg-blue-800 text-white">
+              <Phone className="w-5 h-5 mr-2" />
+              Contact Us
+            </Button>
+          </Link>
+          <Link href="/services/residential">
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-[#012E71] text-[#012E71] hover:bg-[#012E71] hover:text-white bg-transparent"
+            >
+              View Residential Services
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

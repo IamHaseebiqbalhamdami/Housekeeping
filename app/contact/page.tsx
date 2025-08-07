@@ -1,13 +1,12 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Phone, Mail, MapPin, Clock } from "lucide-react"
+import { Phone, Mail, MapPin, Clock, Facebook, Instagram } from "lucide-react"
 import SharedHeader from "@/components/shared-header"
 
 export default function ContactPage() {
@@ -19,9 +18,25 @@ export default function ContactPage() {
     message: "",
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+
     console.log("Form submitted:", formData)
+
+    try {
+      await fetch("http://localhost:5000/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+
+      setFormData({ name: "", email: "", phone: "", service: "", message: "" })
+      alert("Email sent successfully!")
+    } catch (error) {
+      alert("Failed to send email.")
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -33,9 +48,6 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <SharedHeader currentPage="contact" />
-
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-r from-[#012E71] to-blue-800 text-white">
         <div className="container mx-auto px-4">
@@ -181,6 +193,29 @@ export default function ContactPage() {
                     </div>
                   </CardContent>
                 </Card>
+
+                {/* Social Media Links */}
+                <div className="mt-8">
+                  <h3 className="text-xl font-semibold text-[#012E71] mb-4">Follow Us</h3>
+                  <div className="flex space-x-4">
+                    <a
+                      href="https://www.facebook.com/share/1CyDBAFJhR/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-3 rounded-full bg-gray-100 hover:bg-[#012E71] hover:text-white transition"
+                    >
+                      <Facebook className="w-5 h-5" />
+                    </a>
+                    <a
+                      href="https://www.instagram.com/house_keeping49?igsh=MXkxdnQ3bTBubDgwaA=="
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-3 rounded-full bg-gray-100 hover:bg-[#012E71] hover:text-white transition"
+                    >
+                      <Instagram className="w-5 h-5" />
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

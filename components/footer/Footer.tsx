@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
-import Link from 'next/link'  // ✅ Correct import for navigation links
-import { Building2, Home, Leaf, Mail, MapPin, Phone, Shield, Sparkles } from 'lucide-react'
+import Link from 'next/link'
+import { Building2, Home, Leaf, Mail, MapPin, Phone, Shield, Sparkles, Facebook, Instagram } from 'lucide-react'
 
 function Footer() {
   return (
@@ -22,11 +22,29 @@ function Footer() {
             <p className="text-gray-300 mb-4">
               Canadian owned and operated cleaning services serving Simcoe County for 26 years.
             </p>
-            <div className="flex space-x-4">
-              <div className="flex items-center text-sm">
-                <Shield className="w-4 h-4 mr-2" />
-                <span>Fully Insured</span>
-              </div>
+            <div className="flex items-center text-sm mb-4">
+              <Shield className="w-4 h-4 mr-2" />
+              <span>Fully Insured</span>
+            </div>
+
+            {/* Social Links */}
+            <div className="flex space-x-4 mt-4">
+              <Link
+                href="https://www.facebook.com/share/1CyDBAFJhR/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
+                <Facebook className="w-5 h-5" />
+              </Link>
+              <Link
+                href="https://www.instagram.com/house_keeping49?igsh=MXkxdnQ3bTBubDgwaA=="
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
+                <Instagram className="w-5 h-5" />
+              </Link>
             </div>
           </div>
 

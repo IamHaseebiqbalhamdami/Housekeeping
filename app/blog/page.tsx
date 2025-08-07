@@ -132,7 +132,7 @@ export default function BlogPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <SharedHeader currentPage="blog" />
+      {/* <SharedHeader currentPage="blog" /> */}
 
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-r from-[#012E71] to-blue-800 text-white">
@@ -467,85 +467,6 @@ export default function BlogPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-black text-white py-16">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <Image
-                src="/images/logo.png"
-                alt="HouseKeeping PRO Logo"
-                width={180}
-                height={60}
-                className="h-12 w-auto mb-4 brightness-0 invert"
-              />
-              <p className="text-gray-300 mb-4">
-                Expert cleaning tips and professional services across Simcoe County for 26 years.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Popular Articles</h3>
-              <ul className="space-y-2 text-gray-300">
-                <li>
-                  <Link href="/blog/1" className="hover:text-white transition-colors">
-                    Spring Cleaning Guide
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/blog/2" className="hover:text-white transition-colors">
-                    Eco-Friendly Products
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/blog/3" className="hover:text-white transition-colors">
-                    Deep Cleaning Schedule
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Categories</h3>
-              <ul className="space-y-2 text-gray-300">
-                <li>
-                  <Link href="/blog/category/seasonal" className="hover:text-white transition-colors">
-                    Seasonal Cleaning
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/blog/category/eco-friendly" className="hover:text-white transition-colors">
-                    Eco-Friendly
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/blog/category/commercial" className="hover:text-white transition-colors">
-                    Commercial Tips
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Contact</h3>
-              <div className="space-y-2 text-gray-300">
-                <div className="flex items-center">
-                  <Phone className="w-4 h-4 mr-2" />
-                  (705) 555-0123
-                </div>
-                <div className="flex items-center">
-                  <Mail className="w-4 h-4 mr-2" />
-                  blog@housekeepingpro.ca
-                </div>
-                <div className="flex items-center">
-                  <MapPin className="w-4 h-4 mr-2" />
-                  Simcoe County, ON
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 HouseKeeping PRO. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   )
 }

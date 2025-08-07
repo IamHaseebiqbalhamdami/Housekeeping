@@ -19,7 +19,7 @@ export default function ReviewsPage() {
       rating: 5,
       date: "March 2024",
       text: "HouseKeeping PRO has been cleaning our home for 3 years now. Their attention to detail is incredible and the team is so professional and reliable. I can't imagine using anyone else!",
-      avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face",
+      avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX_XAKqFiXUPYKF2qXPFZcDmzQ7SoDJj_OiQ&s",
       verified: true,
       featured: true,
     },
@@ -85,22 +85,14 @@ export default function ReviewsPage() {
     },
   ]
 
-  const videoReviews = [
-    {
+  // Video review data - now using single video from public/video/ folder
+  const videoReview = {
       id: 1,
-      name: "Margaret & John Smith",
-      location: "Barrie, ON",
-      thumbnail: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400&h=300&fit=crop",
-      duration: "2:15",
-    },
-    {
-      id: 2,
-      name: "Downtown Barrie Office",
-      location: "Barrie, ON",
-      thumbnail: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=300&fit=crop",
-      duration: "1:45",
-    },
-  ]
+    name: "Client Testimonial",
+    location: "Simcoe County, ON",
+    videoPath: "/video/review.mp4",
+    description: "Watch this authentic review from one of our satisfied clients sharing their experience with HouseKeeping PRO."
+  }
 
   const filters = [
     { id: "all", name: "All Reviews", icon: Star },
@@ -118,7 +110,7 @@ export default function ReviewsPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <SharedHeader currentPage="reviews" />
+      {/* <SharedHeader currentPage="reviews" /> */}
 
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-r from-[#012E71] to-blue-800 text-white">
@@ -206,35 +198,203 @@ export default function ReviewsPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {videoReviews.map((video) => (
-              <Card key={video.id} className="shadow-lg border-0 overflow-hidden group cursor-pointer">
+          <div className="max-w-4xl mx-auto">
+            <Card className="shadow-xl border-0 overflow-hidden">
                 <div className="relative">
+                <video
+                  src="/video/review.mp4"
+                  className="w-full h-96 md:h-[500px] object-cover"
+                  autoPlay
+                  muted={false}
+                  controls
+                  loop
+                  playsInline
+                >
+                  Your browser does not support the video tag.
+                </video>
+                <div className="absolute top-4 right-4 bg-black/70 text-white px-3 py-1 rounded-full text-sm font-medium">
+                  Client Review
+                </div>
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-2xl font-bold text-[#012E71] mb-2">Client Testimonial</h3>
+                <p className="text-gray-600 flex items-center">
+                  <MapPin className="w-4 h-4 mr-1" />
+                  Simcoe County, ON
+                </p>
+                <p className="text-gray-600 mt-2">
+                  Watch this authentic review from one of our satisfied clients sharing their experience with HouseKeeping PRO.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Client Testimonials - Component 1 */}
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-20 w-40 h-40 bg-[#012E71]/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-20 w-60 h-60 bg-blue-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#012E71] mb-4">Featured Client Stories</h2>
+            <p className="text-xl text-gray-700 max-w-2xl mx-auto">
+              Real experiences from our satisfied clients across Simcoe County
+            </p>
+          </div>
+
+          <div className="max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Left Side - Client Image & Info */}
+              <div className="relative group">
+                <div className="relative overflow-hidden rounded-2xl shadow-2xl">
                   <Image
-                    src={video.thumbnail || "/placeholder.svg"}
-                    alt={video.name}
-                    width={400}
-                    height={300}
-                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                    src="https://plus.unsplash.com/premium_photo-1688350808212-4e6908a03925?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGVyc29uJTIwZmFjZXxlbnwwfHwwfHx8MA%3D%3D"
+                    alt="Sarah Johnson - Residential Client"
+                    width={500}
+                    height={600}
+                    className="w-full h-[500px] object-cover group-hover:scale-105 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/50 transition-colors">
-                    <div className="bg-white/20 backdrop-blur-sm p-4 rounded-full group-hover:scale-110 transition-transform duration-300">
-                      <Play className="w-8 h-8 text-white ml-1" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <div className="flex items-center space-x-3 mb-3">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                      ))}
                     </div>
-                  </div>
-                  <div className="absolute bottom-4 right-4 bg-black/70 text-white px-2 py-1 rounded text-sm">
-                    {video.duration}
+                    <h3 className="text-2xl font-bold text-white mb-2">Sarah Johnson</h3>
+                    <p className="text-white/90 text-lg">Residential Deep Cleaning</p>
                   </div>
                 </div>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold text-[#012E71] mb-2">{video.name}</h3>
-                  <p className="text-gray-600 flex items-center">
-                    <MapPin className="w-4 h-4 mr-1" />
-                    {video.location}
+                <div className="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-br from-[#012E71] to-blue-600 rounded-full flex items-center justify-center shadow-lg">
+                  <Quote className="w-8 h-8 text-white" />
+                </div>
+              </div>
+
+              {/* Right Side - Testimonial Content */}
+              <div className="space-y-6">
+                <div className="relative">
+                  <Quote className="w-12 h-12 text-[#012E71] opacity-20 mb-4" />
+                  <p className="text-2xl md:text-3xl text-gray-800 leading-relaxed italic mb-6">
+                    "HouseKeeping PRO transformed our home! After 15 years of living here, I never realized how much dirt had accumulated. The team was professional, thorough, and left our home smelling fresh and looking brand new."
                   </p>
-                </CardContent>
-              </Card>
-            ))}
+                  <div className="flex items-center space-x-4">
+                    <div className="w-1 h-12 bg-gradient-to-b from-[#012E71] to-blue-600 rounded-full"></div>
+                    <div>
+                      <p className="text-lg font-semibold text-[#012E71]">Sarah Johnson</p>
+                      <p className="text-gray-600">Barrie, ON • 5-Star Review</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="grid grid-cols-3 gap-4 pt-6">
+                  <div className="text-center p-4 bg-gradient-to-br from-[#012E71]/10 to-blue-500/10 rounded-xl">
+                    <div className="text-2xl font-bold text-[#012E71]">4 Hours</div>
+                    <div className="text-sm text-gray-600">Service Time</div>
+                  </div>
+                  <div className="text-center p-4 bg-gradient-to-br from-[#012E71]/10 to-blue-500/10 rounded-xl">
+                    <div className="text-2xl font-bold text-[#012E71]">$350</div>
+                    <div className="text-sm text-gray-600">Service Value</div>
+                  </div>
+                  <div className="text-center p-4 bg-gradient-to-br from-[#012E71]/10 to-blue-500/10 rounded-xl">
+                    <div className="text-2xl font-bold text-[#012E71]">100%</div>
+                    <div className="text-sm text-gray-600">Satisfaction</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Commercial Client Showcase - Component 2 */}
+      <section className="py-20 bg-gradient-to-br from-gray-900 via-[#012E71] to-black text-white relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 right-1/4 w-32 h-32 bg-white/10 rounded-full blur-3xl animate-pulse delay-500"></div>
+          <div className="absolute bottom-1/4 left-1/4 w-48 h-48 bg-gray-400/10 rounded-full blur-3xl animate-pulse delay-1500"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Commercial Success Story</h2>
+            <p className="text-xl opacity-90 max-w-2xl mx-auto">
+              How we helped a local business maintain their professional image
+            </p>
+          </div>
+
+          <div className="max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Left Side - Content */}
+              <div className="space-y-8">
+                <div className="relative">
+                  <Quote className="w-12 h-12 text-white opacity-30 mb-4" />
+                  <p className="text-2xl md:text-3xl leading-relaxed italic mb-6">
+                    "As a busy dental office, cleanliness is crucial for our patients' confidence. HouseKeeping PRO has been our trusted partner for 3 years, ensuring our facility always meets the highest standards of hygiene."
+                  </p>
+                  <div className="flex items-center space-x-4">
+                    <div className="w-1 h-12 bg-gradient-to-b from-white to-blue-200 rounded-full"></div>
+                    <div>
+                      <p className="text-lg font-semibold">Dr. Michael Chen</p>
+                      <p className="opacity-90">Downtown Barrie Dental Clinic</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-6">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+                    <div className="flex items-center space-x-3 mb-3">
+                      <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+                        <Calendar className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <div className="text-2xl font-bold">3 Years</div>
+                        <div className="text-sm opacity-90">Partnership</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+                    <div className="flex items-center space-x-3 mb-3">
+                      <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+                        <Star className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <div className="text-2xl font-bold">5.0</div>
+                        <div className="text-sm opacity-90">Rating</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Side - Client Image */}
+              <div className="relative group">
+                <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+                  <Image
+                    src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=500&h=600&fit=crop"
+                    alt="Dr. Michael Chen - Commercial Client"
+                    width={500}
+                    height={600}
+                    className="w-full h-[500px] object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <div className="flex items-center space-x-3 mb-3">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                      ))}
+                    </div>
+                    <h3 className="text-2xl font-bold text-white mb-2">Dr. Michael Chen</h3>
+                    <p className="text-white/90 text-lg">Commercial Cleaning</p>
+                  </div>
+                </div>
+                <div className="absolute -top-4 -left-4 w-16 h-16 bg-gradient-to-br from-white to-blue-200 rounded-full flex items-center justify-center shadow-lg">
+                  <Building2 className="w-8 h-8 text-[#012E71]" />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -340,84 +500,7 @@ export default function ReviewsPage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-black text-white py-16">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-08-02%20at%2020.55.30_d31d3cc8.jpg-ltfbL4qxNsZJM19pu8YgBkJBiRmUlE.jpeg"
-                alt="HouseKeeping PRO Logo"
-                width={180}
-                height={60}
-                className="h-12 w-auto mb-4 brightness-0 invert"
-              />
-              <p className="text-gray-300 mb-4">
-                Canadian owned and operated cleaning services serving Simcoe County for 26 years.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-              <ul className="space-y-2 text-gray-300">
-                <li>
-                  <a href="/services" className="hover:text-white transition-colors">
-                    Our Services
-                  </a>
-                </li>
-                <li>
-                  <a href="/areas" className="hover:text-white transition-colors">
-                    Service Areas
-                  </a>
-                </li>
-                <li>
-                  <a href="/contact" className="hover:text-white transition-colors">
-                    Contact Us
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Services</h3>
-              <ul className="space-y-2 text-gray-300">
-                <li>
-                  <a href="/services/residential" className="hover:text-white transition-colors">
-                    Residential Cleaning
-                  </a>
-                </li>
-                <li>
-                  <a href="/services/commercial" className="hover:text-white transition-colors">
-                    Commercial Cleaning
-                  </a>
-                </li>
-                <li>
-                  <a href="/services/airbnb" className="hover:text-white transition-colors">
-                    Airbnb Cleaning
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Contact</h3>
-              <div className="space-y-2 text-gray-300">
-                <div className="flex items-center">
-                  <Phone className="w-4 h-4 mr-2" />
-                  (705) 555-0123
-                </div>
-                <div className="flex items-center">
-                  <Mail className="w-4 h-4 mr-2" />
-                  info@housekeepingpro.ca
-                </div>
-                <div className="flex items-center">
-                  <MapPin className="w-4 h-4 mr-2" />
-                  Barrie, Ontario
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 HouseKeeping PRO. All rights reserved. | 26 Years Serving Simcoe County</p>
-          </div>
-        </div>
-      </footer>
+     
     </div>
   )
 }
