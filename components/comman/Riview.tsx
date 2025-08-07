@@ -18,7 +18,7 @@ function Riview() {
           <div key={i} className="p-6 bg-white rounded-lg shadow flex flex-col items-center">
             <img
               src={client.img}
-          
+           
               className="w-16 h-16 rounded-full object-cover mb-4"
             />
             <p className="text-gray-600 mb-4 text-center">

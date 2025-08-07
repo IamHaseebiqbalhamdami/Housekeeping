@@ -2,12 +2,9 @@
 import { Button } from "@/components/ui/button"
 import { Building2, CheckCircle, Calendar, Phone } from "lucide-react"
 import SharedHeader from "@/components/shared-header"
-
 export default function OfficeServicesPage() {
   return (
     <div className="min-h-screen bg-white">
-     
-
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-r from-[#012E71] to-blue-800 text-white">
         <div className="container mx-auto px-4">

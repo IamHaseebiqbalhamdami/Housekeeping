@@ -44,7 +44,7 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 
 // Hero Slider Component
-function HeroSlider() {
+ function HeroSlider() {
   const [currentSlide, setCurrentSlide] = useState(0)
 
   const slides = [
@@ -90,7 +90,7 @@ function HeroSlider() {
   }
 
   return (
-    <section className="relative h-[90vh] overflow-hidden">
+    <section className="relative h-[80vh] md:h-[90vh] overflow-hidden">
       {/* Slides */}
       {slides.map((slide, index) => (
         <div
@@ -100,10 +100,10 @@ function HeroSlider() {
           }`}
         >
           <Image
-            src={slide.image || "/placeholder.svg"}
+            src={slide.image}
             alt={slide.title}
             fill
-            className="object-cover"
+            className="object-cover min-h-full"
             priority={index === 0}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#012E71]/90 to-black/60" />
@@ -111,19 +111,21 @@ function HeroSlider() {
       ))}
 
       {/* Content */}
-      <div className="relative z-10 h-full flex items-center">
+      <div className="relative z-10 h-full flex items-center justify-center text-center sm:text-left">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl">
+          <div className="max-w-4xl mx-auto sm:mx-0">
             <div className="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full inline-block mb-4">
-              <span className="text-white/90 text-sm font-medium">{slides[currentSlide].highlight}</span>
+              <span className="text-white/90 text-sm font-medium">
+                {slides[currentSlide].highlight}
+              </span>
             </div>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
               {slides[currentSlide].title}
             </h1>
-            <p className="text-xl md:text-2xl text-white/95 mb-8 max-w-3xl leading-relaxed">
+            <p className="text-base sm:text-lg md:text-2xl text-white/95 mb-8 max-w-3xl mx-auto sm:mx-0 leading-relaxed">
               {slides[currentSlide].subtitle}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 items-center sm:items-start justify-center sm:justify-start">
               <Link href="/contact">
                 <Button size="lg" className="bg-white text-[#012E71] hover:bg-gray-100 text-lg px-8 py-4">
                   <Calendar className="w-5 h-5 mr-2" />
@@ -830,102 +832,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* Footer
-      <footer className="bg-black text-white py-16">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-08-02%20at%2020.55.30_d31d3cc8.jpg-ltfbL4qxNsZJM19pu8YgBkJBiRmUlE.jpeg"
-                alt="HouseKeeping PRO Logo"
-                width={180}
-                height={60}
-                className="h-12 w-auto mb-4 brightness-0 invert"
-              />
-              <p className="text-gray-300 mb-4">
-                Canadian owned and operated cleaning services serving Simcoe County for 26 years.
-              </p>
-              <div className="flex space-x-4">
-                <div className="flex items-center text-sm">
-                  <Shield className="w-4 h-4 mr-2" />
-                  <span>Fully Insured</span>
-                </div>
-              </div>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Services</h3>
-              <ul className="space-y-2 text-gray-300">
-                <li>
-                  <Link href="/services/residential" className="hover:text-white transition-colors">
-                    Residential Cleaning
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services/commercial" className="hover:text-white transition-colors">
-                    Commercial Cleaning
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services/airbnb" className="hover:text-white transition-colors">
-                    Airbnb Cleaning
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services/deep" className="hover:text-white transition-colors">
-                    Deep Cleaning
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Service Areas</h3>
-              <ul className="space-y-2 text-gray-300">
-                <li>
-                  <Link href="/areas/barrie" className="hover:text-white transition-colors">
-                    Barrie
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/areas/orillia" className="hover:text-white transition-colors">
-                    Orillia
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/areas/midland" className="hover:text-white transition-colors">
-                    Midland
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/areas" className="hover:text-white transition-colors">
-                    All Areas
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Contact</h3>
-              <div className="space-y-2 text-gray-300">
-                <div className="flex items-center">
-                  <Phone className="w-4 h-4 mr-2" />
-                  (705) 555-0123
-                </div>
-                <div className="flex items-center">
-                  <Mail className="w-4 h-4 mr-2" />
-                  info@housekeepingpro.ca
-                </div>
-                <div className="flex items-center">
-                  <MapPin className="w-4 h-4 mr-2" />
-                  Simcoe County, Ontario
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 HouseKeeping PRO. All rights reserved. | 26 Years Serving Simcoe County</p>
-          </div>
-        </div>
-      </footer> */}
     </div>
   )
 }
