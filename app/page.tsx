@@ -248,9 +248,7 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <SharedHeader currentPage="home" />
-
+  
       {/* Hero Slider Section */}
       <HeroSlider />
 

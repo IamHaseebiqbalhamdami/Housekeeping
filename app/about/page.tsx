@@ -142,7 +142,7 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <SharedHeader currentPage="about" />
+    
 
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-r from-[#012E71] to-blue-800 text-white">
