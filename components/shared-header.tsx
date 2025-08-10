@@ -224,7 +224,7 @@ export default function SharedHeader({ currentPage }: { currentPage: string }) {
                 className="border-[#012E71] text-[#012E71] hover:bg-[#012E71] hover:text-white bg-transparent"
               >
                 <Phone className="w-4 h-4 mr-2" />
-                (705) 555-0123
+                (+1) 6475348050
               </Button>
             </Link>
             <Link href="/contact">
@@ -287,7 +287,7 @@ export default function SharedHeader({ currentPage }: { currentPage: string }) {
                     className="w-full border-[#012E71] text-[#012E71] hover:bg-[#012E71] hover:text-white bg-transparent"
                   >
                     <Phone className="w-4 h-4 mr-2" />
-                    (705) 555-0123
+                    (+1) 6475348050
                   </Button>
                 </Link>
                 <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
