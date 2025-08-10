@@ -507,7 +507,7 @@ export default function AboutPage() {
                 className="border-white text-white hover:bg-white hover:text-[#012E71] text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 h-auto bg-transparent"
               >
                 <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                Call (705) 555-0123
+                Call (+1)6475348050
               </Button>
             </div>
           </div>

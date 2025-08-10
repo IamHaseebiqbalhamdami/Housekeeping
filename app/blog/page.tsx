@@ -115,9 +115,7 @@ export default function BlogPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-white">
-      <SharedHeader currentPage="blog" />
-      
+    <div className="min-h-screen bg-white">   
       {/* Hero Section */}
       <section className="relative py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-r from-[#012E71] to-blue-800 text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -476,7 +474,7 @@ export default function BlogPage() {
                 className="border-white text-white hover:bg-white hover:text-[#012E71] px-6 sm:px-8 py-3 sm:py-4 bg-transparent text-sm sm:text-base"
               >
                 <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                Call (705) 555-0123
+                Call (+1) 6475348050
               </Button>
             </div>
           </div>
