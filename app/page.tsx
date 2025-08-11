@@ -593,7 +593,7 @@ export default function HomePage() {
                           height={300}
                           className="w-full h-32 sm:h-40 lg:h-48 object-cover group-hover:scale-105 transition-transform duration-500"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                       
                       </div>
                       <h3 className="text-sm sm:text-base lg:text-lg font-bold mb-2">{equipment.title}</h3>
                       <p className="text-xs sm:text-sm opacity-90">{equipment.description}</p>

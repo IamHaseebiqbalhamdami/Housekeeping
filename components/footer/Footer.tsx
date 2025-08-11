@@ -10,7 +10,7 @@ function Footer() {
       <div className="grid md:grid-cols-4 gap-8">
         <div>
           <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-08-02%20at%2020.55.30_d31d3cc8.jpg-ltfbL4qxNsZJM19pu8YgBkJBiRmUlE.jpeg"
+            src="/images/logo.png"
             alt="HouseKeeping PRO Logo"
             width={180}
             height={60}
