@@ -507,122 +507,123 @@ export default function HomePage() {
         </section>
 
         {/* Professional Equipment Showcase */}
-        <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-[#012E71] to-blue-800 text-white relative overflow-hidden">
-          <div className="absolute inset-0">
-            <div className="absolute top-10 sm:top-20 left-10 sm:left-20 w-20 h-20 sm:w-40 sm:h-40 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-10 sm:bottom-20 right-10 sm:right-20 w-30 h-30 sm:w-60 sm:h-60 bg-blue-400/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-            <div className="absolute top-1/2 left-1/3 w-16 h-16 sm:w-32 sm:h-32 bg-gray-400/10 rounded-full blur-3xl animate-pulse delay-2000"></div>
-          </div>
-          
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="text-center mb-12 sm:mb-16">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
-                Professional Equipment
-              </h2>
-              <p className="text-base sm:text-lg lg:text-xl opacity-90 max-w-2xl mx-auto">
-                State-of-the-art cleaning tools and equipment for exceptional results
-              </p>
-            </div>
-            <div className="max-w-6xl mx-auto">
-              <Swiper
-                modules={[Autoplay, Navigation, Pagination]}
-                spaceBetween={20}
-                slidesPerView={1}
-                breakpoints={{
-                  480: {
-                    slidesPerView: 2,
-                    spaceBetween: 20,
-                  },
-                  768: {
-                    slidesPerView: 3,
-                    spaceBetween: 30,
-                  },
-                  1024: {
-                    slidesPerView: 4,
-                    spaceBetween: 30,
-                  },
-                }}
-                autoplay={{
-                  delay: 3000,
-                  disableOnInteraction: false,
-                }}
-                loop={true}
-                navigation={true}
-                pagination={{ clickable: true }}
-                className="professional-equipment-swiper"
-              >
-                {[
-                  {
-                    image: "/images/1st.png",
-                    title: "HEPA Vacuum Systems",
-                    description: "Advanced filtration for allergen-free cleaning"
-                  },
-                  {
-                    image: "/images/5th.jpg",
-                    title: "Steam Cleaners",
-                    description: "Chemical-free sanitization at high temperatures"
-                  },
-                  {
-                    image: "/images/3rd.jpg",
-                    title: "Floor Polishers",
-                    description: "Professional floor restoration and maintenance"
-                  },
-                  {
-                    image: "/images/4th.png",
-                    title: "Carpet Cleaners",
-                    description: "Deep carpet cleaning and stain removal"
-                  },
-                  {
-                    image: "/images/2nd.jpg",
-                    title: "Window Cleaning Tools",
-                    description: "Streak-free window and glass cleaning"
-                  },
-                  {
-                    image: "/images/5th.jpg",
-                    title: "Eco-Friendly Products",
-                    description: "Non-toxic, biodegradable cleaning solutions"
-                  }
-                ].map((equipment, index) => (
-                  <SwiperSlide key={index}>
-                    <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 group">
-                      <div className="relative overflow-hidden rounded-xl mb-3 sm:mb-4">
-                        <Image
-                          src={equipment.image || "/placeholder.svg"}
-                          alt={equipment.title}
-                          width={400}
-                          height={300}
-                          className="w-full h-32 sm:h-40 lg:h-48 object-cover group-hover:scale-105 transition-transform duration-500"
-                        />
-                       
-                      </div>
-                      <h3 className="text-sm sm:text-base lg:text-lg font-bold mb-2">{equipment.title}</h3>
-                      <p className="text-xs sm:text-sm opacity-90">{equipment.description}</p>
-                    </div>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-              <div className="text-center mt-8 sm:mt-12">
-                <p className="text-sm sm:text-base lg:text-lg opacity-90 mb-3 sm:mb-4">
-                  Professional-grade equipment ensures thorough, efficient, and safe cleaning
-                </p>
-                <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 lg:gap-8 text-xs sm:text-sm opacity-75">
-                  <div className="flex items-center">
-                    <Shield className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
-                    <span>Certified Equipment</span>
-                  </div>
-                  <div className="flex items-center">
-                    <Leaf className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
-                    <span>Eco-Friendly</span>
-                  </div>
-                  <div className="flex items-center">
-                    <Award className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
-                    <span>Professional Grade</span>
-                  </div>
-                </div>
+     {/* Professional Equipment Showcase */}
+<section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-[#012E71] to-blue-800 text-white relative overflow-hidden">
+  <div className="absolute inset-0">
+    <div className="absolute top-10 sm:top-20 left-10 sm:left-20 w-20 h-20 sm:w-40 sm:h-40 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
+    <div className="absolute bottom-10 sm:bottom-20 right-10 sm:right-20 w-30 h-30 sm:w-60 sm:h-60 bg-blue-400/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+    <div className="absolute top-1/2 left-1/3 w-16 h-16 sm:w-32 sm:h-32 bg-gray-400/10 rounded-full blur-3xl animate-pulse delay-2000"></div>
+  </div>
+
+  <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div className="text-center mb-12 sm:mb-16">
+      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
+        Professional Equipment
+      </h2>
+      <p className="text-base sm:text-lg lg:text-xl opacity-90 max-w-2xl mx-auto">
+        State-of-the-art cleaning tools and equipment for exceptional results
+      </p>
+    </div>
+    <div className="max-w-6xl mx-auto">
+      <Swiper
+        modules={[Autoplay]}
+        spaceBetween={20}
+        slidesPerView={1}
+        breakpoints={{
+          480: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+          1024: {
+            slidesPerView: 4,
+            spaceBetween: 30,
+          },
+        }}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
+        loop={true}
+        navigation={false} // Removed arrows
+        pagination={false} // Removed dots
+        className="professional-equipment-swiper"
+      >
+        {[
+          {
+            image: "/images/1st.png",
+            title: "HEPA Vacuum Systems",
+            description: "Advanced filtration for allergen-free cleaning"
+          },
+          {
+            image: "/images/5th.jpg",
+            title: "Steam Cleaners",
+            description: "Chemical-free sanitization at high temperatures"
+          },
+          {
+            image: "/images/3rd.jpg",
+            title: "Floor Polishers",
+            description: "Professional floor restoration and maintenance"
+          },
+          {
+            image: "/images/4th.png",
+            title: "Carpet Cleaners",
+            description: "Deep carpet cleaning and stain removal"
+          },
+          {
+            image: "/images/2nd.jpg",
+            title: "Window Cleaning Tools",
+            description: "Streak-free window and glass cleaning"
+          },
+          {
+            image: "/images/5th.jpg",
+            title: "Eco-Friendly Products",
+            description: "Non-toxic, biodegradable cleaning solutions"
+          }
+        ].map((equipment, index) => (
+          <SwiperSlide key={index}>
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 group">
+              <div className="relative overflow-hidden rounded-xl mb-3 sm:mb-4">
+                <Image
+                  src={equipment.image || "/placeholder.svg"}
+                  alt={equipment.title}
+                  width={400}
+                  height={300}
+                  className="w-full h-32 sm:h-40 lg:h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
               </div>
+              <h3 className="text-sm sm:text-base lg:text-lg font-bold mb-2">{equipment.title}</h3>
+              <p className="text-xs sm:text-sm opacity-90">{equipment.description}</p>
             </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+      <div className="text-center mt-8 sm:mt-12">
+        <p className="text-sm sm:text-base lg:text-lg opacity-90 mb-3 sm:mb-4">
+          Professional-grade equipment ensures thorough, efficient, and safe cleaning
+        </p>
+        <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 lg:gap-8 text-xs sm:text-sm opacity-75">
+          <div className="flex items-center">
+            <Shield className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
+            <span>Certified Equipment</span>
           </div>
-        </section>
+          <div className="flex items-center">
+            <Leaf className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
+            <span>Eco-Friendly</span>
+          </div>
+          <div className="flex items-center">
+            <Award className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
+            <span>Professional Grade</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
         {/* Testimonials Section */}
         <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">

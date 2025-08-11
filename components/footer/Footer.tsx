@@ -14,7 +14,7 @@ function Footer() {
             alt="HouseKeeping PRO Logo"
             width={180}
             height={60}
-            className="h-12 w-auto mb-4 brightness-0 invert"
+            className="h-20 w-auto mb-4 invert"
           />
           <p className="text-gray-300 mb-4">
             Professional commercial cleaning services across Simcoe County for 26 years.
