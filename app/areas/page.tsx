@@ -237,7 +237,9 @@ export default function AreasPage() {
                 className="border-white text-white hover:bg-white hover:text-[#012E71] bg-transparent"
               >
                 <Phone className="w-5 h-5 mr-2" />
-                Call (705) 555-0123
+                Call 
+  (647) 534-8050
+he
               </Button>
             </div>
           </div>

@@ -48,6 +48,86 @@ export default function LocationPage() {
       services: ["Cottage Cleaning", "Airbnb", "Deep Cleaning"],
       href: "/areas/wasaga",
     },
+    {
+      city: "Springwater",
+      region: "Central Simcoe",
+      description: "A growing township blending rural communities and small urban centres across Simcoe County.",
+      serviceYears: 10,        // adjust as needed
+      clients: 150,            // estimate based on scale
+      image: "https://cdn-assets.alltrails.com/static-map/production/area/10121568/parks-canada-ontario-springwater-provincial-park-10121568-20210906080059000000000-1200x630-3-41630926054.jpg",
+      services: ["Residential", "Rural Properties", "Seasonal Homes"],
+      href: "/areas/springwater",
+    },
+    {
+      city: "Tay",
+      region: "Georgian Bay Shore",
+      description: "Idyllic lakeside township along Severn Sound, serving cottages and local residences.",
+      serviceYears: 8,         // adjust as needed
+      clients: 120,  
+      image: "https://www.tayvalleytwp.ca/en/living-here/resources/Recreation/Murphys_Point_Provincial_Park_1_Friends_of_Murphys_Point.jpg",
+      services: ["Cottage Cleaning", "Residential", "Seasonal Properties"],
+      href: "/areas/tay",
+    }
+    ,{
+      city: "Penetanguishene",
+      region: "Georgian Bay",
+      description: "Historic bilingual town on Georgian Bay with rich heritage, theatre, and waterfront charm.",
+      serviceYears: 15,
+      clients: 180,
+      image: "https://d1l57x9nwbbkz.cloudfront.net/files/s3fs-public/2025-05/tall-ship-discovery-harbour-penetanguishene-summer.jpg?VersionId=yUUHX7d.Bf1DCZ7AnnbpmpAw8eTK0pp1",
+      services: ["Residential", "Heritage Properties", "Tourism Rentals"],
+      href: "/areas/penetanguishene",
+    },
+    {
+      city: "Oro-Medonte",
+      region: "Lake Simcoe Northwest",
+      description: "Scenic rural township nestled between Barrie and Orillia, with heritage trails and airport access.",
+      serviceYears: 12,
+      clients: 140,
+      image: "https://upload.wikimedia.org/wikipedia/commons/0/04/Oro-Medonte_ON.JPG", // you may source a scenic photo or map of Oro-Medonte
+      services: ["Rural Properties", "Seasonal Homes", "Airport-Area Services"],
+      href: "/areas/oro-medonte",
+    },
+    {
+      city: "Innisfil",
+      region: "Lake Simcoe South",
+      description: "Growing commuter town on Lake Simcoe’s shore, featuring vibrant development and mixed-use communities.",
+      serviceYears: 8,
+      clients: 200,
+      image: " https://ontarionaturetrails.com/wp-content/uploads/penetang-bay-marinas.jpg ",
+      services: ["Residential", "New Developments", "Commuter Homes"],
+      href: "/areas/innisfil",
+    },
+    {
+      city: "Port McNicoll",
+      region: "Tay / Georgian Bay",
+      description: "Historic CPR port-community turned seasonal hotspot with beaches, festivals, and growing tourism.",
+      serviceYears: 6,
+      clients: 100,
+      image: "", // could use a photo of Port McNicoll waterfront from online sources
+      services: ["Cottage Cleaning", "Seasonal Rentals", "Event Readiness"],
+      href: "/areas/port-mcnicoll",
+    },
+    {
+      city: "Creemore",
+      region: "Clearview / Escarpment",
+      description: "Charming small town with historic buildings, trails, brewery, and rustic village feel.",
+      serviceYears: 5,
+      clients: 80,
+      image: "https://upload.wikimedia.org/wikipedia/commons/1/1b/Penetang_Docks.jpg", // insert a favorite scenic shot of Creemore
+      services: ["Residential", "Historic Homes", "Vacation Rentals"],
+      href: "/areas/creemore",
+    },
+    {
+      city: "Tiny",
+      region: "Southern Georgian Bay",
+      description: "Picturesque township with 70 km of coastline, parks, beaches and outdoor-oriented service demand.",
+      serviceYears: 10,
+      clients: 160,
+      image: "", // add a Tiny image
+      services: ["Cottage Cleaning", "Residential", "Seasonal Properties"],
+      href: "/areas/tiny",
+    },
   ]
 
   const whyChooseUs = [
@@ -164,10 +244,13 @@ export default function LocationPage() {
                         Learn More
                       </Button>
                     </Link>
+                    
+                    <Link href={'/contact'}>
                     <Button className="bg-[#012E71] hover:bg-blue-800 text-white">
                       <Calendar className="w-4 h-4 mr-2" />
                       Book Now
                     </Button>
+                    </Link>
                   </div>
                 </CardContent>
               </Card>

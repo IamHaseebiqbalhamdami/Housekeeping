@@ -1,10 +1,9 @@
 "use client"
-
 import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ChevronDown, ChevronRight, Phone, Menu, X } from "lucide-react"
+import { ChevronDown, ChevronRight, Phone, Menu, X } from 'lucide-react'
 
 // ✅ Navigation Dropdown Component
 function NavigationDropdown({
@@ -27,7 +26,6 @@ function NavigationDropdown({
         {title}
         <ChevronDown className={`w-4 h-4 ml-1 transition-transform ${isOpen ? "rotate-180" : ""}`} />
       </button>
-
       {isOpen && (
         <div className="absolute top-full left-0 mt-2 min-w-[20rem] bg-white rounded-lg shadow-xl border border-gray-200 z-50 transition-all duration-200">
           <div className="p-2">
@@ -47,6 +45,51 @@ function NavigationDropdown({
               </Link>
             ))}
           </div>
+        </div>
+      )}
+    </div>
+  )
+}
+
+// ✅ Mobile Expandable Section Component
+function MobileExpandableSection({
+  title,
+  items,
+  currentPage,
+  onLinkClick,
+}: {
+  title: string
+  items: { name: string; href: string; description: string }[]
+  currentPage: string
+  onLinkClick: () => void
+}) {
+  const [isExpanded, setIsExpanded] = useState(false)
+
+  return (
+    <div className="border-b border-gray-100 last:border-b-0">
+      <button
+        onClick={() => setIsExpanded(!isExpanded)}
+        className="flex items-center justify-between w-full px-3 py-3 text-left text-gray-700 hover:bg-gray-50 transition-colors"
+      >
+        <span className="font-medium">{title}</span>
+        <ChevronDown className={`w-4 h-4 transition-transform ${isExpanded ? "rotate-180" : ""}`} />
+      </button>
+      {isExpanded && (
+        <div className="pb-2">
+          {items.map((item, index) => (
+            <Link
+              key={index}
+              href={item.href}
+              className="flex items-start gap-3 px-6 py-2 text-sm hover:bg-gray-50 transition-colors"
+              onClick={onLinkClick}
+            >
+              <ChevronRight className="w-3 h-3 text-[#012E71] mt-1 flex-shrink-0" />
+              <div>
+                <div className="font-medium text-[#012E71] mb-1">{item.name}</div>
+                <div className="text-xs text-gray-600">{item.description}</div>
+              </div>
+            </Link>
+          ))}
         </div>
       )}
     </div>
@@ -169,7 +212,6 @@ export default function SharedHeader({ currentPage }: { currentPage: string }) {
                 {item.label}
               </Link>
             ))}
-
             <NavigationDropdown title="Services" items={servicesDropdown} />
             <NavigationDropdown title="Service Areas" items={areasDropdown} />
           </nav>
@@ -182,7 +224,9 @@ export default function SharedHeader({ currentPage }: { currentPage: string }) {
                 className="border-[#012E71] text-[#012E71] hover:bg-[#012E71] hover:text-white bg-transparent"
               >
                 <Phone className="w-4 h-4 mr-2" />
-                (705) 555-0123
+                
+  (647) 534-8050
+
               </Button>
             </Link>
             <Link href="/contact">
@@ -199,12 +243,11 @@ export default function SharedHeader({ currentPage }: { currentPage: string }) {
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="lg:hidden mt-4 pb-4 border-t border-gray-200">
-            <nav className="flex flex-col space-y-4 mt-4">
+            <nav className="flex flex-col mt-4">
+              {/* Regular Navigation Items */}
               {[
                 { label: "Home", href: "/", key: "home" },
                 { label: "About", href: "/about", key: "about" },
-                { label: "Services", href: "/services", key: "services" },
-                { label: "Service Areas", href: "/areas", key: "areas" },
                 { label: "Pricing", href: "/pricing", key: "pricing" },
                 { label: "Blog", href: "/blog", key: "blog" },
                 { label: "Reviews", href: "/reviews", key: "reviews" },
@@ -213,28 +256,48 @@ export default function SharedHeader({ currentPage }: { currentPage: string }) {
                 <Link
                   key={item.key}
                   href={item.href}
-                  className={`px-3 py-2 rounded transition-all ${
+                  className={`px-3 py-3 border-b border-gray-100 transition-all ${
                     currentPage === item.key
                       ? "bg-black text-white"
-                      : "text-gray-700 hover:bg-[#012E71] hover:text-white"
+                      : "text-gray-700 hover:bg-gray-50"
                   }`}
+                  onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.label}
                 </Link>
               ))}
 
-              <div className="flex flex-col space-y-2 pt-4">
-                <Link href="/contact">
+              {/* Expandable Sections */}
+              <MobileExpandableSection
+                title="Services"
+                items={servicesDropdown}
+                currentPage={currentPage}
+                onLinkClick={() => setIsMobileMenuOpen(false)}
+              />
+              <MobileExpandableSection
+                title="Service Areas"
+                items={areasDropdown}
+                currentPage={currentPage}
+                onLinkClick={() => setIsMobileMenuOpen(false)}
+              />
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col space-y-3 p-4 bg-gray-50 mt-4">
+                <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
                   <Button
                     variant="outline"
-                    className="border-[#012E71] text-[#012E71] hover:bg-[#012E71] hover:text-white bg-transparent"
+                    className="w-full border-[#012E71] text-[#012E71] hover:bg-[#012E71] hover:text-white bg-transparent"
                   >
                     <Phone className="w-4 h-4 mr-2" />
-                    (705) 555-0123
+                    
+  (647) 534-8050
+
                   </Button>
                 </Link>
-                <Link href="/contact">
-                  <Button className="bg-[#012E71] hover:bg-blue-800 text-white">Book Online</Button>
+                <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
+                  <Button className="w-full bg-[#012E71] hover:bg-blue-800 text-white">
+                    Book Online
+                  </Button>
                 </Link>
               </div>
             </nav>

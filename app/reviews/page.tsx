@@ -19,7 +19,7 @@ export default function ReviewsPage() {
       rating: 5,
       date: "March 2024",
       text: "HouseKeeping PRO has been cleaning our home for 3 years now. Their attention to detail is incredible and the team is so professional and reliable. I can't imagine using anyone else!",
-      avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX_XAKqFiXUPYKF2qXPFZcDmzQ7SoDJj_OiQ&s",
+      avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face",
       verified: true,
       featured: true,
     },
@@ -85,14 +85,32 @@ export default function ReviewsPage() {
     },
   ]
 
-  // Video review data - now using single video from public/video/ folder
+  // Single video review from first file
   const videoReview = {
-      id: 1,
+    id: 1,
     name: "Client Testimonial",
     location: "Simcoe County, ON",
-    videoPath: "/video/review.mp4",
+    videoPath: "https://res.cloudinary.com/dterqp7lk/video/upload/v1754918781/review_ajpjqt.mp4",
     description: "Watch this authentic review from one of our satisfied clients sharing their experience with HouseKeeping PRO."
   }
+
+  // Multiple video reviews from second file
+  const videoReviews = [
+    {
+      id: 1,
+      name: "Margaret & John Smith",
+      location: "Barrie, ON",
+      thumbnail: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400&h=300&fit=crop",
+      duration: "2:15",
+    },
+    {
+      id: 2,
+      name: "Downtown Barrie Office",
+      location: "Barrie, ON",
+      thumbnail: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=300&fit=crop",
+      duration: "1:45",
+    },
+  ]
 
   const filters = [
     { id: "all", name: "All Reviews", icon: Star },
@@ -188,11 +206,11 @@ export default function ReviewsPage() {
         </div>
       </section>
 
-      {/* Video Reviews */}
+      {/* Featured Video Review Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#012E71] mb-4">Video Reviews</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-[#012E71] mb-4">Featured Video Review</h2>
             <p className="text-xl text-gray-700 max-w-2xl mx-auto">
               Watch our clients share their experiences with HouseKeeping PRO
             </p>
@@ -200,9 +218,9 @@ export default function ReviewsPage() {
 
           <div className="max-w-4xl mx-auto">
             <Card className="shadow-xl border-0 overflow-hidden">
-                <div className="relative">
+              <div className="relative">
                 <video
-                  src="/video/review.mp4"
+                  src="https://res.cloudinary.com/dterqp7lk/video/upload/v1754918781/review_ajpjqt.mp4"
                   className="w-full h-96 md:h-[500px] object-cover"
                   autoPlay
                   muted={false}
@@ -217,7 +235,7 @@ export default function ReviewsPage() {
                 </div>
               </div>
               <CardContent className="p-6">
-                <h3 className="text-2xl font-bold text-[#012E71] mb-2">Client Testimonial</h3>
+                <h3 className="text-2xl font-bold text-[#012E71] mb-2">Client Reviews</h3>
                 <p className="text-gray-600 flex items-center">
                   <MapPin className="w-4 h-4 mr-1" />
                   Simcoe County, ON
@@ -230,6 +248,8 @@ export default function ReviewsPage() {
           </div>
         </div>
       </section>
+
+  
 
       {/* Featured Client Testimonials - Component 1 */}
       <section className="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
@@ -474,6 +494,127 @@ export default function ReviewsPage() {
         </div>
       </section>
 
+      {/* Submit Review Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#012E71] mb-4">Share Your Experience</h2>
+            <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+              We value your feedback! Submit your review and help others learn about our services.
+            </p>
+          </div>
+
+          <form className="max-w-3xl mx-auto bg-gray-50 shadow-lg rounded-xl p-8 space-y-6">
+            <div>
+              <label className="block text-gray-700 font-semibold mb-2">Your Name</label>
+              <input
+                type="text"
+                placeholder="Enter your name"
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#012E71]"
+              />
+            </div>
+            <div>
+              <label className="block text-gray-700 font-semibold mb-2">Email</label>
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#012E71]"
+              />
+            </div>
+            <div>
+              <label className="block text-gray-700 font-semibold mb-2">Service Type</label>
+              <select className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#012E71]">
+                <option>Residential</option>
+                <option>Commercial</option>
+                <option>Airbnb</option>
+                <option>Deep Cleaning</option>
+              </select>
+            </div>
+            <div>
+              <label className="block text-gray-700 font-semibold mb-2">Rating</label>
+              <div className="flex gap-2">
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <button
+                    key={star}
+                    type="button"
+                    className="w-10 h-10 flex items-center justify-center border rounded-full hover:bg-yellow-400 hover:text-white"
+                  >
+                    ★
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div>
+              <label className="block text-gray-700 font-semibold mb-2">Your Review</label>
+              <textarea
+                placeholder="Write your review here..."
+                rows={5}
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#012E71]"
+              ></textarea>
+            </div>
+            <div className="text-center">
+              <button
+                type="submit"
+                className="bg-[#012E71] text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-blue-900 transition"
+              >
+                Submit Review
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#012E71] mb-4">Frequently Asked Questions</h2>
+            <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+              Got questions? We've got answers. Here are some of the most common questions we receive.
+            </p>
+          </div>
+
+          <div className="max-w-3xl mx-auto space-y-6">
+            {[
+              {
+                question: "How do I schedule a cleaning service?",
+                answer:
+                  "You can schedule a cleaning by booking online through our website or by calling our customer support team.",
+              },
+              {
+                question: "Do you offer same-day bookings?",
+                answer:
+                  "Yes, we do offer same-day bookings based on availability. Please contact us as early as possible for urgent requests.",
+              },
+              {
+                question: "Are your cleaning products eco-friendly?",
+                answer:
+                  "Absolutely! We use safe and eco-friendly products that are family and pet-friendly.",
+              },
+              {
+                question: "Do you bring your own cleaning supplies?",
+                answer:
+                  "Yes, our team brings all the necessary cleaning products and equipment for every service.",
+              },
+            ].map((faq, index) => (
+              <div key={index} className="border border-gray-300 rounded-lg">
+                <button
+                  className="w-full text-left px-6 py-4 flex justify-between items-center font-semibold text-gray-800"
+                  onClick={(e) => {
+                    const content = e.currentTarget.nextElementSibling
+                    content!.classList.toggle("hidden")
+                  }}
+                >
+                  {faq.question}
+                  <span className="text-gray-500">+</span>
+                </button>
+                <div className="hidden px-6 pb-4 text-gray-600">{faq.answer}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-[#012E71] text-white">
         <div className="container mx-auto px-4">
@@ -500,7 +641,6 @@ export default function ReviewsPage() {
       </section>
 
       {/* Footer */}
-     
     </div>
   )
 }

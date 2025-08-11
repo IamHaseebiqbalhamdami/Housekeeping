@@ -11,8 +11,7 @@ const nextConfig = {
   images: {
     unoptimized: true, // Required for static exports (Hostinger)
   },
-  // Optional: Add basePath if your site isn't at the root (e.g., GitHub Pages)
-  // basePath: '/your-repo-name',
+  // basePath: '/your-repo-name', // Uncomment if deploying under subpath
 };
 
 export default nextConfig;
