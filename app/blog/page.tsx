@@ -8,6 +8,7 @@ import SharedHeader from "@/components/shared-header"
 import BlogShowcase from "@/components/blog-showcase"
 import UseCasesShowcase from "@/components/use-cases-showcase"
 import {featuredPost,blogPosts} from './blogdata.js'
+
 export default function BlogPage() {
   
 
