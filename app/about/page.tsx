@@ -3,7 +3,8 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Award, Shield, Users, Clock, Star, CheckCircle, Phone, Mail, MapPin, Calendar, Heart, Leaf, ChevronLeft, ChevronRight } from 'lucide-react'
+import { Award, Shield, Users, Clock, Star, CheckCircle, Phone, Mail, MapPin, Calendar, Heart, Leaf, ChevronLeft, ChevronRight,  } from 'lucide-react'
+import Link from "next/link"
 import { useState } from "react"
 
 export default function AboutPage() {
@@ -494,13 +495,17 @@ export default function AboutPage() {
               service excellence.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-              <Button 
-                size="lg" 
-                className="bg-white text-[#012E71] hover:bg-gray-100 text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 h-auto"
-              >
-                <Calendar className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                Book Your Service
-              </Button>
+              
+            <Link href="/contact">
+  <Button 
+    size="lg" 
+    className="bg-white text-[#012E71] hover:bg-gray-100 text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 h-auto"
+  >
+    <Calendar className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+    Book Your Service
+  </Button>
+</Link>
+               
               <Button
                 size="lg"
                 variant="outline"

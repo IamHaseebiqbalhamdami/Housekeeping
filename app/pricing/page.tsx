@@ -1,11 +1,15 @@
 "use client"
+
+import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Clock, Home, Building2, Sparkles, CheckCircle, Phone, Calendar, Star } from "lucide-react"
-import SharedHeader from "@/components/shared-header"
+import { Clock, Home, Building2, Sparkles, CheckCircle, Phone, Calendar, Star, Leaf, X } from "lucide-react"
 import InteractiveCleaningCalculator from "@/components/interactivecal"
+
 export default function PricingPage() {
+  const [showComingSoon, setShowComingSoon] = useState(false)
+
   const pricingPlans = [
     {
       name: "One-Time Cleaning",
@@ -22,6 +26,7 @@ export default function PricingPage() {
         "Satisfaction guarantee",
       ],
       popular: false,
+      available: true,
     },
     {
       name: "Weekly Cleaning",
@@ -38,6 +43,7 @@ export default function PricingPage() {
         "Free cleaning supplies",
       ],
       popular: true,
+      available: true,
     },
     {
       name: "Bi-Weekly Cleaning",
@@ -54,6 +60,7 @@ export default function PricingPage() {
         "Eco-friendly options",
       ],
       popular: false,
+      available: true,
     },
     {
       name: "Monthly Cleaning",
@@ -70,6 +77,24 @@ export default function PricingPage() {
         "Professional equipment",
       ],
       popular: false,
+      available: true,
+    },
+    {
+      name: "Seasonal Cleaning",
+      icon: Leaf,
+      price: "TBD",
+      unit: "coming soon",
+      description: "Specialized seasonal deep cleaning for spring and fall",
+      features: [
+        "Deep seasonal cleaning",
+        "Window washing inside & out",
+        "Gutter cleaning service",
+        "Outdoor furniture cleaning",
+        "Garage and basement deep clean",
+        "Holiday preparation cleaning",
+      ],
+      popular: false,
+      available: false,
     },
   ]
 
@@ -106,10 +131,46 @@ export default function PricingPage() {
     { service: "Basement Cleaning", price: "$55" },
   ]
 
+  const handlePlanSelect = (plan: any) => {
+    if (!plan.available) {
+      setShowComingSoon(true)
+    } else {
+      // Navigate to contact or handle plan selection
+      window.location.href = "/contact"
+    }
+  }
+
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
       {/* <SharedHeader currentPage="pricing" /> */}
+
+      {showComingSoon && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg p-8 max-w-md mx-4 relative">
+            <button
+              onClick={() => setShowComingSoon(false)}
+              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+            >
+              <X className="w-6 h-6" />
+            </button>
+            <div className="text-center">
+              <Leaf className="w-16 h-16 text-[#012E71] mx-auto mb-4" />
+              <h3 className="text-2xl font-bold text-[#012E71] mb-4">Coming Soon!</h3>
+              <p className="text-gray-600 mb-6">
+                Our Seasonal Cleaning service is currently being developed. We'll be launching this comprehensive
+                seasonal cleaning package soon!
+              </p>
+              <p className="text-sm text-gray-500 mb-6">
+                Want to be notified when it's available? Contact us and we'll add you to our waiting list.
+              </p>
+              <Link href="/contact">
+                <Button className="bg-[#012E71] hover:bg-blue-800 text-white">Contact Us</Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-r from-[#012E71] to-blue-800 text-white">
@@ -134,19 +195,25 @@ export default function PricingPage() {
               cleaning supplies and equipment.
             </p>
           </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
             {pricingPlans.map((plan, index) => (
               <Card
                 key={index}
                 className={`relative shadow-lg border-0 hover:shadow-xl transition-all duration-300 ${
                   plan.popular ? "ring-2 ring-[#012E71] scale-105" : ""
-                }`}
+                } ${!plan.available ? "opacity-75" : ""}`}
               >
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                     <div className="bg-[#012E71] text-white px-4 py-2 rounded-full text-sm font-semibold">
                       Most Popular
+                    </div>
+                  </div>
+                )}
+                {!plan.available && (
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                    <div className="bg-orange-500 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                      Coming Soon
                     </div>
                   </div>
                 )}
@@ -167,14 +234,15 @@ export default function PricingPage() {
                     ))}
                   </ul>
                   <Button
+                    onClick={() => handlePlanSelect(plan)}
                     className={`w-full ${
                       plan.popular
                         ? "bg-[#012E71] hover:bg-blue-800 text-white"
                         : "border-[#012E71] text-[#012E71] hover:bg-[#012E71] hover:text-white bg-transparent"
-                    }`}
+                    } ${!plan.available ? "opacity-75" : ""}`}
                     variant={plan.popular ? "default" : "outline"}
                   >
-                    Choose Plan
+                    {plan.available ? "Choose Plan" : "Coming Soon"}
                   </Button>
                 </CardContent>
               </Card>
@@ -182,7 +250,6 @@ export default function PricingPage() {
           </div>
         </div>
       </section>
-
 
       {/* Commercial Pricing */}
       <section className="py-20 bg-gray-50">
@@ -194,7 +261,6 @@ export default function PricingPage() {
               Simcoe County.
             </p>
           </div>
-
           <div className="grid md:grid-cols-3 gap-8">
             {commercialPricing.map((plan, index) => (
               <Card key={index} className="shadow-lg border-0 hover:shadow-xl transition-all duration-300">
@@ -214,12 +280,14 @@ export default function PricingPage() {
                       </li>
                     ))}
                   </ul>
-                  <Button
-                    className="w-full border-[#012E71] text-[#012E71] hover:bg-[#012E71] hover:text-white bg-transparent"
-                    variant="outline"
-                  >
-                    Get Quote
-                  </Button>
+                  <Link href="/contact">
+                    <Button
+                      className="w-full border-[#012E71] text-[#012E71] hover:bg-[#012E71] hover:text-white bg-transparent"
+                      variant="outline"
+                    >
+                      Get Quote
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}
@@ -237,7 +305,6 @@ export default function PricingPage() {
                 Enhance your cleaning package with these popular add-on services at competitive rates.
               </p>
             </div>
-
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {additionalServices.map((item, index) => (
                 <Card key={index} className="shadow-lg border-0 hover:shadow-xl transition-all duration-300">
@@ -265,7 +332,6 @@ export default function PricingPage() {
                 needs.
               </p>
             </div>
-
             <div className="grid md:grid-cols-2 gap-8">
               <Card className="shadow-lg border-0">
                 <CardContent className="p-8">
@@ -298,7 +364,6 @@ export default function PricingPage() {
                   </ul>
                 </CardContent>
               </Card>
-
               <Card className="shadow-lg border-0">
                 <CardContent className="p-8">
                   <h3 className="text-2xl font-bold text-[#012E71] mb-6">Money-Saving Tips</h3>
@@ -333,9 +398,9 @@ export default function PricingPage() {
             </div>
           </div>
         </div>
-      
       </section>
-          <InteractiveCleaningCalculator />
+
+      <InteractiveCleaningCalculator />
 
       {/* CTA Section */}
       <section className="py-20 bg-[#012E71] text-white">
