@@ -1,6 +1,8 @@
 "use client"
-
 import { useState } from "react"
+import Link from "next/link"
+
+
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -9,7 +11,7 @@ import SharedHeader from "@/components/shared-header"
 
 export default function ReviewsPage() {
   const [activeFilter, setActiveFilter] = useState("all")
-
+  const [rating, setRating] = useState(0)
   const reviews = [
     {
       id: 1,
@@ -19,7 +21,7 @@ export default function ReviewsPage() {
       rating: 5,
       date: "March 2024",
       text: "HouseKeeping PRO has been cleaning our home for 3 years now. Their attention to detail is incredible and the team is so professional and reliable. I can't imagine using anyone else!",
-      avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face",
+      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face",
       verified: true,
       featured: true,
     },
@@ -531,19 +533,22 @@ export default function ReviewsPage() {
               </select>
             </div>
             <div>
-              <label className="block text-gray-700 font-semibold mb-2">Rating</label>
-              <div className="flex gap-2">
-                {[1, 2, 3, 4, 5].map((star) => (
-                  <button
-                    key={star}
-                    type="button"
-                    className="w-10 h-10 flex items-center justify-center border rounded-full hover:bg-yellow-400 hover:text-white"
-                  >
-                    ★
-                  </button>
-                ))}
-              </div>
-            </div>
+      <label className="block text-gray-700 font-semibold mb-2">Rating</label>
+      <div className="flex gap-2">
+        {[1, 2, 3, 4, 5].map((star) => (
+          <button
+            key={star}
+            type="button"
+            onClick={() => setRating(star)}
+            className={`w-10 h-10 flex items-center justify-center border rounded-full transition-colors
+              ${star <= rating ? "bg-yellow-400 text-white" : "bg-white text-black"}
+            `}
+          >
+            ★
+          </button>
+        ))}
+      </div>
+    </div>
             <div>
               <label className="block text-gray-700 font-semibold mb-2">Your Review</label>
               <textarea
@@ -624,18 +629,28 @@ export default function ReviewsPage() {
               Experience the same exceptional service that has earned us 98% customer satisfaction across Simcoe County.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-[#012E71] hover:bg-gray-100 px-8 py-4">
-                <Calendar className="w-5 h-5 mr-2" />
-                Book Your Cleaning
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-[#012E71] px-8 py-4 bg-transparent"
-              >
-                Get Free Quote
-              </Button>
-            </div>
+      {/* Book Your Cleaning */}
+      <Link href="/contact">
+        <Button
+          size="lg"
+          className="bg-white text-[#012E71] hover:bg-gray-100 px-8 py-4"
+        >
+          <Calendar className="w-5 h-5 mr-2" />
+          Book Your Cleaning
+        </Button>
+      </Link>
+
+      {/* Get Free Quote */}
+      <Link href="/contact">
+        <Button
+          size="lg"
+          variant="outline"
+          className="border-white text-white hover:bg-white hover:text-[#012E71] px-8 py-4 bg-transparent"
+        >
+          Get Free Quote
+        </Button>
+      </Link>
+    </div>
           </div>
         </div>
       </section>
