@@ -11,6 +11,7 @@ import { Autoplay, Navigation, Pagination } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
+import SplashScreen from "@/components/splash-screen"
 
 // Responsive Hero Slider Component
 function HeroSlider() {
@@ -119,7 +120,9 @@ function HeroSlider() {
                   className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-[#012E71] text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 h-auto bg-transparent"
                 >
                   <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                  Call (+1)6475348050
+                  Call 
+ (647) 534-8050
+
                 </Button>
               </Link>
             </div>
@@ -243,467 +246,471 @@ export default function HomePage() {
   ]
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Hero Slider Section */}
-      <HeroSlider />
+    <>
+      {showSplash && <SplashScreen onComplete={handleSplashComplete} />}
+      <div className="min-h-screen bg-white">
+        {/* Hero Slider Section */}
+        <HeroSlider />
 
-      {/* Company Info Banner */}
-      <section className="py-8 sm:py-12 lg:py-16 bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 text-center">
-            <div className="flex flex-col items-center p-3 sm:p-4">
-              <Award className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-[#012E71] mb-2 sm:mb-4" />
-              <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#012E71] mb-1 sm:mb-2">26</div>
-              <p className="text-xs sm:text-sm lg:text-base text-gray-700 font-medium">Years Experience</p>
-            </div>
-            <div className="flex flex-col items-center p-3 sm:p-4">
-              <Users className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-[#012E71] mb-2 sm:mb-4" />
-              <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#012E71] mb-1 sm:mb-2">1,200+</div>
-              <p className="text-xs sm:text-sm lg:text-base text-gray-700 font-medium">Happy Clients</p>
-            </div>
-            <div className="flex flex-col items-center p-3 sm:p-4">
-              <Shield className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-[#012E71] mb-2 sm:mb-4" />
-              <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#012E71] mb-1 sm:mb-2">98%</div>
-              <p className="text-xs sm:text-sm lg:text-base text-gray-700 font-medium">Satisfaction Rate</p>
-            </div>
-            <div className="flex flex-col items-center p-3 sm:p-4">
-              <Clock className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-[#012E71] mb-2 sm:mb-4" />
-              <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#012E71] mb-1 sm:mb-2">24/7</div>
-              <p className="text-xs sm:text-sm lg:text-base text-gray-700 font-medium">Support Available</p>
+        {/* Company Info Banner */}
+        <section className="py-8 sm:py-12 lg:py-16 bg-gray-50">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 text-center">
+              <div className="flex flex-col items-center p-3 sm:p-4">
+                <Award className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-[#012E71] mb-2 sm:mb-4" />
+                <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#012E71] mb-1 sm:mb-2">26</div>
+                <p className="text-xs sm:text-sm lg:text-base text-gray-700 font-medium">Years Experience</p>
+              </div>
+              <div className="flex flex-col items-center p-3 sm:p-4">
+                <Users className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-[#012E71] mb-2 sm:mb-4" />
+                <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#012E71] mb-1 sm:mb-2">1,200+</div>
+                <p className="text-xs sm:text-sm lg:text-base text-gray-700 font-medium">Happy Clients</p>
+              </div>
+              <div className="flex flex-col items-center p-3 sm:p-4">
+                <Shield className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-[#012E71] mb-2 sm:mb-4" />
+                <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#012E71] mb-1 sm:mb-2">98%</div>
+                <p className="text-xs sm:text-sm lg:text-base text-gray-700 font-medium">Satisfaction Rate</p>
+              </div>
+              <div className="flex flex-col items-center p-3 sm:p-4">
+                <Clock className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-[#012E71] mb-2 sm:mb-4" />
+                <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#012E71] mb-1 sm:mb-2">24/7</div>
+                <p className="text-xs sm:text-sm lg:text-base text-gray-700 font-medium">Support Available</p>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Services Section */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#012E71] mb-3 sm:mb-4">
-              Our Cleaning Services
-            </h2>
-            <p className="text-base sm:text-lg lg:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              Professional cleaning solutions tailored to your needs across Simcoe County. From regular maintenance to
-              deep cleaning, we've got you covered.
-            </p>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
-            {services.map((service, index) => (
-              <Card
-                key={index}
-                className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-0 shadow-lg overflow-hidden"
-              >
-                <div className="relative overflow-hidden">
-                  <Image
-                    src={service.image || "/placeholder.svg?height=300&width=400"}
-                    alt={service.title}
-                    width={400}
-                    height={300}
-                    className="w-full h-48 sm:h-56 lg:h-64 object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#012E71]/70 to-transparent" />
-                  <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 text-white">
-                    <service.icon className="w-6 h-6 sm:w-8 sm:h-8 mb-2" />
-                    <h3 className="text-lg sm:text-xl font-bold">{service.title}</h3>
+        {/* Services Section */}
+        <section className="py-12 sm:py-16 lg:py-20 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12 sm:mb-16">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#012E71] mb-3 sm:mb-4">
+                Our Cleaning Services
+              </h2>
+              <p className="text-base sm:text-lg lg:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+                Professional cleaning solutions tailored to your needs across Simcoe County. From regular maintenance to
+                deep cleaning, we've got you covered.
+              </p>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
+              {services.map((service, index) => (
+                <Card
+                  key={index}
+                  className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-0 shadow-lg overflow-hidden"
+                >
+                  <div className="relative overflow-hidden">
+                    <Image
+                      src={service.image || "/placeholder.svg?height=300&width=400"}
+                      alt={service.title}
+                      width={400}
+                      height={300}
+                      className="w-full h-48 sm:h-56 lg:h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#012E71]/70 to-transparent" />
+                    <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 text-white">
+                      <service.icon className="w-6 h-6 sm:w-8 sm:h-8 mb-2" />
+                      <h3 className="text-lg sm:text-xl font-bold">{service.title}</h3>
+                    </div>
                   </div>
-                </div>
-                <CardContent className="p-4 sm:p-6">
-                  <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">{service.description}</p>
-                  <Link href={service.link}>
-                    <Button className="w-full bg-[#012E71] hover:bg-blue-800 text-white group-hover:scale-105 transition-transform duration-300 text-sm sm:text-base">
-                      Learn More
-                      <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-2" />
-                    </Button>
-                  </Link>
-                </CardContent>
+                  <CardContent className="p-4 sm:p-6">
+                    <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">{service.description}</p>
+                    <Link href={service.link}>
+                      <Button className="w-full bg-[#012E71] hover:bg-blue-800 text-white group-hover:scale-105 transition-transform duration-300 text-sm sm:text-base">
+                        Learn More
+                        <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-2" />
+                      </Button>
+                    </Link>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Why Choose Us Section */}
+        <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12 sm:mb-16">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#012E71] mb-3 sm:mb-4">
+                Why Choose HouseKeeping PRO?
+              </h2>
+              <p className="text-base sm:text-lg lg:text-xl text-gray-700 max-w-2xl mx-auto">
+                26 years of trusted service across Simcoe County with a commitment to excellence
+              </p>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+              <Card className="text-center p-4 sm:p-6 lg:p-8 hover:shadow-lg transition-all duration-300">
+                <Shield className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-[#012E71] mx-auto mb-4 sm:mb-6" />
+                <h3 className="text-lg sm:text-xl font-bold text-[#012E71] mb-3 sm:mb-4">Fully Insured & Bonded</h3>
+                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                  Complete insurance coverage and bonding for your peace of mind. All team members are background-checked
+                  and trained professionals.
+                </p>
               </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us Section */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#012E71] mb-3 sm:mb-4">
-              Why Choose HouseKeeping PRO?
-            </h2>
-            <p className="text-base sm:text-lg lg:text-xl text-gray-700 max-w-2xl mx-auto">
-              26 years of trusted service across Simcoe County with a commitment to excellence
-            </p>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            <Card className="text-center p-4 sm:p-6 lg:p-8 hover:shadow-lg transition-all duration-300">
-              <Shield className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-[#012E71] mx-auto mb-4 sm:mb-6" />
-              <h3 className="text-lg sm:text-xl font-bold text-[#012E71] mb-3 sm:mb-4">Fully Insured & Bonded</h3>
-              <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
-                Complete insurance coverage and bonding for your peace of mind. All team members are background-checked
-                and trained professionals.
-              </p>
-            </Card>
-            <Card className="text-center p-4 sm:p-6 lg:p-8 hover:shadow-lg transition-all duration-300">
-              <Award className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-[#012E71] mx-auto mb-4 sm:mb-6" />
-              <h3 className="text-lg sm:text-xl font-bold text-[#012E71] mb-3 sm:mb-4">26 Years Experience</h3>
-              <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
-                Canadian owned and operated since 1998. We've built our reputation on consistent, reliable service
-                across Simcoe County.
-              </p>
-            </Card>
-            <Card className="text-center p-4 sm:p-6 lg:p-8 hover:shadow-lg transition-all duration-300 sm:col-span-2 lg:col-span-1">
-              <Star className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-[#012E71] mx-auto mb-4 sm:mb-6" />
-              <h3 className="text-lg sm:text-xl font-bold text-[#012E71] mb-3 sm:mb-4">98% Satisfaction Rate</h3>
-              <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
-                Our clients love our service! With over 1,200 satisfied customers, we consistently deliver exceptional
-                results.
-              </p>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Process & Methodology Section */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#012E71] mb-3 sm:mb-4">
-              Our Proven Process
-            </h2>
-            <p className="text-base sm:text-lg lg:text-xl text-gray-700 max-w-3xl mx-auto">
-              A systematic approach that ensures consistent, high-quality results every time
-            </p>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-            {[
-              {
-                icon: Target,
-                title: "Assessment",
-                description: "We evaluate your space and discuss your specific needs to create a customized cleaning plan.",
-                number: 1
-              },
-              {
-                icon: Lightbulb,
-                title: "Planning",
-                description: "Our team develops a detailed cleaning strategy using professional-grade equipment and products.",
-                number: 2
-              },
-              {
-                icon: Truck,
-                title: "Execution",
-                description: "Trained professionals arrive on time and complete the job with attention to every detail.",
-                number: 3
-              },
-              {
-                icon: CheckCircle,
-                title: "Quality Check",
-                description: "Final inspection ensures everything meets our high standards before we leave your property.",
-                number: 4
-              }
-            ].map((step, index) => (
-              <div key={index} className="text-center group">
-                <div className="relative mb-4 sm:mb-6">
-                  <div className="w-16 h-16 sm:w-18 sm:h-18 lg:w-20 lg:h-20 bg-[#012E71] rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-500">
-                    <step.icon className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 text-white" />
-                  </div>
-                  <div className="absolute -top-1 sm:-top-2 -right-1 sm:-right-2 w-6 h-6 sm:w-8 sm:h-8 bg-yellow-400 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold text-[#012E71]">
-                    {step.number}
-                  </div>
-                </div>
-                <h3 className="text-lg sm:text-xl font-bold text-[#012E71] mb-3 sm:mb-4">{step.title}</h3>
-                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">{step.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Technology & Innovation Section */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-[#012E71] to-blue-900 text-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
-              Advanced Technology & Innovation
-            </h2>
-            <p className="text-base sm:text-lg lg:text-xl opacity-90 max-w-3xl mx-auto">
-              We combine cutting-edge cleaning technology with eco-friendly practices for superior results
-            </p>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {[
-              {
-                icon: Zap,
-                title: "HEPA Filtration Systems",
-                description: "Advanced air purification technology removes 99.97% of airborne particles, ensuring cleaner, healthier indoor air."
-              },
-              {
-                icon: Heart,
-                title: "Eco-Friendly Products",
-                description: "Certified green cleaning products that are safe for your family, pets, and the environment while delivering exceptional results."
-              },
-              {
-                icon: TrendingUp,
-                title: "Smart Scheduling",
-                description: "AI-powered scheduling system ensures optimal timing and route planning for maximum efficiency and reliability."
-              }
-            ].map((tech, index) => (
-              <Card key={index} className="bg-white/10 backdrop-blur-sm border-white/20 p-4 sm:p-6 lg:p-8 hover:bg-white/20 transition-all duration-500 hover:-translate-y-2">
-                <tech.icon className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-white mx-auto mb-4 sm:mb-6" />
-                <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-center">{tech.title}</h3>
-                <p className="text-sm sm:text-base text-white/90 leading-relaxed text-center">{tech.description}</p>
+              <Card className="text-center p-4 sm:p-6 lg:p-8 hover:shadow-lg transition-all duration-300">
+                <Award className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-[#012E71] mx-auto mb-4 sm:mb-6" />
+                <h3 className="text-lg sm:text-xl font-bold text-[#012E71] mb-3 sm:mb-4">26 Years Experience</h3>
+                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                  Canadian owned and operated since 1998. We've built our reputation on consistent, reliable service
+                  across Simcoe County.
+                </p>
               </Card>
-            ))}
+              <Card className="text-center p-4 sm:p-6 lg:p-8 hover:shadow-lg transition-all duration-300 sm:col-span-2 lg:col-span-1">
+                <Star className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-[#012E71] mx-auto mb-4 sm:mb-6" />
+                <h3 className="text-lg sm:text-xl font-bold text-[#012E71] mb-3 sm:mb-4">98% Satisfaction Rate</h3>
+                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                  Our clients love our service! With over 1,200 satisfied customers, we consistently deliver exceptional
+                  results.
+                </p>
+              </Card>
+            </div>
           </div>
-          <div className="mt-8 sm:mt-12 text-center">
-            <div className="inline-flex flex-wrap items-center justify-center gap-4 sm:gap-6 lg:gap-8 bg-white/10 backdrop-blur-sm rounded-full px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
-              <div className="flex items-center space-x-2">
-                <Clock3 className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400" />
-                <span className="text-xs sm:text-sm">Real-time Tracking</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <ThumbsUp className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
-                <span className="text-xs sm:text-sm">Quality Guarantee</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400" />
-                <span className="text-xs sm:text-sm">100% Secure</span>
+        </section>
+
+        {/* Process & Methodology Section */}
+        <section className="py-12 sm:py-16 lg:py-20 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12 sm:mb-16">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#012E71] mb-3 sm:mb-4">
+                Our Proven Process
+              </h2>
+              <p className="text-base sm:text-lg lg:text-xl text-gray-700 max-w-3xl mx-auto">
+                A systematic approach that ensures consistent, high-quality results every time
+              </p>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+              {[
+                {
+                  icon: Target,
+                  title: "Assessment",
+                  description: "We evaluate your space and discuss your specific needs to create a customized cleaning plan.",
+                  number: 1
+                },
+                {
+                  icon: Lightbulb,
+                  title: "Planning",
+                  description: "Our team develops a detailed cleaning strategy using professional-grade equipment and products.",
+                  number: 2
+                },
+                {
+                  icon: Truck,
+                  title: "Execution",
+                  description: "Trained professionals arrive on time and complete the job with attention to every detail.",
+                  number: 3
+                },
+                {
+                  icon: CheckCircle,
+                  title: "Quality Check",
+                  description: "Final inspection ensures everything meets our high standards before we leave your property.",
+                  number: 4
+                }
+              ].map((step, index) => (
+                <div key={index} className="text-center group">
+                  <div className="relative mb-4 sm:mb-6">
+                    <div className="w-16 h-16 sm:w-18 sm:h-18 lg:w-20 lg:h-20 bg-[#012E71] rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-500">
+                      <step.icon className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 text-white" />
+                    </div>
+                    <div className="absolute -top-1 sm:-top-2 -right-1 sm:-right-2 w-6 h-6 sm:w-8 sm:h-8 bg-yellow-400 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold text-[#012E71]">
+                      {step.number}
+                    </div>
+                  </div>
+                  <h3 className="text-lg sm:text-xl font-bold text-[#012E71] mb-3 sm:mb-4">{step.title}</h3>
+                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed">{step.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Technology & Innovation Section */}
+        <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-[#012E71] to-blue-900 text-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12 sm:mb-16">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
+                Advanced Technology & Innovation
+              </h2>
+              <p className="text-base sm:text-lg lg:text-xl opacity-90 max-w-3xl mx-auto">
+                We combine cutting-edge cleaning technology with eco-friendly practices for superior results
+              </p>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+              {[
+                {
+                  icon: Zap,
+                  title: "HEPA Filtration Systems",
+                  description: "Advanced air purification technology removes 99.97% of airborne particles, ensuring cleaner, healthier indoor air."
+                },
+                {
+                  icon: Heart,
+                  title: "Eco-Friendly Products",
+                  description: "Certified green cleaning products that are safe for your family, pets, and the environment while delivering exceptional results."
+                },
+                {
+                  icon: TrendingUp,
+                  title: "Smart Scheduling",
+                  description: "AI-powered scheduling system ensures optimal timing and route planning for maximum efficiency and reliability."
+                }
+              ].map((tech, index) => (
+                <Card key={index} className="bg-white/10 backdrop-blur-sm border-white/20 p-4 sm:p-6 lg:p-8 hover:bg-white/20 transition-all duration-500 hover:-translate-y-2">
+                  <tech.icon className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-white mx-auto mb-4 sm:mb-6" />
+                  <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-center">{tech.title}</h3>
+                  <p className="text-sm sm:text-base text-white/90 leading-relaxed text-center">{tech.description}</p>
+                </Card>
+              ))}
+            </div>
+            <div className="mt-8 sm:mt-12 text-center">
+              <div className="inline-flex flex-wrap items-center justify-center gap-4 sm:gap-6 lg:gap-8 bg-white/10 backdrop-blur-sm rounded-full px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
+                <div className="flex items-center space-x-2">
+                  <Clock3 className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400" />
+                  <span className="text-xs sm:text-sm">Real-time Tracking</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <ThumbsUp className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
+                  <span className="text-xs sm:text-sm">Quality Guarantee</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400" />
+                  <span className="text-xs sm:text-sm">100% Secure</span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Service Areas Section */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#012E71] mb-3 sm:mb-4">
-              Areas We Serve
-            </h2>
-            <p className="text-base sm:text-lg lg:text-xl text-gray-700 max-w-2xl mx-auto">
-              Professional cleaning services throughout Simcoe County and surrounding areas
-            </p>
+        {/* Service Areas Section */}
+        <section className="py-12 sm:py-16 lg:py-20 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12 sm:mb-16">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#012E71] mb-3 sm:mb-4">
+                Areas We Serve
+              </h2>
+              <p className="text-base sm:text-lg lg:text-xl text-gray-700 max-w-2xl mx-auto">
+                Professional cleaning services throughout Simcoe County and surrounding areas
+              </p>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+              {serviceAreas.map((area, index) => (
+                <Link key={index} href={area.link}>
+                  <Card className="p-4 sm:p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer group">
+                    <div className="flex items-center">
+                      <MapPin className="w-6 h-6 sm:w-8 sm:h-8 text-[#012E71] mr-3 sm:mr-4 group-hover:scale-110 transition-transform flex-shrink-0" />
+                      <div className="min-w-0">
+                        <h3 className="text-base sm:text-lg font-bold text-[#012E71] group-hover:text-blue-600 truncate">{area.name}</h3>
+                        <p className="text-sm sm:text-base text-gray-600 truncate">{area.description}</p>
+                      </div>
+                    </div>
+                  </Card>
+                </Link>
+              ))}
+            </div>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-            {serviceAreas.map((area, index) => (
-              <Link key={index} href={area.link}>
-                <Card className="p-4 sm:p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer group">
+        </section>
+
+        {/* Professional Equipment Showcase */}
+     {/* Professional Equipment Showcase */}
+<section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-[#012E71] to-blue-800 text-white relative overflow-hidden">
+  <div className="absolute inset-0">
+    <div className="absolute top-10 sm:top-20 left-10 sm:left-20 w-20 h-20 sm:w-40 sm:h-40 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
+    <div className="absolute bottom-10 sm:bottom-20 right-10 sm:right-20 w-30 h-30 sm:w-60 sm:h-60 bg-blue-400/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+    <div className="absolute top-1/2 left-1/3 w-16 h-16 sm:w-32 sm:h-32 bg-gray-400/10 rounded-full blur-3xl animate-pulse delay-2000"></div>
+  </div>
+
+  <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div className="text-center mb-12 sm:mb-16">
+      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
+        Professional Equipment
+      </h2>
+      <p className="text-base sm:text-lg lg:text-xl opacity-90 max-w-2xl mx-auto">
+        State-of-the-art cleaning tools and equipment for exceptional results
+      </p>
+    </div>
+    <div className="max-w-6xl mx-auto">
+      <Swiper
+        modules={[Autoplay]}
+        spaceBetween={20}
+        slidesPerView={1}
+        breakpoints={{
+          480: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+          1024: {
+            slidesPerView: 4,
+            spaceBetween: 30,
+          },
+        }}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
+        loop={true}
+        navigation={false} // Removed arrows
+        pagination={false} // Removed dots
+        className="professional-equipment-swiper"
+      >
+        {[
+          {
+            image: "/images/1st.png",
+            title: "HEPA Vacuum Systems",
+            description: "Advanced filtration for allergen-free cleaning"
+          },
+          {
+            image: "/images/5th.jpg",
+            title: "Steam Cleaners",
+            description: "Chemical-free sanitization at high temperatures"
+          },
+          {
+            image: "/images/3rd.jpg",
+            title: "Floor Polishers",
+            description: "Professional floor restoration and maintenance"
+          },
+          {
+            image: "/images/4th.png",
+            title: "Carpet Cleaners",
+            description: "Deep carpet cleaning and stain removal"
+          },
+          {
+            image: "/images/2nd.jpg",
+            title: "Window Cleaning Tools",
+            description: "Streak-free window and glass cleaning"
+          },
+          {
+            image: "/images/5th.jpg",
+            title: "Eco-Friendly Products",
+            description: "Non-toxic, biodegradable cleaning solutions"
+          }
+        ].map((equipment, index) => (
+          <SwiperSlide key={index}>
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 group">
+              <div className="relative overflow-hidden rounded-xl mb-3 sm:mb-4">
+                <Image
+                  src={equipment.image || "/placeholder.svg"}
+                  alt={equipment.title}
+                  width={400}
+                  height={300}
+                  className="w-full h-32 sm:h-40 lg:h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <h3 className="text-sm sm:text-base lg:text-lg font-bold mb-2">{equipment.title}</h3>
+              <p className="text-xs sm:text-sm opacity-90">{equipment.description}</p>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+      <div className="text-center mt-8 sm:mt-12">
+        <p className="text-sm sm:text-base lg:text-lg opacity-90 mb-3 sm:mb-4">
+          Professional-grade equipment ensures thorough, efficient, and safe cleaning
+        </p>
+        <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 lg:gap-8 text-xs sm:text-sm opacity-75">
+          <div className="flex items-center">
+            <Shield className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
+            <span>Certified Equipment</span>
+          </div>
+          <div className="flex items-center">
+            <Leaf className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
+            <span>Eco-Friendly</span>
+          </div>
+          <div className="flex items-center">
+            <Award className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
+            <span>Professional Grade</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+        {/* Testimonials Section */}
+        <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12 sm:mb-16">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#012E71] mb-3 sm:mb-4">
+                What Our Clients Say
+              </h2>
+              <p className="text-base sm:text-lg lg:text-xl text-gray-700 max-w-2xl mx-auto">
+                Real reviews from satisfied customers across Simcoe County
+              </p>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+              {testimonials.map((testimonial, index) => (
+                <Card key={index} className="p-4 sm:p-6 lg:p-8 hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
+                  <div className="flex mb-4 sm:mb-6">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 fill-current" />
+                    ))}
+                  </div>
+                  <p className="text-sm sm:text-base text-gray-700 mb-4 sm:mb-6 italic leading-relaxed">"{testimonial.text}"</p>
                   <div className="flex items-center">
-                    <MapPin className="w-6 h-6 sm:w-8 sm:h-8 text-[#012E71] mr-3 sm:mr-4 group-hover:scale-110 transition-transform flex-shrink-0" />
-                    <div className="min-w-0">
-                      <h3 className="text-base sm:text-lg font-bold text-[#012E71] group-hover:text-blue-600 truncate">{area.name}</h3>
-                      <p className="text-sm sm:text-base text-gray-600 truncate">{area.description}</p>
+                    <Image
+                      src={testimonial.image || "/placeholder.svg?height=50&width=50"}
+                      alt={testimonial.name}
+                      width={50}
+                      height={50}
+                      className="w-10 h-10 sm:w-12 sm:h-12 rounded-full mr-3 sm:mr-4 object-cover"
+                    />
+                    <div>
+                      <h4 className="text-sm sm:text-base font-bold text-[#012E71]">{testimonial.name}</h4>
+                      <p className="text-xs sm:text-sm text-gray-600 flex items-center">
+                        <MapPin className="w-3 h-3 mr-1" />
+                        {testimonial.location}
+                      </p>
                     </div>
                   </div>
                 </Card>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Professional Equipment Showcase */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-[#012E71] to-blue-800 text-white relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-10 sm:top-20 left-10 sm:left-20 w-20 h-20 sm:w-40 sm:h-40 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-10 sm:bottom-20 right-10 sm:right-20 w-30 h-30 sm:w-60 sm:h-60 bg-blue-400/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-          <div className="absolute top-1/2 left-1/3 w-16 h-16 sm:w-32 sm:h-32 bg-gray-400/10 rounded-full blur-3xl animate-pulse delay-2000"></div>
-        </div>
-        
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
-              Professional Equipment
-            </h2>
-            <p className="text-base sm:text-lg lg:text-xl opacity-90 max-w-2xl mx-auto">
-              State-of-the-art cleaning tools and equipment for exceptional results
-            </p>
-          </div>
-          <div className="max-w-6xl mx-auto">
-            <Swiper
-              modules={[Autoplay, Navigation, Pagination]}
-              spaceBetween={20}
-              slidesPerView={1}
-              breakpoints={{
-                480: {
-                  slidesPerView: 2,
-                  spaceBetween: 20,
-                },
-                768: {
-                  slidesPerView: 3,
-                  spaceBetween: 30,
-                },
-                1024: {
-                  slidesPerView: 4,
-                  spaceBetween: 30,
-                },
-              }}
-              autoplay={{
-                delay: 3000,
-                disableOnInteraction: false,
-              }}
-              loop={true}
-              navigation={true}
-              pagination={{ clickable: true }}
-              className="professional-equipment-swiper"
-            >
-              {[
-                {
-                  image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&h=300&fit=crop",
-                  title: "HEPA Vacuum Systems",
-                  description: "Advanced filtration for allergen-free cleaning"
-                },
-                {
-                  image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
-                  title: "Steam Cleaners",
-                  description: "Chemical-free sanitization at high temperatures"
-                },
-                {
-                  image: "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=400&h=300&fit=crop",
-                  title: "Floor Polishers",
-                  description: "Professional floor restoration and maintenance"
-                },
-                {
-                  image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=300&fit=crop",
-                  title: "Carpet Cleaners",
-                  description: "Deep carpet cleaning and stain removal"
-                },
-                {
-                  image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&h=300&fit=crop",
-                  title: "Window Cleaning Tools",
-                  description: "Streak-free window and glass cleaning"
-                },
-                {
-                  image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
-                  title: "Eco-Friendly Products",
-                  description: "Non-toxic, biodegradable cleaning solutions"
-                }
-              ].map((equipment, index) => (
-                <SwiperSlide key={index}>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 group">
-                    <div className="relative overflow-hidden rounded-xl mb-3 sm:mb-4">
-                      <Image
-                        src={equipment.image || "/placeholder.svg"}
-                        alt={equipment.title}
-                        width={400}
-                        height={300}
-                        className="w-full h-32 sm:h-40 lg:h-48 object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-                    </div>
-                    <h3 className="text-sm sm:text-base lg:text-lg font-bold mb-2">{equipment.title}</h3>
-                    <p className="text-xs sm:text-sm opacity-90">{equipment.description}</p>
-                  </div>
-                </SwiperSlide>
               ))}
-            </Swiper>
+            </div>
             <div className="text-center mt-8 sm:mt-12">
-              <p className="text-sm sm:text-base lg:text-lg opacity-90 mb-3 sm:mb-4">
-                Professional-grade equipment ensures thorough, efficient, and safe cleaning
+              <Link href="/reviews">
+                <Button
+                  variant="outline"
+                  className="border-[#012E71] text-[#012E71] hover:bg-[#012E71] hover:text-white bg-transparent px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 text-sm sm:text-base"
+                >
+                  Read More Reviews
+                  <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-2" />
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-12 sm:py-16 lg:py-20 bg-[#012E71] text-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight">
+                Ready for Professional Cleaning?
+              </h2>
+              <p className="text-base sm:text-lg lg:text-xl mb-6 sm:mb-8 opacity-90 leading-relaxed">
+                Join 1,200+ satisfied clients across Simcoe County. Book your cleaning service today and experience the
+                HouseKeeping PRO difference.
               </p>
-              <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 lg:gap-8 text-xs sm:text-sm opacity-75">
-                <div className="flex items-center">
-                  <Shield className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
-                  <span>Certified Equipment</span>
-                </div>
-                <div className="flex items-center">
-                  <Leaf className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
-                  <span>Eco-Friendly</span>
-                </div>
-                <div className="flex items-center">
-                  <Award className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
-                  <span>Professional Grade</span>
-                </div>
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+                <Link href="/contact">
+                  <Button size="lg" className="w-full sm:w-auto bg-white text-[#012E71] hover:bg-gray-100 text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 h-auto">
+                    <Calendar className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                    Book Your Cleaning
+                  </Button>
+                </Link>
+                <Link href="/contact">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-[#012E71] text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 h-auto bg-transparent"
+                  >
+                    <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                    Get Free Quote
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#012E71] mb-3 sm:mb-4">
-              What Our Clients Say
-            </h2>
-            <p className="text-base sm:text-lg lg:text-xl text-gray-700 max-w-2xl mx-auto">
-              Real reviews from satisfied customers across Simcoe County
-            </p>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="p-4 sm:p-6 lg:p-8 hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
-                <div className="flex mb-4 sm:mb-6">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 fill-current" />
-                  ))}
-                </div>
-                <p className="text-sm sm:text-base text-gray-700 mb-4 sm:mb-6 italic leading-relaxed">"{testimonial.text}"</p>
-                <div className="flex items-center">
-                  <Image
-                    src={testimonial.image || "/placeholder.svg?height=50&width=50"}
-                    alt={testimonial.name}
-                    width={50}
-                    height={50}
-                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-full mr-3 sm:mr-4 object-cover"
-                  />
-                  <div>
-                    <h4 className="text-sm sm:text-base font-bold text-[#012E71]">{testimonial.name}</h4>
-                    <p className="text-xs sm:text-sm text-gray-600 flex items-center">
-                      <MapPin className="w-3 h-3 mr-1" />
-                      {testimonial.location}
-                    </p>
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
-          <div className="text-center mt-8 sm:mt-12">
-            <Link href="/reviews">
-              <Button
-                variant="outline"
-                className="border-[#012E71] text-[#012E71] hover:bg-[#012E71] hover:text-white bg-transparent px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 text-sm sm:text-base"
-              >
-                Read More Reviews
-                <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-2" />
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-[#012E71] text-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight">
-              Ready for Professional Cleaning?
-            </h2>
-            <p className="text-base sm:text-lg lg:text-xl mb-6 sm:mb-8 opacity-90 leading-relaxed">
-              Join 1,200+ satisfied clients across Simcoe County. Book your cleaning service today and experience the
-              HouseKeeping PRO difference.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-              <Link href="/contact">
-                <Button size="lg" className="w-full sm:w-auto bg-white text-[#012E71] hover:bg-gray-100 text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 h-auto">
-                  <Calendar className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                  Book Your Cleaning
-                </Button>
-              </Link>
-              <Link href="/contact">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-[#012E71] text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 h-auto bg-transparent"
-                >
-                  <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                  Get Free Quote
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
+        </section>
+      </div>
+    </>
   )
 }

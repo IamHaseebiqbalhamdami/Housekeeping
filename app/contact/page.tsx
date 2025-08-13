@@ -176,10 +176,13 @@ export default function ContactPage() {
                           Call us for immediate assistance
                         </p>
                         <a 
-                          href="tel:+16475348050" 
+                          href="tel:+1(647) 534-8050
+" 
                           className="text-[#012E71] hover:text-blue-800 font-medium text-sm sm:text-base break-all"
                         >
-                          (+1) 6475348050
+                          
+  (647) 534-8050
+
                         </a>
                       </div>
                     </div>
@@ -201,10 +204,12 @@ export default function ContactPage() {
                           Send us a detailed message
                         </p>
                         <a 
-                          href="Housekeepingpro49@gmail.com" 
+                          href="info@housekeepingpro.ca
+" 
                           className="text-[#012E71] hover:text-blue-800 font-medium text-sm sm:text-base break-all"
                         >
-Housekeepingpro49@gmail.com                        </a>
+info@housekeepingpro.ca
+                        </a>
                       </div>
                     </div>
                   </CardContent>

@@ -393,7 +393,9 @@ export default function BlogPage() {
                 className="border-white text-white hover:bg-white hover:text-[#012E71] px-6 sm:px-8 py-3 sm:py-4 bg-transparent text-sm sm:text-base"
               >
                 <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                Call (+1) 6475348050
+                Call 
+  (647) 534-8050
+
               </Button>
             </div>
           </div>

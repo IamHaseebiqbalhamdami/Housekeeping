@@ -10,11 +10,11 @@ function Footer() {
       <div className="grid md:grid-cols-4 gap-8">
         <div>
           <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-08-02%20at%2020.55.30_d31d3cc8.jpg-ltfbL4qxNsZJM19pu8YgBkJBiRmUlE.jpeg"
+            src="/images/logo.png"
             alt="HouseKeeping PRO Logo"
             width={180}
             height={60}
-            className="h-12 w-auto mb-4 brightness-0 invert"
+            className="h-20 w-auto mb-4 invert"
           />
           <p className="text-gray-300 mb-4">
             Professional commercial cleaning services across Simcoe County for 26 years.
@@ -43,11 +43,14 @@ function Footer() {
           <div className="space-y-2 text-gray-300">
             <div className="flex items-center">
               <Phone className="w-4 h-4 mr-2" />
-              (+1) 6475348050
+              
+  (647) 534-8050
+
             </div>
             <div className="flex items-center">
               <Mail className="w-4 h-4 mr-2" />
-              Housekeepingpro49@gmail.com
+              info@housekeepingpro.ca
+
             </div>
             <div className="flex items-center">
               <MapPin className="w-4 h-4 mr-2" />

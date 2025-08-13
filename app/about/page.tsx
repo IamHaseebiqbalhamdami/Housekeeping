@@ -3,8 +3,7 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Award, Shield, Users, Clock, Star, CheckCircle, Phone, Mail, MapPin, Calendar, Heart, Leaf, ChevronLeft, ChevronRight,  } from 'lucide-react'
-import Link from "next/link"
+import { Award, Shield, Users, Clock, Star, CheckCircle, Phone, Mail, MapPin, Calendar, Heart, Leaf, ChevronLeft, ChevronRight } from 'lucide-react'
 import { useState } from "react"
 
 export default function AboutPage() {
@@ -15,84 +14,84 @@ export default function AboutPage() {
       name: "Margaret Thompson",
       role: "Founder & CEO",
       experience: "26 years",
-      image: "/team/freepik__the-style-is-candid-image-photography-with-natural__91137.png",
+      image: "/Team2/1.png",
       bio: "Founded HouseKeeping PRO in 1998 with a vision to provide exceptional cleaning services across Simcoe County.",
     },
     {
       name: "David Rodriguez",
       role: "CTO & Operations Manager",
       experience: "15 years",
-      image: "/team/freepik__the-style-is-candid-image-photography-with-natural__91136.png",
+      image: "/Team2/2.png",
       bio: "Oversees daily operations and ensures our high standards are maintained across all service areas.",
     },
     {
       name: "Sarah Wilson",
       role: "Quality Assurance Director",
       experience: "12 years",
-      image: "/team/freepik__the-style-is-candid-image-photography-with-natural__91135.png",
+      image: "/Team2/3.png",
       bio: "Leads our quality control initiatives and training programs for all cleaning professionals.",
     },
     {
       name: "Michael Chen",
       role: "Customer Relations Manager",
       experience: "8 years",
-      image: "/team/freepik__the-style-is-candid-image-photography-with-natural__91134.png",
+      image: "/Team2/4.png",
       bio: "Ensures exceptional customer service and manages client relationships across all service areas.",
     },
     {
       name: "Emily Johnson",
       role: "Senior Cleaning Specialist",
       experience: "10 years",
-      image: "/team/freepik__the-style-is-candid-image-photography-with-natural__91133.png",
+      image: "/Team2/5.png",
       bio: "Expert in deep cleaning and specialized residential services with exceptional attention to detail.",
     },
     {
       name: "Robert Martinez",
       role: "Commercial Team Lead",
       experience: "9 years",
-      image: "/team/freepik__the-style-is-candid-image-photography-with-natural__91131.png",
+      image: "/Team2/6.png",
       bio: "Leads our commercial cleaning team with expertise in office and retail facility maintenance.",
     },
     {
       name: "Lisa Anderson",
       role: "Eco-Friendly Specialist",
       experience: "7 years",
-      image: "/team/freepik__the-style-is-candid-image-photography-with-natural__85731.png",
+      image:"/Team2/8.png",
       bio: "Specializes in green cleaning practices and eco-friendly product implementation.",
     },
     {
       name: "James Wilson",
       role: "Equipment Manager",
       experience: "11 years",
-      image: "/team/freepik__the-style-is-candid-image-photography-with-natural__85730.png",
+      image:"/Team2/7.png",
       bio: "Manages all cleaning equipment and ensures proper maintenance of professional tools.",
     },
     {
       name: "Maria Garcia",
       role: "Residential Team Lead",
       experience: "8 years",
-      image: "/team/freepik__the-style-is-candid-image-photography-with-natural__85729.png",
+      image:"/Team2/11.png",
       bio: "Leads our residential cleaning team with focus on customer satisfaction and quality service.",
     },
     {
       name: "Thomas Brown",
       role: "Safety Coordinator",
       experience: "6 years",
-      image: "/team/freepik__the-style-is-candid-image-photography-with-natural__85728.png",
+      image: "/Team2/10.png",
       bio: "Ensures all safety protocols are followed and maintains workplace safety standards.",
     },
     {
       name: "Jennifer Lee",
       role: "Training Coordinator",
       experience: "9 years",
-      image: "/team/freepik__the-style-is-candid-image-photography-with-natural__85726.png",
+      image:"/Team2/9.png",
       bio: "Develops and implements training programs for all cleaning professionals.",
     },
     {
       name: "Christopher Davis",
       role: "Quality Control Specialist",
       experience: "7 years",
-      image: "/team/freepik__the-style-is-candid-image-photography-with-natural__35067.png",
+      image: "/Team2/12.png",
       bio: "Conducts quality inspections and ensures service standards are consistently met.",
     },
   ]
@@ -204,7 +203,7 @@ export default function AboutPage() {
                   controls
                   poster="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=600&h=400&fit=crop"
                 >
-                  <source src="/videos/cleaning-process.mp4" type="video/mp4" />
+                  <source src="https://res.cloudinary.com/dterqp7lk/video/upload/v1754918781/review_ajpjqt.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
                 <div className="absolute top-2 sm:top-4 left-2 sm:left-4">
@@ -301,7 +300,7 @@ export default function AboutPage() {
                     alt={member.name}
                     width={300}
                     height={300}
-                    className="w-full h-48 sm:h-56 lg:h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-48 sm:h-56 lg:h-96 object-fitwidth group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#012E71]/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500" />
                   <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 text-white opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
@@ -495,24 +494,22 @@ export default function AboutPage() {
               service excellence.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-              
-            <Link href="/contact">
-  <Button 
-    size="lg" 
-    className="bg-white text-[#012E71] hover:bg-gray-100 text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 h-auto"
-  >
-    <Calendar className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-    Book Your Service
-  </Button>
-</Link>
-               
+              <Button 
+                size="lg" 
+                className="bg-white text-[#012E71] hover:bg-gray-100 text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 h-auto"
+              >
+                <Calendar className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                Book Your Service
+              </Button>
               <Button
                 size="lg"
                 variant="outline"
                 className="border-white text-white hover:bg-white hover:text-[#012E71] text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 h-auto bg-transparent"
               >
                 <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                Call (+1)6475348050
+                Call 
+ (647) 534-8050
+
               </Button>
             </div>
           </div>

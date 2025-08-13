@@ -67,7 +67,9 @@ export default function OrilliaAreaPage() {
                 className="border-white text-white hover:bg-white hover:text-[#012E71] bg-transparent"
               >
                 <Phone className="w-5 h-5 mr-2" />
-                Call (+1) 6475348050
+                Call 
+  (647) 534-8050
+
               </Button>
             </div>
           </div>
@@ -203,7 +205,9 @@ export default function OrilliaAreaPage() {
                 className="border-white text-white hover:bg-white hover:text-[#012E71] px-8 py-4 bg-transparent"
               >
                 <Phone className="w-5 h-5 mr-2" />
-                Call (+1) 6475348050
+                Call 
+  (647) 534-8050
+
               </Button>
             </div>
           </div>
