@@ -1,9 +1,9 @@
 import { notFound } from "next/navigation"
 import { featuredPost, blogPosts } from "../blogdata"
-
+import{ blogshowPosts} from "@/components/blogshowcase.js"
 export function generateStaticParams() {
   // Combine featured post and blog posts, return array of param objects
-  const allPosts = [featuredPost, ...blogPosts]
+  const allPosts = [featuredPost, ...blogPosts,...blogshowPosts]
   return allPosts.map((post) => ({
     id: post.id.toString(),
   }))
