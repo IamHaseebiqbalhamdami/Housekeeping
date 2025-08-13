@@ -1,4 +1,3 @@
-
 "use client"
 
 import { useState, useEffect } from "react"
@@ -46,21 +45,32 @@ function HeroSlider() {
     },
   ]
 
+  // Initialize mobile state
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768)
     }
     
+    // Set initial state
     checkMobile()
+    
+    // Add resize listener
     window.addEventListener('resize', checkMobile)
     
+    // Cleanup
+    return () => {
+      window.removeEventListener('resize', checkMobile)
+    }
+  }, [])
+
+  // Separate useEffect for the timer to avoid dependency issues
+  useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length)
     }, isMobile ? 6000 : 5000) // Slower on mobile
     
     return () => {
       clearInterval(timer)
-      window.removeEventListener('resize', checkMobile)
     }
   }, [slides.length, isMobile])
 
@@ -163,17 +173,21 @@ export default function HomePage() {
   const [showSplash, setShowSplash] = useState(false)
   
   useEffect(() => {
-    // Check if splash has been shown in this session
-    const splashShown = sessionStorage.getItem('splashShown')
-    if (!splashShown) {
-      setShowSplash(true)
+    // Only check sessionStorage on client side
+    if (typeof window !== 'undefined') {
+      const splashShown = sessionStorage.getItem('splashShown')
+      if (!splashShown) {
+        setShowSplash(true)
+      }
     }
   }, [])
   
   const handleSplashComplete = () => {
     setShowSplash(false)
     // Mark splash as shown for this session
-    sessionStorage.setItem('splashShown', 'true')
+    if (typeof window !== 'undefined') {
+      sessionStorage.setItem('splashShown', 'true')
+    }
   }
 
   const services = [
@@ -262,41 +276,40 @@ export default function HomePage() {
         <HeroSlider />
 
         <section className="py-12 sm:py-16 bg-gray-50">
-  <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6 lg:gap-8 text-center">
-      <div className="flex flex-col items-center p-4">
-        <Award className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-[#012E71] mb-3 sm:mb-4" />
-        <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#012E71] mb-1 sm:mb-2">26</div>
-        <p className="text-sm sm:text-base text-gray-700 font-medium">Years Experience</p>
-      </div>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6 lg:gap-8 text-center">
+              <div className="flex flex-col items-center p-4">
+                <Award className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-[#012E71] mb-3 sm:mb-4" />
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#012E71] mb-1 sm:mb-2">26</div>
+                <p className="text-sm sm:text-base text-gray-700 font-medium">Years Experience</p>
+              </div>
 
-      <div className="flex flex-col items-center p-4">
-        <Users className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-[#012E71] mb-3 sm:mb-4" />
-        <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#012E71] mb-1 sm:mb-2">1,200+</div>
-        <p className="text-sm sm:text-base text-gray-700 font-medium">Happy Clients</p>
-      </div>
+              <div className="flex flex-col items-center p-4">
+                <Users className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-[#012E71] mb-3 sm:mb-4" />
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#012E71] mb-1 sm:mb-2">1,200+</div>
+                <p className="text-sm sm:text-base text-gray-700 font-medium">Happy Clients</p>
+              </div>
 
-      <div className="flex flex-col items-center p-4">
-        <Shield className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-[#012E71] mb-3 sm:mb-4" />
-        <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#012E71] mb-1 sm:mb-2">98%</div>
-        <p className="text-sm sm:text-base text-gray-700 font-medium">Satisfaction Rate</p>
-      </div>
+              <div className="flex flex-col items-center p-4">
+                <Shield className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-[#012E71] mb-3 sm:mb-4" />
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#012E71] mb-1 sm:mb-2">98%</div>
+                <p className="text-sm sm:text-base text-gray-700 font-medium">Satisfaction Rate</p>
+              </div>
 
-      <div className="flex flex-col items-center p-4">
-        <Clock className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-[#012E71] mb-3 sm:mb-4" />
-        <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#012E71] mb-1 sm:mb-2">50+</div>
-        <p className="text-sm sm:text-base text-gray-700 font-medium">Team Members</p>
-      </div>
+              <div className="flex flex-col items-center p-4">
+                <Clock className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-[#012E71] mb-3 sm:mb-4" />
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#012E71] mb-1 sm:mb-2">50+</div>
+                <p className="text-sm sm:text-base text-gray-700 font-medium">Team Members</p>
+              </div>
 
-      <div className="flex flex-col items-center p-4">
-        <Users className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-[#012E71] mb-3 sm:mb-4" />
-        <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#012E71] mb-1 sm:mb-2">40</div>
-        <p className="text-sm sm:text-base text-gray-700 font-medium">Employees</p>
-      </div>
-    </div>
-  </div>
-</section>
-
+              <div className="flex flex-col items-center p-4">
+                <Users className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-[#012E71] mb-3 sm:mb-4" />
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#012E71] mb-1 sm:mb-2">40</div>
+                <p className="text-sm sm:text-base text-gray-700 font-medium">Employees</p>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Services Section */}
         <section className="py-12 sm:py-16 lg:py-20 bg-white">
@@ -406,7 +419,7 @@ export default function HomePage() {
                     </h3>
                     <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                       Canadian owned and operated since 1998. We've built our reputation on consistent, reliable
-                      service across Simcoe County and in Other Counties where Prople Alive.
+                      service across Simcoe County and in Other Counties where People Alive.
                     </p>
                   </Card>
                 </SwiperSlide>
@@ -440,7 +453,6 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-
 
         {/* Process & Methodology Section */}
         <section className="py-12 sm:py-16 lg:py-20 bg-white">
