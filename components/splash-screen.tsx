@@ -306,7 +306,7 @@ const SplashScreen: FC<SplashScreenProps> = ({ onComplete }) => {
       </div>
 
       {/* Loading indicator for mobile */}
-      {isMobile() && (
+      
         <div className="absolute top-6 left-1/2 transform -translate-x-1/2">
           <div className="flex space-x-1">
             {Array.from({ length: 3 }, (_, i) => (
@@ -320,7 +320,8 @@ const SplashScreen: FC<SplashScreenProps> = ({ onComplete }) => {
             ))}
           </div>
         </div>
-      )}
+    
+    
 
       {/* Performance optimization for mobile */}
       <style jsx>{`

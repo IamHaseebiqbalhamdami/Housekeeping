@@ -12,8 +12,6 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import SplashScreen from "@/components/splash-screen"
-
-// Responsive Hero Slider Component
 function HeroSlider() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isMobile, setIsMobile] = useState(false)
@@ -547,7 +545,7 @@ export default function HomePage() {
           </div>
         </section>
      {/* Professional Equipment Showcase */}
-  {/* <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-[#012E71] to-blue-800 text-white relative overflow-hidden">
+     <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-[#012E71] to-blue-800 text-white relative overflow-hidden">
   <div className="absolute inset-0">
     <div className="absolute top-10 sm:top-20 left-10 sm:left-20 w-20 h-20 sm:w-40 sm:h-40 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
     <div className="absolute bottom-10 sm:bottom-20 right-10 sm:right-20 w-30 h-30 sm:w-60 sm:h-60 bg-blue-400/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
@@ -661,7 +659,7 @@ export default function HomePage() {
       </div>
     </div>
   </div>
-</section> */}
+</section>
 
 
         {/* Testimonials Section */}

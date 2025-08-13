@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  output: 'export', // Enables static HTML export
+const nextConfig = { // Enables static HTML export
   trailingSlash: true, // Ensures consistent URLs (e.g., `/about/`)
   eslint: {
     ignoreDuringBuilds: true, // Disables ESLint during build
