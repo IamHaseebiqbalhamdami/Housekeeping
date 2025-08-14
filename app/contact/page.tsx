@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Phone, Mail, MapPin, Clock, Facebook, Instagram } from 'lucide-react'
 
+
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
@@ -22,7 +23,7 @@ export default function ContactPage() {
     e.preventDefault()
     console.log("Form submitted:", formData)
     try {
-      await fetch(`http://localhost:5000/send-email`, {
+      await fetch(`${process.env.BACKENDPIORT}/send-email`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -35,7 +36,7 @@ export default function ContactPage() {
       alert("Failed to send email.")
     }
   }
-
+ 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
