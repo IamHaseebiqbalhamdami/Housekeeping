@@ -22,7 +22,7 @@ export default function ContactPage() {
     e.preventDefault()
     console.log("Form submitted:", formData)
     try {
-      await fetch("http://localhost:5000/send-email", {
+      await fetch(`http://localhost:5000/send-email`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

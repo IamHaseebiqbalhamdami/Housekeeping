@@ -4,8 +4,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { MapPin, Star, Shield, Calendar, Phone, Mail, Award, Home, Building2 } from "lucide-react"
-import SharedHeader from "@/components/shared-header"
-
+import Link from "next/link"
 export default function BarrieAreaPage() {
   const neighborhoods = [
     "Downtown Barrie",
@@ -93,7 +92,6 @@ export default function BarrieAreaPage() {
                 <Phone className="w-5 h-5 mr-2" />
                 Call 
   (647) 534-8050
-
               </Button>
             </div>
           </div>
@@ -123,7 +121,6 @@ export default function BarrieAreaPage() {
           </div>
         </div>
       </section>
-
       {/* Neighborhoods Served */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
@@ -133,7 +130,6 @@ export default function BarrieAreaPage() {
               Professional cleaning services throughout all Barrie neighborhoods and surrounding areas.
             </p>
           </div>
-
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
             {neighborhoods.map((neighborhood, index) => (
               <Card key={index} className="text-center p-4 hover:shadow-lg transition-all duration-300">
