@@ -1,7 +1,7 @@
 import React from "react";
 import { Shield, Clock, Leaf, DollarSign, Users } from "lucide-react";
 import { Button } from "../ui/button";
-
+import Link from "next/link"
 function SeasonalBenefits() {
   return (
     <section className="py-20 bg-gray-50">
@@ -52,11 +52,12 @@ function SeasonalBenefits() {
             </div>
           ))}
         </div>
-
-        <div className="mt-8">
+<div>
+        <Link href="/pricing">
           <Button className="bg-[#012E71] text-white hover:bg-blue-800">
             Explore Packages
           </Button>
+          </Link>
         </div>
       </div>
     </section>

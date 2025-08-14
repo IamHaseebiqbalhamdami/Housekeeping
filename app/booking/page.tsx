@@ -94,8 +94,7 @@ export default function BookingPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <SharedHeader currentPage="booking" />
+      
 
       {/* Progress Bar */}
       <div className="bg-gray-100 py-4">
@@ -423,7 +422,7 @@ export default function BookingPage() {
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <Button className="bg-[#012E71] hover:bg-blue-800 text-white">
                       <Phone className="w-4 h-4 mr-2" />
-                      Call Us: (705) 555-0123
+                      Call Us: (647) 534-8050
                     </Button>
                     <Button variant="outline">
                       <Mail className="w-4 h-4 mr-2" />

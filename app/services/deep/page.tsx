@@ -19,7 +19,7 @@ export default function DeepCleaningServicesPage() {
       {/* Hero Section */}
       <Deephero/>
       <HowItWorks/>
-      <BeforeAfter/>
+    
       <Testimonials/>
       <Pricing/>
     <SpecialOffers/>

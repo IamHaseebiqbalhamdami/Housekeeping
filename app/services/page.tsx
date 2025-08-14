@@ -419,102 +419,14 @@ export default function ServicesPage() {
                 className="border-white text-white hover:bg-white hover:text-[#012E71] px-8 py-4 bg-transparent"
               >
                 <Phone className="w-5 h-5 mr-2" />
-                Call (555) 123-4567
+                Call (647) 534-8050
               </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-[#313131] text-white py-16">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-08-02%20at%2020.55.30_d31d3cc8.jpg-ltfbL4qxNsZJM19pu8YgBkJBiRmUlE.jpeg"
-                alt="HouseKeeping PRO Logo"
-                width={180}
-                height={60}
-                className="h-12 w-auto mb-4 brightness-0 invert"
-              />
-              <p className="text-gray-300 mb-4">
-                Professional cleaning services across Canada. Your trusted partner for a spotless home.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Residential Services</h3>
-              <ul className="space-y-2 text-gray-300">
-                <li>
-                  <Link href="/services/ongoing" className="hover:text-white transition-colors">
-                    Ongoing Cleaning
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services/one-time" className="hover:text-white transition-colors">
-                    One-Time Cleaning
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services/apartment" className="hover:text-white transition-colors">
-                    Apartment Cleaning
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services/move-in-out" className="hover:text-white transition-colors">
-                    Move In/Out
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Commercial Services</h3>
-              <ul className="space-y-2 text-gray-300">
-                <li>
-                  <Link href="/services/office" className="hover:text-white transition-colors">
-                    Office Cleaning
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services/retail" className="hover:text-white transition-colors">
-                    Retail Cleaning
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services/post-construction" className="hover:text-white transition-colors">
-                    Post-Construction
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services/green" className="hover:text-white transition-colors">
-                    Green Cleaning
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Contact</h3>
-              <div className="space-y-2 text-gray-300">
-                <div className="flex items-center">
-                  <Phone className="w-4 h-4 mr-2" />
-                  (555) 123-4567
-                </div>
-                <div className="flex items-center">
-                  <Mail className="w-4 h-4 mr-2" />
-                  info@housekeepingpro.ca
-                </div>
-                <div className="flex items-center">
-                  <MapPin className="w-4 h-4 mr-2" />
-                  Serving All of Canada
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="border-t border-gray-600 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 HouseKeeping PRO. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+ 
     </div>
   )
 }

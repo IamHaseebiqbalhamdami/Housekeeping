@@ -1,4 +1,5 @@
 "use client"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Building2, CheckCircle, Calendar, Phone } from "lucide-react"
 import SharedHeader from "@/components/shared-header"
@@ -17,11 +18,13 @@ export default function OfficeServicesPage() {
               Professional office cleaning services to maintain a productive and healthy work environment across Simcoe
               County.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center"> <Link href="/contact">
               <Button size="lg" className="bg-white text-[#012E71] hover:bg-gray-100">
                 <Calendar className="w-5 h-5 mr-2" />
                 Book Office Service
-              </Button>
+              </Button> </Link>
+
+<Link href="/contact">
               <Button
                 size="lg"
                 variant="outline"
@@ -29,7 +32,7 @@ export default function OfficeServicesPage() {
               >
                 <Phone className="w-5 h-5 mr-2" />
                 Get Office Quote
-              </Button>
+              </Button>  </Link>
             </div>
           </div>
         </div>
@@ -74,17 +77,20 @@ export default function OfficeServicesPage() {
               offerings.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/contact">
               <Button size="lg" className="bg-[#012E71] hover:bg-blue-800 text-white">
                 <Phone className="w-5 h-5 mr-2" />
                 Contact Us
-              </Button>
+              </Button> </Link>
+
+<Link href="/contact">
               <Button
                 size="lg"
                 variant="outline"
                 className="border-[#012E71] text-[#012E71] hover:bg-[#012E71] hover:text-white bg-transparent"
               >
                 View Commercial Services
-              </Button>
+              </Button>  </Link>
             </div>
           </div>
         </div>

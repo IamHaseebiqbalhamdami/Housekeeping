@@ -1,5 +1,5 @@
 "use client"
-
+import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -39,14 +39,14 @@ export default function AirbnbServicesPage() {
       name: "Jessica Martinez",
       role: "Airbnb Specialist",
       experience: "5 years",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=300&fit=crop&crop=face",
+      image: "/Newteam/5.jpg",
       uniform: "Green HouseKeeping PRO polo shirt with company logo",
     },
     {
       name: "Ryan O'Connor",
       role: "Turnover Coordinator",
       experience: "4 years",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face",
+      image: "/Newteam/2.jpg",
       uniform: "Green HouseKeeping PRO polo shirt with company logo",
     },
   ]
@@ -58,7 +58,7 @@ export default function AirbnbServicesPage() {
       location: "Orillia, ON",
       rating: 5,
       text: "HouseKeeping PRO has been managing my Airbnb cleaning for 2 years. My guests consistently mention how clean and welcoming the space is. 5-star reviews every time!",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face",
+      image: "/Newteam/3.jpg",
       serviceImage: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400&h=300&fit=crop",
     },
     {
@@ -85,10 +85,15 @@ export default function AirbnbServicesPage() {
               reviews at 5 stars.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/contact">
               <Button size="lg" className="bg-white text-[#012E71] hover:bg-gray-100">
                 <Calendar className="w-5 h-5 mr-2" />
                 Book Airbnb Service
               </Button>
+              
+              </Link>
+
+<Link href="/contact">
               <Button
                 size="lg"
                 variant="outline"
@@ -97,6 +102,7 @@ export default function AirbnbServicesPage() {
                 <Phone className="w-5 h-5 mr-2" />
                 Get Host Quote
               </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -180,7 +186,7 @@ export default function AirbnbServicesPage() {
                     alt={member.name}
                     width={300}
                     height={300}
-                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-84 object-fitwidth group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#012E71]/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -278,10 +284,13 @@ export default function AirbnbServicesPage() {
               Join successful Airbnb hosts across Simcoe County who trust HouseKeeping PRO for their cleaning needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/contact">
               <Button size="lg" className="bg-white text-[#012E71] hover:bg-gray-100 px-8 py-4">
                 <Calendar className="w-5 h-5 mr-2" />
                 Schedule Airbnb Service
-              </Button>
+              </Button> </Link>
+
+<Link href="/contact">
               <Button
                 size="lg"
                 variant="outline"
@@ -292,6 +301,7 @@ export default function AirbnbServicesPage() {
   (647) 534-8050
 
               </Button>
+              </Link>
             </div>
           </div>
         </div>

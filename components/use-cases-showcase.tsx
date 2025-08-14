@@ -1,4 +1,5 @@
 "use client"
+import Link from "next/link"
 import React, { useState, useEffect, useRef } from "react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -198,10 +199,12 @@ export default function UseCasesShowcase() {
                               </div>
                             ))}
                           </div>
+                          <Link href="/booking">
                           <Button className="bg-gradient-to-r from-[#012E71] to-blue-800 text-white hover:from-blue-800 hover:to-[#012E71] w-full transition-all duration-300 hover:scale-105 text-sm sm:text-base">
                             <Calendar className="w-4 h-4 mr-2" />
                             Book This Service
                           </Button>
+                          </Link>
                         </div>
                       )}
                     </div>
@@ -274,13 +277,16 @@ export default function UseCasesShowcase() {
                     </div>
 
                     <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-3">
+                    <Link href="/contact">
                       <Button className="flex-1 bg-gradient-to-r from-[#012E71] to-blue-800 text-white hover:from-blue-800 hover:to-[#012E71] transition-all duration-300 hover:scale-105 text-sm sm:text-base py-2 sm:py-3">
                         <Play className="w-4 h-4 mr-2" />
                         Get Free Quote
                       </Button>
+                      
                       <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 p-2 sm:p-3">
                         <Phone className="w-4 h-4" />
                       </Button>
+                      </Link>
                     </div>
                   </div>
                 </div>

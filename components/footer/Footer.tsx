@@ -67,7 +67,7 @@ function Footer() {
               </div>
               <div className="flex items-center">
                 <Mail className="w-4 h-4 mr-2" />
-                info@housekeepingpro.ca
+              Housekeepingpro49@gmail.com
               </div>
               <div className="flex items-center">
                 <MapPin className="w-4 h-4 mr-2" />
