@@ -14,6 +14,7 @@ export default function ContactPage() {
     email: "",
     address:"",
     phone: "",
+    address: "", 
     service: "",
     message: "",
   })
@@ -29,7 +30,7 @@ export default function ContactPage() {
         },
         body: JSON.stringify(formData),
       })
-      setFormData({ name: "", email: "", phone: "", service: "", message: "", address:"" })
+      setFormData({ name: "", email: "", phone: "", service: "", message: "" , address: ""})
       alert("Email sent successfully!")
     } catch (error) {
       alert("Failed to send email.")
@@ -125,6 +126,18 @@ export default function ContactPage() {
                       />
                     </div>
                     <div>
+  <label className="block text-sm font-medium text-gray-700 mb-2">
+    Address
+  </label>
+  <Input 
+    name="address" 
+    value={formData.address} 
+    onChange={handleChange} 
+    required 
+    className="h-10 sm:h-11"
+  />
+</div>
+                    <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
                         Service Needed
                       </label>
@@ -218,11 +231,11 @@ export default function ContactPage() {
                           Send us a detailed message
                         </p>
                         <a 
-                          href="info@housekeepingpro.ca
+                          href="housekeepingpro49@gmail.com
 " 
                           className="text-[#012E71] hover:text-blue-800 font-medium text-sm sm:text-base break-all"
                         >
-info@housekeepingpro.ca
+housekeepingpro49@gmail.com
                         </a>
                       </div>
                     </div>
@@ -279,19 +292,25 @@ info@housekeepingpro.ca
                       Follow Us
                     </h3>
                     <div className="flex space-x-4">
-                      <a 
-                        href="#" 
-                        className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-[#012E71] text-white rounded-full hover:bg-blue-800 transition-colors"
-                      >
-                        <Facebook className="w-5 h-5 sm:w-6 sm:h-6" />
-                      </a>
-                      <a 
-                        href="#" 
-                        className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-[#012E71] text-white rounded-full hover:bg-blue-800 transition-colors"
-                      >
-                        <Instagram className="w-5 h-5 sm:w-6 sm:h-6" />
-                      </a>
-                    </div>
+  <a 
+    href="https://www.facebook.com/share/1CyDBAFJhR/" 
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-[#012E71] text-white rounded-full hover:bg-blue-800 transition-colors"
+  >
+    <Facebook className="w-5 h-5 sm:w-6 sm:h-6" />
+  </a>
+
+  <a 
+    href="https://www.instagram.com/house_keeping49?igsh=MXkxdnQ3bTBubDgwaA==" 
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-[#012E71] text-white rounded-full hover:bg-blue-800 transition-colors"
+  >
+    <Instagram className="w-5 h-5 sm:w-6 sm:h-6" />
+  </a>
+</div>
+
                   </CardContent>
                 </Card>
 
@@ -315,7 +334,7 @@ info@housekeepingpro.ca
             className="bg-white text-[#012E71] hover:bg-gray-100 text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 h-auto"
           >
             <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-            Call Emergency Line: (705) 555-0911
+            Call Emergency Line: (647) 534-8050
           </Button>
         </div>
       </section>

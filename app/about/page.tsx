@@ -1,13 +1,21 @@
 "use client"
-
+import { useEffect } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Award, Shield, Users, Clock, Star, CheckCircle, Phone, Mail, MapPin, Calendar, Heart, Leaf, ChevronLeft, ChevronRight } from 'lucide-react'
 import { useState } from "react"
+import Link from "next/link"
 
 export default function AboutPage() {
   const [currentTeamPage, setCurrentTeamPage] = useState(0)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setIsMobile(/Mobi|Android/i.test(navigator.userAgent))
+    }
+  }, [])
   const teamMembersPerPage = 6
   const teamMembers = [
     {
@@ -21,7 +29,7 @@ export default function AboutPage() {
       name: "David Rodriguez",
       role: "CTO & Operations Manager",
       experience: "15 years",
-      image: "/Team2/2.png",
+      image: "/Team2/6.png",
       bio: "Oversees daily operations and ensures our high standards are maintained across all service areas.",
     },
     {
@@ -49,51 +57,11 @@ export default function AboutPage() {
       name: "Robert Martinez",
       role: "Commercial Team Lead",
       experience: "9 years",
-      image: "/Team2/6.png",
+      image: "",
       bio: "Leads our commercial cleaning team with expertise in office and retail facility maintenance.",
     },
-    {
-      name: "Lisa Anderson",
-      role: "Eco-Friendly Specialist",
-      experience: "7 years",
-      image:"/Team2/8.png",
-      bio: "Specializes in green cleaning practices and eco-friendly product implementation.",
-    },
-    {
-      name: "James Wilson",
-      role: "Equipment Manager",
-      experience: "11 years",
-      image:"/Team2/7.png",
-      bio: "Manages all cleaning equipment and ensures proper maintenance of professional tools.",
-    },
-    {
-      name: "Maria Garcia",
-      role: "Residential Team Lead",
-      experience: "8 years",
-      image:"/Team2/11.png",
-      bio: "Leads our residential cleaning team with focus on customer satisfaction and quality service.",
-    },
-    {
-      name: "Thomas Brown",
-      role: "Safety Coordinator",
-      experience: "6 years",
-      image: "/Team2/10.png",
-      bio: "Ensures all safety protocols are followed and maintains workplace safety standards.",
-    },
-    {
-      name: "Jennifer Lee",
-      role: "Training Coordinator",
-      experience: "9 years",
-      image:"/Team2/9.png",
-      bio: "Develops and implements training programs for all cleaning professionals.",
-    },
-    {
-      name: "Christopher Davis",
-      role: "Quality Control Specialist",
-      experience: "7 years",
-      image: "/Team2/12.png",
-      bio: "Conducts quality inspections and ensures service standards are consistently met.",
-    },
+  
+ 
   ]
 
   const values = [
@@ -183,18 +151,23 @@ export default function AboutPage() {
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-8">
-                <Button className="bg-[#012E71] hover:bg-blue-800 text-white text-sm sm:text-base px-4 sm:px-6 py-2.5 sm:py-3 h-auto">
-                  <Calendar className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                  Book Our Services
-                </Button>
-                <Button
-                  variant="outline"
-                  className="border-[#012E71] text-[#012E71] hover:bg-[#012E71] hover:text-white bg-transparent text-sm sm:text-base px-4 sm:px-6 py-2.5 sm:py-3 h-auto"
-                >
-                  <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                  Contact Us
-                </Button>
-              </div>
+      <Link href="/contact">
+        <Button className="bg-[#012E71] hover:bg-blue-800 text-white text-sm sm:text-base px-4 sm:px-6 py-2.5 sm:py-3 h-auto">
+          <Calendar className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+          Book Our Services
+        </Button>
+      </Link>
+
+      <Link href="/contact">
+        <Button
+          variant="outline"
+          className="border-[#012E71] text-[#012E71] hover:bg-[#012E71] hover:text-white bg-transparent text-sm sm:text-base px-4 sm:px-6 py-2.5 sm:py-3 h-auto"
+        >
+          <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+          Contact Us
+        </Button>
+      </Link>
+    </div>
             </div>
             <div className="order-1 lg:order-2">
               <div className="relative">
@@ -223,31 +196,38 @@ export default function AboutPage() {
 
       {/* Company Stats */}
       <section className="py-12 sm:py-16 bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 text-center">
-            <div className="flex flex-col items-center p-4">
-              <Award className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-[#012E71] mb-3 sm:mb-4" />
-              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#012E71] mb-1 sm:mb-2">26</div>
-              <p className="text-sm sm:text-base text-gray-700 font-medium">Years Experience</p>
-            </div>
-            <div className="flex flex-col items-center p-4">
-              <Users className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-[#012E71] mb-3 sm:mb-4" />
-              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#012E71] mb-1 sm:mb-2">1,200+</div>
-              <p className="text-sm sm:text-base text-gray-700 font-medium">Happy Clients</p>
-            </div>
-            <div className="flex flex-col items-center p-4">
-              <Shield className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-[#012E71] mb-3 sm:mb-4" />
-              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#012E71] mb-1 sm:mb-2">98%</div>
-              <p className="text-sm sm:text-base text-gray-700 font-medium">Satisfaction Rate</p>
-            </div>
-            <div className="flex flex-col items-center p-4">
-              <Clock className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-[#012E71] mb-3 sm:mb-4" />
-              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#012E71] mb-1 sm:mb-2">50+</div>
-              <p className="text-sm sm:text-base text-gray-700 font-medium">Team Members</p>
-            </div>
-          </div>
-        </div>
-      </section>
+  <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6 lg:gap-8 text-center">
+      <div className="flex flex-col items-center p-4">
+        <Award className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-[#012E71] mb-3 sm:mb-4" />
+        <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#012E71] mb-1 sm:mb-2">26</div>
+        <p className="text-sm sm:text-base text-gray-700 font-medium">Years Experience</p>
+      </div>
+      <div className="flex flex-col items-center p-4">
+        <Users className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-[#012E71] mb-3 sm:mb-4" />
+        <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#012E71] mb-1 sm:mb-2">1,200+</div>
+        <p className="text-sm sm:text-base text-gray-700 font-medium">Happy Clients</p>
+      </div>
+      <div className="flex flex-col items-center p-4">
+        <Shield className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-[#012E71] mb-3 sm:mb-4" />
+        <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#012E71] mb-1 sm:mb-2">98%</div>
+        <p className="text-sm sm:text-base text-gray-700 font-medium">Satisfaction Rate</p>
+      </div>
+      <div className="flex flex-col items-center p-4">
+        <Clock className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-[#012E71] mb-3 sm:mb-4" />
+        <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#012E71] mb-1 sm:mb-2">50+</div>
+        <p className="text-sm sm:text-base text-gray-700 font-medium">Team Members</p>
+      </div>
+      {/* New block for Employees */}
+      <div className="flex flex-col items-center p-4">
+        <Users className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-[#012E71] mb-3 sm:mb-4" />
+        <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#012E71] mb-1 sm:mb-2">40</div>
+        <p className="text-sm sm:text-base text-gray-700 font-medium">Employees</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Our Values */}
       <section className="py-12 sm:py-16 lg:py-20 bg-white">
@@ -494,24 +474,42 @@ export default function AboutPage() {
               service excellence.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-              <Button 
-                size="lg" 
-                className="bg-white text-[#012E71] hover:bg-gray-100 text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 h-auto"
-              >
-                <Calendar className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                Book Your Service
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-[#012E71] text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 h-auto bg-transparent"
-              >
-                <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                Call 
- (647) 534-8050
+      {/* Book Service Button */}
+      <Link href="/contact">
+        <Button
+          size="lg"
+          className="bg-white text-[#012E71] hover:bg-gray-100 text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 h-auto"
+        >
+          <Calendar className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+          Book Your Service
+        </Button>
+      </Link>
 
-              </Button>
-            </div>
+      {/* Call or Contact Button */}
+      {isMobile ? (
+        <a href="tel:+16475348050">
+          <Button
+            size="lg"
+            variant="outline"
+            className="border-white text-white hover:bg-white hover:text-[#012E71] text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 h-auto bg-transparent"
+          >
+            <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+            Call (647) 534-8050
+          </Button>
+        </a>
+      ) : (
+        <Link href="/contact">
+          <Button
+            size="lg"
+            variant="outline"
+            className="border-white text-white hover:bg-white hover:text-[#012E71] text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 h-auto bg-transparent"
+          >
+            <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+            Call (647) 534-8050
+          </Button>
+        </Link>
+      )}
+    </div>
           </div>
         </div>
       </section>

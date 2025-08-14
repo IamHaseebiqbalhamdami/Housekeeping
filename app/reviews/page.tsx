@@ -1,6 +1,8 @@
 "use client"
-
 import { useState } from "react"
+import Link from "next/link"
+
+
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -8,11 +10,7 @@ import { Star, Quote, MapPin, Calendar, Home, Building2, Sparkles, Play, Phone, 
 
 export default function ReviewsPage() {
   const [activeFilter, setActiveFilter] = useState("all")
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [service, setService] = useState("Residential");
-  const [rating, setRating] = useState(0);
-  const [review, setReview] = useState("");
+  const [rating, setRating] = useState(0)
   const reviews = [
     {
       id: 1,
@@ -22,7 +20,7 @@ export default function ReviewsPage() {
       rating: 5,
       date: "March 2024",
       text: "HouseKeeping PRO has been cleaning our home for 3 years now. Their attention to detail is incredible and the team is so professional and reliable. I can't imagine using anyone else!",
-      avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face",
+      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face",
       verified: true,
       featured: true,
     },
@@ -529,105 +527,66 @@ export default function ReviewsPage() {
             </p>
           </div>
 
-          <form
-      onSubmit={handleSubmit}
-      className="max-w-3xl mx-auto bg-gray-50 shadow-lg rounded-xl p-8 space-y-6"
-    >
-      {/* Name */}
-      <div>
-        <label className="block text-gray-700 font-semibold mb-2">
-          Your Name
-        </label>
-        <input
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          placeholder="Enter your name"
-          className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#012E71]"
-          required
-        />
+          <form className="max-w-3xl mx-auto bg-gray-50 shadow-lg rounded-xl p-8 space-y-6">
+            <div>
+              <label className="block text-gray-700 font-semibold mb-2">Your Name</label>
+              <input
+                type="text"
+                placeholder="Enter your name"
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#012E71]"
+              />
+            </div>
+            <div>
+              <label className="block text-gray-700 font-semibold mb-2">Email</label>
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#012E71]"
+              />
+            </div>
+            <div>
+              <label className="block text-gray-700 font-semibold mb-2">Service Type</label>
+              <select className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#012E71]">
+                <option>Residential</option>
+                <option>Commercial</option>
+                <option>Airbnb</option>
+                <option>Deep Cleaning</option>
+              </select>
+            </div>
+            <div>
+      <label className="block text-gray-700 font-semibold mb-2">Rating</label>
+      <div className="flex gap-2">
+        {[1, 2, 3, 4, 5].map((star) => (
+          <button
+            key={star}
+            type="button"
+            onClick={() => setRating(star)}
+            className={`w-10 h-10 flex items-center justify-center border rounded-full transition-colors
+              ${star <= rating ? "bg-yellow-400 text-white" : "bg-white text-black"}
+            `}
+          >
+            ★
+          </button>
+        ))}
       </div>
-
-      {/* Email */}
-      <div>
-        <label className="block text-gray-700 font-semibold mb-2">
-          Email
-        </label>
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Enter your email"
-          className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#012E71]"
-          required
-        />
-      </div>
-
-      {/* Service Type */}
-      <div>
-        <label className="block text-gray-700 font-semibold mb-2">
-          Service Type
-        </label>
-        <select
-          value={service}
-          onChange={(e) => setService(e.target.value)}
-          className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#012E71]"
-        >
-          <option>Residential</option>
-          <option>Commercial</option>
-          <option>Airbnb</option>
-          <option>Deep Cleaning</option>
-        </select>
-      </div>
-
-      {/* Rating */}
-      <div>
-        <label className="block text-gray-700 font-semibold mb-2">
-          Rating
-        </label>
-        <div className="flex gap-2">
-          {[1, 2, 3, 4, 5].map((star) => (
-            <button
-              key={star}
-              type="button"
-              onClick={() => setRating(star)}
-              className={`w-10 h-10 flex items-center justify-center border rounded-full ${
-                rating >= star
-                  ? "bg-yellow-400 text-white"
-                  : "hover:bg-yellow-300"
-              }`}
-            >
-              ★
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {/* Review */}
-      <div>
-        <label className="block text-gray-700 font-semibold mb-2">
-          Your Review
-        </label>
-        <textarea
-          value={review}
-          onChange={(e) => setReview(e.target.value)}
-          placeholder="Write your review here..."
-          rows={5}
-          className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#012E71]"
-          required
-        ></textarea>
-      </div>
-
-      {/* Submit */}
-      <div className="text-center">
-        <button
-          type="submit"
-          className="bg-[#012E71] text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-blue-900 transition"
-        >
-          Submit Review
-        </button>
-      </div>
-    </form>
+    </div>
+            <div>
+              <label className="block text-gray-700 font-semibold mb-2">Your Review</label>
+              <textarea
+                placeholder="Write your review here..."
+                rows={5}
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#012E71]"
+              ></textarea>
+            </div>
+            <div className="text-center">
+              <button
+                type="submit"
+                className="bg-[#012E71] text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-blue-900 transition"
+              >
+                Submit Review
+              </button>
+            </div>
+          </form>
         </div>
       </section>
 
@@ -691,18 +650,28 @@ export default function ReviewsPage() {
               Experience the same exceptional service that has earned us 98% customer satisfaction across Simcoe County.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-[#012E71] hover:bg-gray-100 px-8 py-4">
-                <Calendar className="w-5 h-5 mr-2" />
-                Book Your Cleaning
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-[#012E71] px-8 py-4 bg-transparent"
-              >
-                Get Free Quote
-              </Button>
-            </div>
+      {/* Book Your Cleaning */}
+      <Link href="/contact">
+        <Button
+          size="lg"
+          className="bg-white text-[#012E71] hover:bg-gray-100 px-8 py-4"
+        >
+          <Calendar className="w-5 h-5 mr-2" />
+          Book Your Cleaning
+        </Button>
+      </Link>
+
+      {/* Get Free Quote */}
+      <Link href="/contact">
+        <Button
+          size="lg"
+          variant="outline"
+          className="border-white text-white hover:bg-white hover:text-[#012E71] px-8 py-4 bg-transparent"
+        >
+          Get Free Quote
+        </Button>
+      </Link>
+    </div>
           </div>
         </div>
       </section>

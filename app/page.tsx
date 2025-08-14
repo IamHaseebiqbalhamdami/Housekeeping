@@ -12,8 +12,6 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import SplashScreen from "@/components/splash-screen"
-
-// Responsive Hero Slider Component
 function HeroSlider() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isMobile, setIsMobile] = useState(false)
@@ -45,21 +43,32 @@ function HeroSlider() {
     },
   ]
 
+  // Initialize mobile state
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768)
     }
     
+    // Set initial state
     checkMobile()
+    
+    // Add resize listener
     window.addEventListener('resize', checkMobile)
     
+    // Cleanup
+    return () => {
+      window.removeEventListener('resize', checkMobile)
+    }
+  }, [])
+
+  // Separate useEffect for the timer to avoid dependency issues
+  useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length)
     }, isMobile ? 6000 : 5000) // Slower on mobile
     
     return () => {
       clearInterval(timer)
-      window.removeEventListener('resize', checkMobile)
     }
   }, [slides.length, isMobile])
 
@@ -120,9 +129,7 @@ function HeroSlider() {
                   className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-[#012E71] text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 h-auto bg-transparent"
                 >
                   <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                  Call 
- (647) 534-8050
-
+                  Call (647) 534-8050
                 </Button>
               </Link>
             </div>
@@ -161,10 +168,24 @@ function HeroSlider() {
 }
 
 export default function HomePage() {
-  const [showSplash, setShowSplash] = useState(true)
+  const [showSplash, setShowSplash] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
+  useEffect(() => {
+    // Only check sessionStorage on client side
+    if (typeof window !== 'undefined') {
+      const splashShown = sessionStorage.getItem('splashShown')
+      if (!splashShown) {
+        setShowSplash(true)
+      }
+    }
+  }, [])
   
   const handleSplashComplete = () => {
     setShowSplash(false)
+    // Mark splash as shown for this session
+    if (typeof window !== 'undefined') {
+      sessionStorage.setItem('splashShown', 'true')
+    }
   }
 
   const services = [
@@ -252,29 +273,37 @@ export default function HomePage() {
         {/* Hero Slider Section */}
         <HeroSlider />
 
-        {/* Company Info Banner */}
-        <section className="py-8 sm:py-12 lg:py-16 bg-gray-50">
+        <section className="py-12 sm:py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 text-center">
-              <div className="flex flex-col items-center p-3 sm:p-4">
-                <Award className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-[#012E71] mb-2 sm:mb-4" />
-                <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#012E71] mb-1 sm:mb-2">26</div>
-                <p className="text-xs sm:text-sm lg:text-base text-gray-700 font-medium">Years Experience</p>
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6 lg:gap-8 text-center">
+              <div className="flex flex-col items-center p-4">
+                <Award className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-[#012E71] mb-3 sm:mb-4" />
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#012E71] mb-1 sm:mb-2">26</div>
+                <p className="text-sm sm:text-base text-gray-700 font-medium">Years Experience</p>
               </div>
-              <div className="flex flex-col items-center p-3 sm:p-4">
-                <Users className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-[#012E71] mb-2 sm:mb-4" />
-                <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#012E71] mb-1 sm:mb-2">1,200+</div>
-                <p className="text-xs sm:text-sm lg:text-base text-gray-700 font-medium">Happy Clients</p>
+
+              <div className="flex flex-col items-center p-4">
+                <Users className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-[#012E71] mb-3 sm:mb-4" />
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#012E71] mb-1 sm:mb-2">1,200+</div>
+                <p className="text-sm sm:text-base text-gray-700 font-medium">Happy Clients</p>
               </div>
-              <div className="flex flex-col items-center p-3 sm:p-4">
-                <Shield className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-[#012E71] mb-2 sm:mb-4" />
-                <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#012E71] mb-1 sm:mb-2">98%</div>
-                <p className="text-xs sm:text-sm lg:text-base text-gray-700 font-medium">Satisfaction Rate</p>
+
+              <div className="flex flex-col items-center p-4">
+                <Shield className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-[#012E71] mb-3 sm:mb-4" />
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#012E71] mb-1 sm:mb-2">98%</div>
+                <p className="text-sm sm:text-base text-gray-700 font-medium">Satisfaction Rate</p>
               </div>
-              <div className="flex flex-col items-center p-3 sm:p-4">
-                <Clock className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-[#012E71] mb-2 sm:mb-4" />
-                <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#012E71] mb-1 sm:mb-2">24/7</div>
-                <p className="text-xs sm:text-sm lg:text-base text-gray-700 font-medium">Support Available</p>
+
+              <div className="flex flex-col items-center p-4">
+                <Clock className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-[#012E71] mb-3 sm:mb-4" />
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#012E71] mb-1 sm:mb-2">50+</div>
+                <p className="text-sm sm:text-base text-gray-700 font-medium">Team Members</p>
+              </div>
+
+              <div className="flex flex-col items-center p-4">
+                <Users className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-[#012E71] mb-3 sm:mb-4" />
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#012E71] mb-1 sm:mb-2">40</div>
+                <p className="text-sm sm:text-base text-gray-700 font-medium">Employees</p>
               </div>
             </div>
           </div>
@@ -327,7 +356,6 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Why Choose Us Section */}
         <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 sm:mb-16">
@@ -335,34 +363,91 @@ export default function HomePage() {
                 Why Choose HouseKeeping PRO?
               </h2>
               <p className="text-base sm:text-lg lg:text-xl text-gray-700 max-w-2xl mx-auto">
-                26 years of trusted service across Simcoe County with a commitment to excellence
+                26 years of trusted service across Simcoe County with a commitment to excellence.
               </p>
             </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-              <Card className="text-center p-4 sm:p-6 lg:p-8 hover:shadow-lg transition-all duration-300">
-                <Shield className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-[#012E71] mx-auto mb-4 sm:mb-6" />
-                <h3 className="text-lg sm:text-xl font-bold text-[#012E71] mb-3 sm:mb-4">Fully Insured & Bonded</h3>
-                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
-                  Complete insurance coverage and bonding for your peace of mind. All team members are background-checked
-                  and trained professionals.
-                </p>
-              </Card>
-              <Card className="text-center p-4 sm:p-6 lg:p-8 hover:shadow-lg transition-all duration-300">
-                <Award className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-[#012E71] mx-auto mb-4 sm:mb-6" />
-                <h3 className="text-lg sm:text-xl font-bold text-[#012E71] mb-3 sm:mb-4">26 Years Experience</h3>
-                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
-                  Canadian owned and operated since 1998. We've built our reputation on consistent, reliable service
-                  across Simcoe County.
-                </p>
-              </Card>
-              <Card className="text-center p-4 sm:p-6 lg:p-8 hover:shadow-lg transition-all duration-300 sm:col-span-2 lg:col-span-1">
-                <Star className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-[#012E71] mx-auto mb-4 sm:mb-6" />
-                <h3 className="text-lg sm:text-xl font-bold text-[#012E71] mb-3 sm:mb-4">98% Satisfaction Rate</h3>
-                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
-                  Our clients love our service! With over 1,200 satisfied customers, we consistently deliver exceptional
-                  results.
-                </p>
-              </Card>
+
+            <div className="max-w-4xl mx-auto">
+              <Swiper
+                modules={[Autoplay, Navigation, Pagination]}
+                spaceBetween={30}
+                slidesPerView={1}
+                breakpoints={{
+                  640: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                  },
+                  1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                  },
+                }}
+                autoplay={{
+                  delay: 5000,
+                  disableOnInteraction: false,
+                }}
+                navigation={{
+                  nextEl: '.swiper-button-next',
+                  prevEl: '.swiper-button-prev',
+                }}
+                pagination={{
+                  clickable: true,
+                  el: '.swiper-pagination',
+                }}
+                loop={true}
+              >
+                <SwiperSlide>
+                  <Card className="text-center p-4 sm:p-6 lg:p-8 hover:shadow-lg transition-all duration-300 h-full">
+                    <Shield className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-[#012E71] mx-auto mb-4 sm:mb-6" />
+                    <h3 className="text-lg sm:text-xl font-bold text-[#012E71] mb-3 sm:mb-4">
+                      Fully Insured & Bonded
+                    </h3>
+                    <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                      Complete insurance coverage and bonding for your peace of mind. All team members are
+                      background-checked and trained professionals.
+                    </p>
+                  </Card>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                  <Card className="text-center p-4 sm:p-6 lg:p-8 hover:shadow-lg transition-all duration-300 h-full">
+                    <Award className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-[#012E71] mx-auto mb-4 sm:mb-6" />
+                    <h3 className="text-lg sm:text-xl font-bold text-[#012E71] mb-3 sm:mb-4">
+                      26 Years Experience
+                    </h3>
+                    <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                      Canadian owned and operated since 1998. We've built our reputation on consistent, reliable
+                      service across Simcoe County and in Other Counties where People Alive.
+                    </p>
+                  </Card>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                  <Card className="text-center p-4 sm:p-6 lg:p-8 hover:shadow-lg transition-all duration-300 h-full">
+                    <Users className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-[#012E71] mx-auto mb-4 sm:mb-6" />
+                    <h3 className="text-lg sm:text-xl font-bold text-[#012E71] mb-3 sm:mb-4">
+                      40 Dedicated Employees
+                    </h3>
+                    <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                      Our skilled and committed team of 40 professionals works tirelessly to deliver the highest
+                      standards of cleaning and customer satisfaction.
+                    </p>
+                  </Card>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                  <Card className="text-center p-4 sm:p-6 lg:p-8 hover:shadow-lg transition-all duration-300 h-full">
+                    <Star className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-[#012E71] mx-auto mb-4 sm:mb-6" />
+                    <h3 className="text-lg sm:text-xl font-bold text-[#012E71] mb-3 sm:mb-4">
+                      98% Satisfaction Rate
+                    </h3>
+                    <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                      Our clients love our service! With over 1,200 satisfied customers, we consistently deliver
+                      exceptional results that satisfied by its user and clients.
+                    </p>
+                  </Card>
+                </SwiperSlide>
+              </Swiper>
             </div>
           </div>
         </section>
@@ -403,52 +488,6 @@ export default function HomePage() {
                   title: "Quality Check",
                   description: "Final inspection ensures everything meets our high standards before we leave your property.",
                   number: 4
-                }
-              ].map((step, index) => (
-                <div key={index} className="text-center group">
-                  <div className="relative mb-4 sm:mb-6">
-                    <div className="w-16 h-16 sm:w-18 sm:h-18 lg:w-20 lg:h-20 bg-[#012E71] rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-500">
-                      <step.icon className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 text-white" />
-                    </div>
-                    <div className="absolute -top-1 sm:-top-2 -right-1 sm:-right-2 w-6 h-6 sm:w-8 sm:h-8 bg-yellow-400 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold text-[#012E71]">
-                      {step.number}
-                    </div>
-                  </div>
-                  <h3 className="text-lg sm:text-xl font-bold text-[#012E71] mb-3 sm:mb-4">{step.title}</h3>
-                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed">{step.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Technology & Innovation Section */}
-        <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-[#012E71] to-blue-900 text-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12 sm:mb-16">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
-                Advanced Technology & Innovation
-              </h2>
-              <p className="text-base sm:text-lg lg:text-xl opacity-90 max-w-3xl mx-auto">
-                We combine cutting-edge cleaning technology with eco-friendly practices for superior results
-              </p>
-            </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-              {[
-                {
-                  icon: Zap,
-                  title: "HEPA Filtration Systems",
-                  description: "Advanced air purification technology removes 99.97% of airborne particles, ensuring cleaner, healthier indoor air."
-                },
-                {
-                  icon: Heart,
-                  title: "Eco-Friendly Products",
-                  description: "Certified green cleaning products that are safe for your family, pets, and the environment while delivering exceptional results."
-                },
-                {
-                  icon: TrendingUp,
-                  title: "Smart Scheduling",
-                  description: "AI-powered scheduling system ensures optimal timing and route planning for maximum efficiency and reliability."
                 }
               ].map((tech, index) => (
                 <Card key={index} className="bg-white/10 backdrop-blur-sm border-white/20 p-4 sm:p-6 lg:p-8 hover:bg-white/20 transition-all duration-500 hover:-translate-y-2">
@@ -505,10 +544,8 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-
-        {/* Professional Equipment Showcase */}
      {/* Professional Equipment Showcase */}
-<section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-[#012E71] to-blue-800 text-white relative overflow-hidden">
+     <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-[#012E71] to-blue-800 text-white relative overflow-hidden">
   <div className="absolute inset-0">
     <div className="absolute top-10 sm:top-20 left-10 sm:left-20 w-20 h-20 sm:w-40 sm:h-40 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
     <div className="absolute bottom-10 sm:bottom-20 right-10 sm:right-20 w-30 h-30 sm:w-60 sm:h-60 bg-blue-400/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
@@ -690,23 +727,27 @@ export default function HomePage() {
                 HouseKeeping PRO difference.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-                <Link href="/contact">
-                  <Button size="lg" className="w-full sm:w-auto bg-white text-[#012E71] hover:bg-gray-100 text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 h-auto">
-                    <Calendar className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                    Book Your Cleaning
-                  </Button>
-                </Link>
-                <Link href="/contact">
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-[#012E71] text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 h-auto bg-transparent"
-                  >
-                    <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                    Get Free Quote
-                  </Button>
-                </Link>
-              </div>
+      <Link href="/contact">
+        <Button
+          size="lg"
+          className="w-full sm:w-auto bg-white text-[#012E71] hover:bg-gray-100 text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 h-auto"
+        >
+          <Calendar className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+          Book Your Cleaning
+        </Button>
+      </Link>
+
+      <Link href="/contact">
+        <Button
+          size="lg"
+          variant="outline"
+          className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-[#012E71] text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 h-auto bg-transparent"
+        >
+          <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+          Get Free Quote
+        </Button>
+      </Link>
+    </div>
             </div>
           </div>
         </section>
