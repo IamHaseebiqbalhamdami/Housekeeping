@@ -1,5 +1,5 @@
 "use client"
-
+import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -64,7 +64,7 @@ export default function ResidentialServicesPage() {
       location: "Barrie, ON",
       rating: 5,
       text: "The residential team is amazing! They've been cleaning our 3-bedroom home for 2 years. Always professional, thorough, and reliable.",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face",
+      image: "/team/freepik__the-style-is-candid-image-photography-with-natural__91134.png",
       serviceImage: "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=400&h=300&fit=crop",
     },
     {
@@ -90,10 +90,15 @@ export default function ResidentialServicesPage() {
               keep your home spotless.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/contact">
               <Button size="lg" className="bg-white text-[#012E71] hover:bg-gray-100">
                 <Calendar className="w-5 h-5 mr-2" />
                 Book Residential Service
               </Button>
+              </Link>
+
+{/* Get Free Quote */}
+<Link href="/contact">
               <Button
                 size="lg"
                 variant="outline"
@@ -102,6 +107,7 @@ export default function ResidentialServicesPage() {
                 <Phone className="w-5 h-5 mr-2" />
                 Get Free Quote
               </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -278,10 +284,15 @@ export default function ResidentialServicesPage() {
               residential cleaning needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/contact">
               <Button size="lg" className="bg-white text-[#012E71] hover:bg-gray-100 px-8 py-4">
                 <Calendar className="w-5 h-5 mr-2" />
                 Book Residential Service
               </Button>
+              </Link>
+
+{/* Get Free Quote */}
+<Link href="/contact">
               <Button
                 size="lg"
                 variant="outline"
@@ -292,68 +303,12 @@ export default function ResidentialServicesPage() {
   (647) 534-8050
 
               </Button>
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Footer
-      <footer className="bg-black text-white py-16">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-08-02%20at%2020.55.30_d31d3cc8.jpg-ltfbL4qxNsZJM19pu8YgBkJBiRmUlE.jpeg"
-                alt="HouseKeeping PRO Logo"
-                width={180}
-                height={60}
-                className="h-12 w-auto mb-4 brightness-0 invert"
-              />
-              <p className="text-gray-300 mb-4">
-                Professional residential cleaning services across Simcoe County for 26 years.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Residential Services</h3>
-              <ul className="space-y-2 text-gray-300">
-                <li>Regular House Cleaning</li>
-                <li>Deep House Cleaning</li>
-                <li>Move-In/Move-Out</li>
-                <li>Post-Construction</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Service Areas</h3>
-              <ul className="space-y-2 text-gray-300">
-                <li>Barrie</li>
-                <li>Orillia</li>
-                <li>Midland</li>
-                <li>Oro-Medonte</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Contact</h3>
-              <div className="space-y-2 text-gray-300">
-                <div className="flex items-center">
-                  <Phone className="w-4 h-4 mr-2" />
-                  (705) 555-0123
-                </div>
-                <div className="flex items-center">
-                  <Mail className="w-4 h-4 mr-2" />
-                  info@housekeepingpro.ca
-                </div>
-                <div className="flex items-center">
-                  <MapPin className="w-4 h-4 mr-2" />
-                  Simcoe County, ON
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 HouseKeeping PRO. All rights reserved.</p>
-          </div>
-        </div>
-      </footer> */}
     </div>
   )
 }

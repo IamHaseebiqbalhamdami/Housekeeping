@@ -1,5 +1,5 @@
 "use client"
-
+import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -30,7 +30,7 @@ export default function CommercialServicesPage() {
       price: "From $199",
       duration: "2-5 hours",
       features: ["Medical-grade sanitization", "Biohazard disposal", "Waiting area cleaning", "Equipment cleaning"],
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=300&fit=crop",
+      image: "https://www.servicemasterclean.com/images/JCP_ServiceMaster_PostRecovery_0111.2408230846570.jpg",
     },
   ]
 
@@ -39,21 +39,21 @@ export default function CommercialServicesPage() {
       name: "Michael Thompson",
       role: "Commercial Team Lead",
       experience: "10 years",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face",
+      image: "/Newteam/2.jpg",
       uniform: "Navy HouseKeeping PRO polo shirt with company logo",
     },
     {
       name: "Lisa Rodriguez",
       role: "Senior Commercial Cleaner",
       experience: "7 years",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=300&fit=crop&crop=face",
+      image: "/Newteam/3.jpg",
       uniform: "Navy HouseKeeping PRO polo shirt with company logo",
     },
     {
       name: "David Kim",
       role: "Quality Supervisor",
       experience: "8 years",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face",
+      image: "/Newteam/4.jpg",
       uniform: "Navy HouseKeeping PRO polo shirt with company logo",
     },
   ]
@@ -65,7 +65,7 @@ export default function CommercialServicesPage() {
       location: "Barrie, ON",
       rating: 5,
       text: "HouseKeeping PRO has been cleaning our law office for 4 years. They're professional, reliable, and work around our schedule perfectly.",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face",
+      image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=100&h=100&fit=crop&crop=face",
       serviceImage: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=300&fit=crop",
     },
     {
@@ -75,7 +75,7 @@ export default function CommercialServicesPage() {
       rating: 5,
       text: "Their medical office cleaning is exceptional. They understand the strict hygiene requirements and always exceed our expectations.",
       image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=100&h=100&fit=crop&crop=face",
-      serviceImage: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=300&fit=crop",
+      serviceImage: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&h=300&fit=crop",
     },
   ]
 
@@ -91,10 +91,15 @@ export default function CommercialServicesPage() {
               County.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/contact">
               <Button size="lg" className="bg-white text-[#012E71] hover:bg-gray-100">
                 <Calendar className="w-5 h-5 mr-2" />
                 Book Commercial Service
               </Button>
+              </Link>
+
+{/* Get Free Quote */}
+<Link href="/contact">
               <Button
                 size="lg"
                 variant="outline"
@@ -102,7 +107,7 @@ export default function CommercialServicesPage() {
               >
                 <Phone className="w-5 h-5 mr-2" />
                 Get Business Quote
-              </Button>
+              </Button></Link>
             </div>
           </div>
         </div>
@@ -186,7 +191,7 @@ export default function CommercialServicesPage() {
                     alt={member.name}
                     width={300}
                     height={300}
-                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-84 object-fitwidth group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#012E71]/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -283,10 +288,15 @@ export default function CommercialServicesPage() {
               needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/contact">
               <Button size="lg" className="bg-white text-[#012E71] hover:bg-gray-100 px-8 py-4">
                 <Calendar className="w-5 h-5 mr-2" />
                 Schedule Commercial Service
               </Button>
+              </Link>
+
+{/* Get Free Quote */}
+<Link href="/contact">
               <Button
                 size="lg"
                 variant="outline"
@@ -297,6 +307,7 @@ export default function CommercialServicesPage() {
   (647) 534-8050
 
               </Button>
+              </Link>
             </div>
           </div>
         </div>
