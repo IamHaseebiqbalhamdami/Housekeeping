@@ -6,8 +6,18 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Phone, Clock, Users, Calendar } from "lucide-react"
 import SharedHeader from "@/components/shared-header"
-
+import { useState } from "react"
+import { useRouter } from "next/navigation"
 export default function AreasPage() {
+  const [isMobile, setIsMobile] = useState(false);
+  const router = useRouter();
+  const handleClick = () => {
+    if (isMobile) {
+      window.location.href = "tel:6475348050";
+    } else {
+      router.push("/contact");
+    }
+  }
   const serviceAreas = [
     {
       city: "Barrie",
@@ -152,18 +162,12 @@ export default function AreasPage() {
                   </div>
 
                   <div className="flex items-center justify-between">
-                    <Link href={area.href}>
-                      <Button
-                        variant="outline"
-                        className="border-[#012E71] text-[#012E71] hover:bg-[#012E71] hover:text-white bg-transparent"
-                      >
-                        Learn More
-                      </Button>
-                    </Link>
+                    <Link href={'/contact'}>
                     <Button className="bg-[#012E71] hover:bg-blue-800 text-white">
                       <Calendar className="w-4 h-4 mr-2" />
                       Book Now
                     </Button>
+                    </Link>
                   </div>
                 </CardContent>
               </Card>
@@ -227,19 +231,22 @@ export default function AreasPage() {
               Experience professional cleaning services backed by 26 years of excellence across Simcoe County.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href={'/contact'}>
               <Button size="lg" className="bg-white text-[#012E71] hover:bg-gray-100">
                 <Calendar className="w-5 h-5 mr-2" />
                 Book Your Area
               </Button>
+              </Link>
+
               <Button
                 size="lg"
                 variant="outline"
+                onClick={handleClick}
                 className="border-white text-white hover:bg-white hover:text-[#012E71] bg-transparent"
               >
                 <Phone className="w-5 h-5 mr-2" />
                 Call 
   (647) 534-8050
-he
               </Button>
             </div>
           </div>

@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { MapPin, Star, Shield, Calendar, Phone, Mail, Award, Home, Building2 } from "lucide-react"
 import Link from "next/link"
+import { useState } from "react"
+import { useRouter } from "next/navigation";
 export default function BarrieAreaPage() {
   const neighborhoods = [
     "Downtown Barrie",
@@ -16,7 +18,15 @@ export default function BarrieAreaPage() {
     "Bayfield",
     "Holly",
   ]
-
+  const [isMobile, setIsMobile] = useState(false);
+  const router = useRouter();
+  const handleClick = () => {
+    if (isMobile) {
+      window.location.href = "tel:6475348050";
+    } else {
+      router.push("/contact");
+    }
+  }
   const reviews = [
     {
       name: "Jennifer Thompson",
@@ -80,11 +90,13 @@ export default function BarrieAreaPage() {
               homes and businesses throughout the city.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href={'/contact'}>
               <Button size="lg" className="bg-white text-[#012E71] hover:bg-gray-100">
                 <Calendar className="w-5 h-5 mr-2" />
                 Book in Barrie
               </Button>
-              <Button
+              </Link> 
+              <Button onClick={handleClick}
                 size="lg"
                 variant="outline"
                 className="border-white text-white hover:bg-white hover:text-[#012E71] bg-transparent"
@@ -289,10 +301,12 @@ export default function BarrieAreaPage() {
               Join 500+ satisfied clients throughout Barrie who trust HouseKeeping PRO for their cleaning needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+             <Link href={'/contact'}>
               <Button size="lg" className="bg-white text-[#012E71] hover:bg-gray-100 px-8 py-4">
                 <Calendar className="w-5 h-5 mr-2" />
                 Book Barrie Service
               </Button>
+              </Link>
               <Button
                 size="lg"
                 variant="outline"

@@ -93,14 +93,14 @@ export default function ReviewsPage() {
   ]
   const handleSubmit = async () => {
 
-    await fetch(" http://localhost:5000/submit-review", {
+    await fetch("http://localhost:5000/submit-review", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ ...formData, rating })
     });
     alert("Review sent!");
   };
-
+ 
   // Single video review from first file
   const videoReview = {
     id: 1,
