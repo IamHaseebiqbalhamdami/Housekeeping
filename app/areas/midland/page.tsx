@@ -4,7 +4,9 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { MapPin, Star, Shield, Calendar, Phone, Mail, Award, Home, Building2 } from "lucide-react"
-
+import { useState } from "react"
+import { useRouter } from "next/navigation";
+import Link from "next/link"
 export default function MidlandAreaPage() {
   const neighborhoods = [
     "Downtown Midland",
@@ -16,7 +18,15 @@ export default function MidlandAreaPage() {
     "Midland Point",
     "Huronia District",
   ]
-
+  const [isMobile, setIsMobile] = useState(false);
+  const router = useRouter();
+  const handleClick = () => {
+    if (isMobile) {
+      window.location.href = "tel:6475348050";
+    } else {
+      router.push("/contact");
+    }
+  }
   const reviews = [
     {
       name: "Emily Carter",
@@ -80,13 +90,16 @@ export default function MidlandAreaPage() {
               Trusted by homeowners and businesses for reliable and detailed cleaning.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href={'/contact'}>
               <Button size="lg" className="bg-white text-[#012E71] hover:bg-gray-100">
                 <Calendar className="w-5 h-5 mr-2" />
                 Book in Midland
               </Button>
+              </Link>
               <Button
                 size="lg"
                 variant="outline"
+                onClick={handleClick}
                 className="border-white text-white hover:bg-white hover:text-[#012E71] bg-transparent"
               >
                 <Phone className="w-5 h-5 mr-2" />
@@ -292,13 +305,16 @@ export default function MidlandAreaPage() {
               Join hundreds of satisfied clients in Midland who trust HouseKeeping PRO for their cleaning needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+             <Link href={'/contact'}>
               <Button size="lg" className="bg-white text-[#012E71] hover:bg-gray-100 px-8 py-4">
                 <Calendar className="w-5 h-5 mr-2" />
                 Book Midland Service
               </Button>
+             </Link>
               <Button
                 size="lg"
                 variant="outline"
+                onClick={handleClick}
                 className="border-white text-white hover:bg-white hover:text-[#012E71] px-8 py-4 bg-transparent"
               >
                 <Phone className="w-5 h-5 mr-2" />

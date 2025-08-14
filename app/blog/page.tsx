@@ -8,9 +8,27 @@ import SharedHeader from "@/components/shared-header"
 import BlogShowcase from "@/components/blog-showcase"
 import UseCasesShowcase from "@/components/use-cases-showcase"
 import {featuredPost,blogPosts} from './blogdata.js'
-
+import { useState } from "react"
 export default function BlogPage() {
   
+const [email,setemail]=useState("")
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault()
+  console.log("Form submitted:", email)
+  try {
+    await fetch("http://localhost:5000/subscribe", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({email}),
+    })
+    setemail(email)
+    alert("Email sent successfully!")
+  } catch (error) {
+    alert("Failed to send email.")
+  }
+}
 
   const categories = [
     { name: "All Posts", count: 24, icon: BookOpen, color: "bg-blue-100 text-blue-800" },
@@ -230,10 +248,13 @@ export default function BlogPage() {
                   </p>
                   <input
                     type="email"
+                    onChange={(e)=>setemail(e.target.value)}
+name="email"
+value={email}
                     placeholder="Your email address"
                     className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg text-gray-900 mb-3 focus:ring-2 focus:ring-white text-sm sm:text-base"
                   />
-                  <Button className="w-full bg-white text-[#012E71] hover:bg-gray-100 text-sm sm:text-base">
+                  <Button onClick={handleSubmit} className="w-full bg-white text-[#012E71] hover:bg-gray-100 text-sm sm:text-base">
                     Subscribe Now
                   </Button>
                 </CardContent>

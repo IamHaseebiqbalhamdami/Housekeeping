@@ -7,11 +7,16 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Star, Quote, MapPin, Calendar, Home, Building2, Sparkles, Play, Phone, Mail } from "lucide-react"
-import SharedHeader from "@/components/shared-header"
 
 export default function ReviewsPage() {
   const [activeFilter, setActiveFilter] = useState("all")
   const [rating, setRating] = useState(0)
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    service: "Residential",
+    review: ""
+  });
   const reviews = [
     {
       id: 1,
@@ -86,7 +91,16 @@ export default function ReviewsPage() {
       featured: false,
     },
   ]
+  const handleSubmit = async () => {
 
+    await fetch("http://localhost:5000/submit-review", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ...formData, rating })
+    });
+    alert("Review sent!");
+  };
+ 
   // Single video review from first file
   const videoReview = {
     id: 1,
@@ -506,7 +520,7 @@ export default function ReviewsPage() {
             </p>
           </div>
 
-          <form className="max-w-3xl mx-auto bg-gray-50 shadow-lg rounded-xl p-8 space-y-6">
+          <form className="max-w-3xl mx-auto bg-gray-50 shadow-lg rounded-xl p-8 space-y-6" onSubmit={handleSubmit}>
             <div>
               <label className="block text-gray-700 font-semibold mb-2">Your Name</label>
               <input

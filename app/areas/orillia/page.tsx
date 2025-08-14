@@ -4,8 +4,9 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { MapPin, Star, Calendar, Phone } from "lucide-react"
-import SharedHeader from "@/components/shared-header"
-
+import { useState } from "react"
+import Link from "next/link"
+import { useRouter } from "next/navigation";
 export default function OrilliaAreaPage() {
   const neighborhoods = [
     "Downtown Orillia",
@@ -15,7 +16,15 @@ export default function OrilliaAreaPage() {
     "Couchiching Beach",
     "Atherley",
   ]
-
+  const [isMobile, setIsMobile] = useState(false);
+  const router = useRouter();
+  const handleClick = () => {
+    if (isMobile) {
+      window.location.href = "tel:6475348050";
+    } else {
+      router.push("/contact");
+    }
+  }
   const reviews = [
     {
       name: "David Chen",
@@ -57,12 +66,15 @@ export default function OrilliaAreaPage() {
               businesses, and residential homes.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href={'/contact'}>
               <Button size="lg" className="bg-white text-[#012E71] hover:bg-gray-100">
                 <Calendar className="w-5 h-5 mr-2" />
                 Book in Orillia
               </Button>
+              </Link>
               <Button
                 size="lg"
+                onClick={handleClick}
                 variant="outline"
                 className="border-white text-white hover:bg-white hover:text-[#012E71] bg-transparent"
               >
@@ -195,13 +207,17 @@ export default function OrilliaAreaPage() {
               Join 300+ satisfied clients throughout Orillia who trust HouseKeeping PRO for their cleaning needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+             <Link href={'/contact'}>
               <Button size="lg" className="bg-white text-[#012E71] hover:bg-gray-100 px-8 py-4">
                 <Calendar className="w-5 h-5 mr-2" />
                 Book Orillia Service
               </Button>
+             </Link>     
+
               <Button
                 size="lg"
                 variant="outline"
+                onClick={handleClick}
                 className="border-white text-white hover:bg-white hover:text-[#012E71] px-8 py-4 bg-transparent"
               >
                 <Phone className="w-5 h-5 mr-2" />

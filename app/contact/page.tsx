@@ -12,8 +12,8 @@ export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    address:"",
     phone: "",
-    address: "", 
     service: "",
     message: "",
   })
@@ -22,7 +22,7 @@ export default function ContactPage() {
     e.preventDefault()
     console.log("Form submitted:", formData)
     try {
-      await fetch("http://localhost:5000/send-email", {
+      await fetch(`http://localhost:5000/send-email`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -97,6 +97,19 @@ export default function ContactPage() {
                           className="h-10 sm:h-11"
                         />
                       </div>
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                         Address
+                      </label>
+                      <Input 
+                        name="address" 
+                        type="text"
+                        value={formData.address} 
+                        onChange={handleChange} 
+                        required 
+                        className="h-10 sm:h-11"
+                      />
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
