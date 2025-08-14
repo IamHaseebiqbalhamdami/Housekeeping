@@ -14,7 +14,6 @@ export default function ContactPage() {
     email: "",
     address:"",
     phone: "",
-    address: "", 
     service: "",
     message: "",
   })

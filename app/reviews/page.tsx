@@ -11,6 +11,12 @@ import { Star, Quote, MapPin, Calendar, Home, Building2, Sparkles, Play, Phone, 
 export default function ReviewsPage() {
   const [activeFilter, setActiveFilter] = useState("all")
   const [rating, setRating] = useState(0)
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    service: "Residential",
+    review: ""
+  });
   const reviews = [
     {
       id: 1,
@@ -86,26 +92,13 @@ export default function ReviewsPage() {
     },
   ]
   const handleSubmit = async () => {
-    
 
-    const reviewData = { name, email, service, rating, review };
-
-    const res = await fetch("http://localhost:5000/submit-review", {
+    await fetch(" http://localhost:5000/submit-review", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(reviewData),
+      body: JSON.stringify({ ...formData, rating })
     });
-    const data = await res.json();
-    if (data.success) {
-      alert("Review submitted successfully!");
-      setName("");
-      setEmail("");
-      setService("Residential");
-      setRating(0);
-      setReview("");
-    } else {
-      alert("Error submitting review!");
-    }
+    alert("Review sent!");
   };
 
   // Single video review from first file
@@ -527,7 +520,7 @@ export default function ReviewsPage() {
             </p>
           </div>
 
-          <form className="max-w-3xl mx-auto bg-gray-50 shadow-lg rounded-xl p-8 space-y-6">
+          <form className="max-w-3xl mx-auto bg-gray-50 shadow-lg rounded-xl p-8 space-y-6" onSubmit={handleSubmit}>
             <div>
               <label className="block text-gray-700 font-semibold mb-2">Your Name</label>
               <input
