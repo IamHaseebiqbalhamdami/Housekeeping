@@ -16,7 +16,7 @@ const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault()
   console.log("Form submitted:", email)
   try {
-    await fetch("http://localhost:5000/subscribe", {
+    await fetch(`${process.env.BACKENDPIORT}/subscribe`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
