@@ -8,11 +8,9 @@ export function generateStaticParams() {
     id: post.id.toString(),
   }))
 }
-
 interface BlogPostPageProps {
   params: { id: string }
 }
-
 export default function BlogPostPage({ params }: BlogPostPageProps) {
   const { id } = params
   const allPosts = [featuredPost, ...blogPosts]

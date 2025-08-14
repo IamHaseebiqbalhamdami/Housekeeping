@@ -5,11 +5,14 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Star, Quote, MapPin, Calendar, Home, Building2, Sparkles, Play, Phone, Mail } from "lucide-react"
-import SharedHeader from "@/components/shared-header"
 
 export default function ReviewsPage() {
   const [activeFilter, setActiveFilter] = useState("all")
-
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [service, setService] = useState("Residential");
+  const [rating, setRating] = useState(0);
+  const [review, setReview] = useState("");
   const reviews = [
     {
       id: 1,
@@ -84,6 +87,28 @@ export default function ReviewsPage() {
       featured: false,
     },
   ]
+  const handleSubmit = async () => {
+    
+
+    const reviewData = { name, email, service, rating, review };
+
+    const res = await fetch("http://localhost:5000/submit-review", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(reviewData),
+    });
+    const data = await res.json();
+    if (data.success) {
+      alert("Review submitted successfully!");
+      setName("");
+      setEmail("");
+      setService("Residential");
+      setRating(0);
+      setReview("");
+    } else {
+      alert("Error submitting review!");
+    }
+  };
 
   // Single video review from first file
   const videoReview = {
@@ -504,63 +529,105 @@ export default function ReviewsPage() {
             </p>
           </div>
 
-          <form className="max-w-3xl mx-auto bg-gray-50 shadow-lg rounded-xl p-8 space-y-6">
-            <div>
-              <label className="block text-gray-700 font-semibold mb-2">Your Name</label>
-              <input
-                type="text"
-                placeholder="Enter your name"
-                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#012E71]"
-              />
-            </div>
-            <div>
-              <label className="block text-gray-700 font-semibold mb-2">Email</label>
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#012E71]"
-              />
-            </div>
-            <div>
-              <label className="block text-gray-700 font-semibold mb-2">Service Type</label>
-              <select className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#012E71]">
-                <option>Residential</option>
-                <option>Commercial</option>
-                <option>Airbnb</option>
-                <option>Deep Cleaning</option>
-              </select>
-            </div>
-            <div>
-              <label className="block text-gray-700 font-semibold mb-2">Rating</label>
-              <div className="flex gap-2">
-                {[1, 2, 3, 4, 5].map((star) => (
-                  <button
-                    key={star}
-                    type="button"
-                    className="w-10 h-10 flex items-center justify-center border rounded-full hover:bg-yellow-400 hover:text-white"
-                  >
-                    ★
-                  </button>
-                ))}
-              </div>
-            </div>
-            <div>
-              <label className="block text-gray-700 font-semibold mb-2">Your Review</label>
-              <textarea
-                placeholder="Write your review here..."
-                rows={5}
-                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#012E71]"
-              ></textarea>
-            </div>
-            <div className="text-center">
-              <button
-                type="submit"
-                className="bg-[#012E71] text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-blue-900 transition"
-              >
-                Submit Review
-              </button>
-            </div>
-          </form>
+          <form
+      onSubmit={handleSubmit}
+      className="max-w-3xl mx-auto bg-gray-50 shadow-lg rounded-xl p-8 space-y-6"
+    >
+      {/* Name */}
+      <div>
+        <label className="block text-gray-700 font-semibold mb-2">
+          Your Name
+        </label>
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Enter your name"
+          className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#012E71]"
+          required
+        />
+      </div>
+
+      {/* Email */}
+      <div>
+        <label className="block text-gray-700 font-semibold mb-2">
+          Email
+        </label>
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Enter your email"
+          className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#012E71]"
+          required
+        />
+      </div>
+
+      {/* Service Type */}
+      <div>
+        <label className="block text-gray-700 font-semibold mb-2">
+          Service Type
+        </label>
+        <select
+          value={service}
+          onChange={(e) => setService(e.target.value)}
+          className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#012E71]"
+        >
+          <option>Residential</option>
+          <option>Commercial</option>
+          <option>Airbnb</option>
+          <option>Deep Cleaning</option>
+        </select>
+      </div>
+
+      {/* Rating */}
+      <div>
+        <label className="block text-gray-700 font-semibold mb-2">
+          Rating
+        </label>
+        <div className="flex gap-2">
+          {[1, 2, 3, 4, 5].map((star) => (
+            <button
+              key={star}
+              type="button"
+              onClick={() => setRating(star)}
+              className={`w-10 h-10 flex items-center justify-center border rounded-full ${
+                rating >= star
+                  ? "bg-yellow-400 text-white"
+                  : "hover:bg-yellow-300"
+              }`}
+            >
+              ★
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Review */}
+      <div>
+        <label className="block text-gray-700 font-semibold mb-2">
+          Your Review
+        </label>
+        <textarea
+          value={review}
+          onChange={(e) => setReview(e.target.value)}
+          placeholder="Write your review here..."
+          rows={5}
+          className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#012E71]"
+          required
+        ></textarea>
+      </div>
+
+      {/* Submit */}
+      <div className="text-center">
+        <button
+          type="submit"
+          className="bg-[#012E71] text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-blue-900 transition"
+        >
+          Submit Review
+        </button>
+      </div>
+    </form>
         </div>
       </section>
 

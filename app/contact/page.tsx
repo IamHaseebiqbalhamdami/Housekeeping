@@ -12,6 +12,7 @@ export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    address:"",
     phone: "",
     service: "",
     message: "",
@@ -28,7 +29,7 @@ export default function ContactPage() {
         },
         body: JSON.stringify(formData),
       })
-      setFormData({ name: "", email: "", phone: "", service: "", message: "" })
+      setFormData({ name: "", email: "", phone: "", service: "", message: "", address:"" })
       alert("Email sent successfully!")
     } catch (error) {
       alert("Failed to send email.")
@@ -96,6 +97,19 @@ export default function ContactPage() {
                           className="h-10 sm:h-11"
                         />
                       </div>
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                         Address
+                      </label>
+                      <Input 
+                        name="address" 
+                        type="text"
+                        value={formData.address} 
+                        onChange={handleChange} 
+                        required 
+                        className="h-10 sm:h-11"
+                      />
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
