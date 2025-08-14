@@ -93,7 +93,7 @@ export default function ReviewsPage() {
   ]
   const handleSubmit = async () => {
 
-    await fetch(`${process.env.BACKENDPIORT}/submit-review`, {
+    await fetch(`${process.env.NEXT_PUBLIC_BACKEND_PORT}/submit-review`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ ...formData, rating })

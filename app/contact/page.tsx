@@ -23,7 +23,7 @@ export default function ContactPage() {
     e.preventDefault()
     console.log("Form submitted:", formData)
     try {
-      await fetch(`${process.env.BACKENDPIORT}/send-email`, {
+      await fetch(`${process.env.NEXT_PUBLIC_BACKEND_PORT}/send-email`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
