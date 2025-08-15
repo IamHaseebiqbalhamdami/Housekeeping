@@ -18,7 +18,6 @@ export default function ContactPage() {
     service: "",
     message: "",
   })
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     console.log("Form submitted:", formData)
