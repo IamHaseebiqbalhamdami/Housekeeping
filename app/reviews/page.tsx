@@ -20,7 +20,7 @@ export default function ReviewsPage() {
   const reviews = [
     {
       id: 1,
-      name: "Jennifer Thompson",
+      name: "Eleanor Brooks",
       location: "Barrie, ON",
       service: "Residential",
       rating: 5,
@@ -32,68 +32,82 @@ export default function ReviewsPage() {
     },
     {
       id: 2,
-      name: "David Chen",
+      name: "Rahul Desai",
       location: "Orillia, ON",
       service: "Airbnb",
       rating: 5,
       date: "March 2024",
       text: "As an Airbnb host, I depend on quick turnaround cleaning. HouseKeeping PRO never disappoints - my guests always comment on how spotless everything is. Best investment I've made for my rental business!",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
+      avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0WVqWZG48djM-SCjTFF2IpaXLhpud6ePyeQ&s",
       verified: true,
       featured: true,
     },
     {
       id: 3,
-      name: "Sarah Wilson",
+      name: "Camille Hart",
       location: "Midland, ON",
       service: "Residential",
       rating: 5,
       date: "February 2024",
       text: "Their monthly contract rates are very reasonable and the service is consistently excellent. After 26 years in business, they really know what they're doing. Highly recommend!",
-      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
+      avatar: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=100&h=100&fit=crop&crop=face",
       verified: true,
       featured: false,
     },
     {
       id: 4,
-      name: "Michael Rodriguez",
+      name: "Sofia Martinez",
       location: "Innisfil, ON",
       service: "Eco-Friendly",
       rating: 5,
       date: "February 2024",
       text: "The eco-friendly cleaning options are perfect for our family. Professional, punctual, and they use safe products around our kids and pets. Couldn't be happier with the service.",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
+      avatar: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=100&h=100&fit=crop&crop=face",
       verified: true,
       featured: false,
     },
     {
       id: 5,
-      name: "Lisa Anderson",
+      name: "Daniel O'Connor",
       location: "Springwater, ON",
       service: "Deep Cleaning",
       rating: 5,
       date: "January 2024",
       text: "We hired them for a deep clean before selling our house. The results were amazing - our realtor said it was the cleanest house she'd ever listed. Worth every penny!",
-      avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop&crop=face",
+      avatar: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=100&h=100&fit=crop&crop=face",
       verified: true,
       featured: false,
     },
     {
       id: 6,
-      name: "Robert Kim",
+      name: "Imani Ndlovu",
       location: "Oro-Medonte, ON",
       service: "Commercial",
       rating: 5,
       date: "January 2024",
       text: "Our office has never looked better. The team is professional, efficient, and works around our schedule. Great value for the quality of service we receive.",
-      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face",
+      avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOyRD34iYbauVkFjfE8sQAjoDGqP31sCoCEw&s",
       verified: true,
       featured: false,
     },
-  ]
+    {
+      id: 7,
+      name: "Oliver Wright",
+      location: "Barrie, ON",
+      service: "Residential",
+      rating: 5,
+      date: "April 2024",
+      text: "Booked them for a one-time spring clean—absolutely exceeded expectations. I love knowing they're using eco-safe products too!",
+      avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop&crop=face",
+      verified: true,
+      featured: false,
+    },
+  ];
+  
+  
   const handleSubmit = async () => {
 
-    await fetch(`${process.env.NEXT_PUBLIC_BACKEND_PORT}/submit-review`, {
+    await fetch("https://housekeepingserver-1.onrender.com/submit-review", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ ...formData, rating })
@@ -301,7 +315,7 @@ export default function ReviewsPage() {
                         <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
                       ))}
                     </div>
-                    <h3 className="text-2xl font-bold text-white mb-2">Sarah Johnson</h3>
+                    <h3 className="text-2xl font-bold text-white mb-2">Emily Harris</h3>
                     <p className="text-white/90 text-lg">Residential Deep Cleaning</p>
                   </div>
                 </div>
@@ -320,7 +334,7 @@ export default function ReviewsPage() {
                   <div className="flex items-center space-x-4">
                     <div className="w-1 h-12 bg-gradient-to-b from-[#012E71] to-blue-600 rounded-full"></div>
                     <div>
-                      <p className="text-lg font-semibold text-[#012E71]">Sarah Johnson</p>
+                      <p className="text-lg font-semibold text-[#012E71]">Emily Harris</p>
                       <p className="text-gray-600">Barrie, ON • 5-Star Review</p>
                     </div>
                   </div>
@@ -373,7 +387,7 @@ export default function ReviewsPage() {
                   <div className="flex items-center space-x-4">
                     <div className="w-1 h-12 bg-gradient-to-b from-white to-blue-200 rounded-full"></div>
                     <div>
-                      <p className="text-lg font-semibold">Dr. Michael Chen</p>
+                      <p className="text-lg font-semibold"> Dr.Oliver Brown</p>
                       <p className="opacity-90">Downtown Barrie Dental Clinic</p>
                     </div>
                   </div>
@@ -422,7 +436,7 @@ export default function ReviewsPage() {
                         <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
                       ))}
                     </div>
-                    <h3 className="text-2xl font-bold text-white mb-2">Dr. Michael Chen</h3>
+                    <h3 className="text-2xl font-bold text-white mb-2">Dr. Oliver Brown</h3>
                     <p className="text-white/90 text-lg">Commercial Cleaning</p>
                   </div>
                 </div>

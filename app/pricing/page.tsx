@@ -40,7 +40,7 @@ function InteractiveCleaningCalculator() {
   ]
 
   const additionalServices: Service[] = [
-    { id: 'deep-clean', name: 'Deep Cleaning', icon: Sparkles, price: 50 },
+    { id: 'deep-clean', name: 'Deep Cleaning', icon: Sparkles, price: 59.99 },
     { id: 'carpet', name: 'Carpet Cleaning', icon: Home, price: 25 },
     { id: 'windows', name: 'Window Cleaning', icon: Droplets, price: 30 },
     { id: 'air-ducts', name: 'Air Duct Cleaning', icon: Wind, price: 45 }
@@ -72,6 +72,7 @@ function InteractiveCleaningCalculator() {
           <h2 className="text-4xl md:text-5xl font-bold text-[#012E71] mb-4">Advanced Smart Cleaning Calculator</h2>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto">
             Select the rooms and services you need to get an instant estimate for your cleaning requirements.
+            All listed prices are charged per hour.
           </p>
         </div>
 
@@ -221,7 +222,7 @@ export default function PricingPage() {
       icon: Sparkles,
       price: "$149",
       unit: "starting price",
-      description: "Perfect for deep cleaning, move-ins, or special occasions",
+      description: "Perfect for cleaning, move-ins, or special occasions",
       features: [
         "Complete deep cleaning",
         "All rooms and bathrooms",

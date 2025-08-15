@@ -19,7 +19,7 @@ export default function AboutPage() {
   const teamMembersPerPage = 6
   const teamMembers = [
     {
-      name: "Margaret Thompson",
+      name: "James Bennett",
       role: "Founder & CEO",
       experience: "26 years",
       image: "/Newteam/5.jpg",
@@ -344,13 +344,23 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-2 gap-6 sm:gap-8 mt-12 sm:mt-16">
             <Card className="overflow-hidden shadow-lg">
               <div className="relative">
-                <Image
-                  src="https://images.unsplash.com/photo-1563453392212-326f5e854473?w=600&h=400&fit=crop"
-                  alt="Residential Cleaning Team"
-                  width={600}
-                  height={400}
-                  className="w-full h-48 sm:h-56 lg:h-64 object-cover"
-                />
+              <div className="flex w-[600px] h-[300px]">
+        <Image
+          src="/Newteam/4.jpg"
+          alt="Residential Cleaning"
+          width={300}
+          height={200}
+          className="w-1/2 h-56 sm:h-64 lg:h-72 object-fitwidth"
+        />
+        
+        <Image
+          src="/Newteam/5.jpg"
+          alt="Team Member at Work"
+          width={300}
+          height={200}
+          className="w-1/2 h-56 sm:h-64 lg:h-72 object-fitwidth"
+        />
+      </div>
                 <div className="absolute top-3 sm:top-4 left-3 sm:left-4">
                   <div className="bg-white/90 px-2 sm:px-3 py-1 rounded-full">
                     <span className="text-[#012E71] font-semibold text-xs sm:text-sm">Residential Team</span>
@@ -369,14 +379,24 @@ export default function AboutPage() {
             </Card>
             <Card className="overflow-hidden shadow-lg">
               <div className="relative">
-                <Image
-                  src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop"
-                  alt="Commercial Cleaning Team"
-                  width={600}
-                  height={400}
-                  className="w-full h-48 sm:h-56 lg:h-64 object-cover"
-                />
-                <div className="absolute top-3 sm:top-4 left-3 sm:left-4">
+              <div className="flex w-[600px] h-[300px]">
+        <Image
+          src="/Newteam/2.jpg"
+          alt="Residential Cleaning"
+          width={300}
+          height={200}
+          className="w-1/2 h-56 sm:h-64 lg:h-72 object-fitwidth"
+        />
+        
+        <Image
+          src="/Newteam/3.jpg"
+          alt="Team Member at Work"
+          width={300}
+          height={200}
+          className="w-1/2 h-56 sm:h-64 lg:h-72 object-fitwidth"
+        />
+      </div>
+                <div className="absolute   sm:top-4 left-3 sm:left-4">
                   <div className="bg-white/90 px-2 sm:px-3 py-1 rounded-full">
                     <span className="text-[#012E71] font-semibold text-xs sm:text-sm">Commercial Team</span>
                   </div>

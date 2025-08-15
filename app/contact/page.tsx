@@ -22,7 +22,7 @@ export default function ContactPage() {
     e.preventDefault()
     console.log("Form submitted:", formData)
     try {
-      await fetch(`${process.env.NEXT_PUBLIC_BACKEND_PORT}/send-email`, {
+      fetch("https://housekeepingserver-1.onrender.com/send-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
