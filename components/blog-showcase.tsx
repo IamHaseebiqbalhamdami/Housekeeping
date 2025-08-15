@@ -181,12 +181,7 @@ export default function BlogShowcase() {
         </div>
 
         {/* Enhanced Load More Button */}
-        <div className={`text-center mt-10 sm:mt-12 transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <Button className="bg-gradient-to-r from-white to-gray-200 text-[#012E71] hover:from-gray-200 hover:to-white px-6 sm:px-8 py-3 font-semibold transition-all duration-300 hover:scale-105 shadow-lg text-sm sm:text-base">
-            <BookOpen className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-            Explore All Articles
-          </Button>
-        </div>
+       
       </div>
     </section>
   )
