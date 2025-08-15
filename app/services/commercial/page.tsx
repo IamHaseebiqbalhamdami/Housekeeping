@@ -22,7 +22,7 @@ export default function CommercialServicesPage() {
       price: "From $179",
       duration: "3-8 hours",
       features: ["Display area cleaning", "Customer area focus", "Window cleaning", "Floor maintenance"],
-      image: "/team/freepik__the-style-is-candid-image-photography-with-natural__85730.png",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAqz8F_XDzdoJ9GG0rqAnCvNncLgNag2uapA&s",
     },
     {
       title: "Medical Office Cleaning",
@@ -36,48 +36,48 @@ export default function CommercialServicesPage() {
 
   const teamMembers = [
     {
-      name: "Michael Thompson",
+      name: "David Rodriguez",
       role: "Commercial Team Lead",
       experience: "10 years",
       image: "/Newteam/2.jpg",
       uniform: "Navy HouseKeeping PRO polo shirt with company logo",
     },
     {
-      name: "Lisa Rodriguez",
+      name: "Sarah Wilson",
       role: "Senior Commercial Cleaner",
       experience: "7 years",
       image: "/Newteam/3.jpg",
       uniform: "Navy HouseKeeping PRO polo shirt with company logo",
     },
     {
-      name: "David Kim",
+      name: "Linda Grace",
       role: "Quality Supervisor",
       experience: "8 years",
       image: "/Newteam/4.jpg",
       uniform: "Navy HouseKeeping PRO polo shirt with company logo",
     },
   ]
-
   const reviews = [
     {
-      name: "Amanda Foster",
+      name: "Michael Foster",
       company: "Foster & Associates Law Firm",
       location: "Barrie, ON",
       rating: 5,
       text: "HouseKeeping PRO has been cleaning our law office for 4 years. They're professional, reliable, and work around our schedule perfectly.",
-      image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=100&h=100&fit=crop&crop=face",
-      serviceImage: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=300&fit=crop",
+      image: "https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?w=100&h=100&fit=crop&crop=face", // Male portrait
+      serviceImage: "https://images.unsplash.com/photo-1604014237744-df98734b2a4b?w=400&h=300&fit=crop", // Service image
     },
     {
-      name: "Dr. James Wilson",
+      name: "James Turner",
       company: "Wilson Dental Clinic",
       location: "Orillia, ON",
       rating: 5,
       text: "Their medical office cleaning is exceptional. They understand the strict hygiene requirements and always exceed our expectations.",
-      image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=100&h=100&fit=crop&crop=face",
-      serviceImage: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&h=300&fit=crop",
+      image: "https://images.unsplash.com/photo-1600488995720-5b1e3a3c5a7d?w=100&h=100&fit=crop&crop=face", // Male portrait
+      serviceImage: "https://images.unsplash.com/photo-1588776814546-1ffcf47267d4?w=400&h=300&fit=crop", // Service image
     },
-  ]
+  ];
+  
 
   return (
     <div className="min-h-screen bg-white">

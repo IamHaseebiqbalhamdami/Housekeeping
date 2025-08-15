@@ -36,14 +36,14 @@ export default function AirbnbServicesPage() {
 
   const teamMembers = [
     {
-      name: "Jessica Martinez",
+      name: "James Bennett",
       role: "Airbnb Specialist",
       experience: "5 years",
       image: "/Newteam/5.jpg",
       uniform: "Green HouseKeeping PRO polo shirt with company logo",
     },
     {
-      name: "Ryan O'Connor",
+      name: "David Rodriguez",
       role: "Turnover Coordinator",
       experience: "4 years",
       image: "/Newteam/2.jpg",
@@ -58,7 +58,7 @@ export default function AirbnbServicesPage() {
       location: "Orillia, ON",
       rating: 5,
       text: "HouseKeeping PRO has been managing my Airbnb cleaning for 2 years. My guests consistently mention how clean and welcoming the space is. 5-star reviews every time!",
-      image: "/Newteam/3.jpg",
+      image: "https://media.sciencephoto.com/f0/01/22/50/f0012250-800px-wm.jpg",
       serviceImage: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400&h=300&fit=crop",
     },
     {

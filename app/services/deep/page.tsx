@@ -22,7 +22,7 @@ export default function DeepCleaningServicesPage() {
     
       <Testimonials/>
       <Pricing/>
-    <SpecialOffers/>
+ 
       <WhyChooseUs/>
       {/* Coming Soon Content */}
      <CoomingSoon/>

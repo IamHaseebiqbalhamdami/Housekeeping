@@ -200,7 +200,7 @@ export default function UseCasesShowcase() {
                             ))}
                           </div>
                           <Link href="/booking">
-                          <Button className="bg-gradient-to-r from-[#012E71] to-blue-800 text-white hover:from-blue-800 hover:to-[#012E71] w-full transition-all duration-300 hover:scale-105 text-sm sm:text-base">
+                          <Button className="bg-gradient-to-r from-[#012E71] to-blue-800 text-white hover:from-blue-800 hover:to-[#012E71] w-full transition-all duration-300 hover:scale-105 text-sm sm:text-base mt-5">
                             <Calendar className="w-4 h-4 mr-2" />
                             Book This Service
                           </Button>
@@ -278,7 +278,7 @@ export default function UseCasesShowcase() {
 
                     <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-3">
                     <Link href="/contact">
-                      <Button className="flex-1 bg-gradient-to-r from-[#012E71] to-blue-800 text-white hover:from-blue-800 hover:to-[#012E71] transition-all duration-300 hover:scale-105 text-sm sm:text-base py-2 sm:py-3">
+                      <Button className="flex-1 bg-gradient-to-r from-[#012E71] to-blue-800 text-white hover:from-blue-800 hover:to-[#012E71] transition-all duration-300 hover:scale-105 text-sm sm:text-base py-2 sm:py-3 mr-5">
                         <Play className="w-4 h-4 mr-2" />
                         Get Free Quote
                       </Button>

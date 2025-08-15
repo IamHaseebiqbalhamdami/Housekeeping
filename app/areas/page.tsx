@@ -45,7 +45,7 @@ export default function AreasPage() {
       description: "Professional cleaning services for Midland and Penetanguishene communities.",
       serviceYears: 20,
       clients: 250,
-      image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop",
+      image: "https://media.istockphoto.com/id/180827818/photo/midland-texas-skyline-cityscape-and-lake.jpg?s=612x612&w=0&k=20&c=aw5t1P9jKCFr2XOjA_KWSVCkKM_JsxjxqwHLCokEbaI=",
       services: ["Residential", "Commercial", "Seasonal"],
       href: "/areas/midland",
     },

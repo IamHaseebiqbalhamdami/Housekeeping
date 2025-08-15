@@ -29,43 +29,44 @@ export default function SimcoeAreaPage() {
   }
   const reviews = [
     {
-      name: "Hannah Brooks",
+      name: "Aria Langley",
       neighborhood: "Downtown Simcoe",
       rating: 5,
-      text: "HouseKeeping PRO has been excellent in Simcoe! They always go the extra mile to make sure everything is spotless. Highly recommended.",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face",
-      serviceImage: "https://images.unsplash.com/photo-1587560699334-cc4ff3d64d15?w=400&h=300&fit=crop",
+      text: "HouseKeeping PRO has been phenomenal in Simcoe! They always pay attention to the smallest details and leave our home spotless. Highly recommended.",
+      image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=100&h=100&fit=crop&crop=face", // Female portrait
+      serviceImage: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&h=300&fit=crop", // Modern condo/home
     },
     {
-      name: "Michael Scott",
+      name: "Lucas Montgomery",
       neighborhood: "Norfolk Heights",
       rating: 5,
-      text: "We booked a deep cleaning for our home and were blown away by the results. Every detail was taken care of!",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
-      serviceImage: "https://images.unsplash.com/photo-1598300042247-464d39dfed9c?w=400&h=300&fit=crop",
+      text: "We booked a deep cleaning for our house and were completely impressed. Every corner was spotless, and the team was extremely professional.",
+      image: "https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?w=100&h=100&fit=crop&crop=face", // Male portrait
+      serviceImage: "https://images.unsplash.com/photo-1572120360610-d971b9b639b5?w=400&h=300&fit=crop", // Luxury home
     },
     {
-      name: "Grace Turner",
+      name: "Lillian Hart",
       neighborhood: "Queensway",
       rating: 5,
-      text: "Our office uses their services regularly, and they have never disappointed. Professional, friendly, and efficient.",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
-      serviceImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&h=300&fit=crop",
+      text: "Our office uses their cleaning services regularly, and the results are always amazing. Friendly, professional, and thorough every time.",
+      image: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=100&h=100&fit=crop&crop=face", // Female portrait
+      serviceImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&h=300&fit=crop", // Modern office/home
     },
   ]
+  
 
   const teamMembers = [
     {
-      name: "Charlotte Adams",
-      role: "Simcoe Area Manager",
-      experience: "18 years",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=300&fit=crop&crop=face",
+      name: "Violanda ibeet",
+      role: "Barrie Area Manager",
+      experience: "5 years",
+      image: "/Newteam/3.jpg",
     },
     {
-      name: "James Miller",
-      role: "Lead Cleaning Specialist",
-      experience: "9 years",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face",
+      name: "skyler mohfit",
+      role: "Senior Team Lead",
+      experience: "10 years",
+      image: "/newteam/6.jpg",
     },
   ]
 

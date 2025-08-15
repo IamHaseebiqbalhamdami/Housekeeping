@@ -2,6 +2,7 @@
 import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
+import {  useRef } from "react"  // ✅ Add useRef here
 import { Button } from "@/components/ui/button"
 import { ChevronDown, ChevronRight, Phone, Menu, X } from 'lucide-react'
 
@@ -11,12 +12,28 @@ function NavigationDropdown({
   items,
 }: { title: string; items: { name: string; href: string; description: string }[] }) {
   const [isOpen, setIsOpen] = useState(false)
+  const openTimeout = useRef<NodeJS.Timeout | null>(null)
+  const closeTimeout = useRef<NodeJS.Timeout | null>(null)
+
+  const handleMouseEnter = () => {
+    if (closeTimeout.current) clearTimeout(closeTimeout.current)
+    openTimeout.current = setTimeout(() => {
+      setIsOpen(true)
+    }, 200) // ⏳ Delay before opening
+  }
+
+  const handleMouseLeave = () => {
+    if (openTimeout.current) clearTimeout(openTimeout.current)
+    closeTimeout.current = setTimeout(() => {
+      setIsOpen(false)
+    }, 200) // ⏳ Delay before closing
+  }
 
   return (
     <div
       className="relative"
-      onMouseEnter={() => setIsOpen(true)}
-      onMouseLeave={() => setIsOpen(false)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       <button
         className={`flex items-center px-3 py-2 rounded transition-all ${
@@ -26,8 +43,9 @@ function NavigationDropdown({
         {title}
         <ChevronDown className={`w-4 h-4 ml-1 transition-transform ${isOpen ? "rotate-180" : ""}`} />
       </button>
+
       {isOpen && (
-        <div className="absolute top-full left-0 mt-2 min-w-[20rem] bg-white rounded-lg shadow-xl border border-gray-200 z-50 transition-all duration-200">
+        <div className="absolute top-full left-0 mt-2 min-w-[20rem] bg-white rounded-lg shadow-xl border border-gray-200 z-50">
           <div className="p-2">
             {items.map((item, index) => (
               <Link
@@ -50,6 +68,7 @@ function NavigationDropdown({
     </div>
   )
 }
+
 
 // ✅ Mobile Expandable Section Component
 function MobileExpandableSection({
