@@ -3,66 +3,134 @@ import Link from "next/link"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Clock, Home, Building2, Sparkles, CheckCircle, Phone, Calendar, Star, X, Car, TreePine, Package, Utensils, Bed, Bath, Sofa, Shirt, Monitor, Book, Flower, Trash2, Droplets, Wind } from "lucide-react"
-import SharedHeader from "@/components/shared-header"
+import {
+  Clock,
+  Home,
+  Building2,
+  Sparkles,
+  CheckCircle,
+  Phone,
+  Calendar,
+  Star,
+  X,
+  Car,
+  TreePine,
+  Package,
+  Utensils,
+  Bed,
+  Bath,
+  Sofa,
+  Shirt,
+  Monitor,
+  Book,
+  Flower,
+  Droplets,
+  Wind,
+  Trash2,
+} from "lucide-react"
 
 // Type definitions
 interface Service {
-  id: string;
-  name: string;
-  icon: any;
-  basePrice?: number;
-  price?: number;
+  id: string
+  name: string
+  icon: any
+  basePrice?: number
+  price?: number
 }
 
 // Enhanced Interactive Cleaning Calculator Component
 function InteractiveCleaningCalculator() {
   const [selectedServices, setSelectedServices] = useState<Service[]>([])
   const [totalCost, setTotalCost] = useState<number>(0)
+  const [selectedService, setSelectedService] = useState<string>("")
+  const [propertySize, setPropertySize] = useState<string>("")
+  const [frequency, setFrequency] = useState<string>("")
+  const [estimatedPrice, setEstimatedPrice] = useState<number | null>(null)
 
   const cleaningServices: Service[] = [
-    { id: 'living-room', name: 'Living Room', icon: Sofa, basePrice: 25 },
-    { id: 'kitchen', name: 'Kitchen', icon: Utensils, basePrice: 30 },
-    { id: 'bedroom', name: 'Bedroom', icon: Bed, basePrice: 20 },
-    { id: 'bathroom', name: 'Bathroom', icon: Bath, basePrice: 25 },
-    { id: 'dining-room', name: 'Dining Room', icon: Utensils, basePrice: 20 },
-    { id: 'office', name: 'Home Office', icon: Monitor, basePrice: 18 },
-    { id: 'garage', name: 'Garage', icon: Car, basePrice: 35 },
-    { id: 'basement', name: 'Basement', icon: Home, basePrice: 40 },
-    { id: 'attic', name: 'Attic', icon: Package, basePrice: 35 },
-    { id: 'laundry', name: 'Laundry Room', icon: Shirt, basePrice: 15 },
-    { id: 'pantry', name: 'Pantry/Store Room', icon: Package, basePrice: 12 },
-    { id: 'garden', name: 'Garden/Patio', icon: TreePine, basePrice: 30 },
-    { id: 'balcony', name: 'Balcony', icon: Flower, basePrice: 15 },
-    { id: 'hallway', name: 'Hallways', icon: Home, basePrice: 10 },
-    { id: 'stairs', name: 'Staircase', icon: Home, basePrice: 20 },
-    { id: 'library', name: 'Library/Study', icon: Book, basePrice: 22 }
+    { id: "living-room", name: "Living Room", icon: Sofa, basePrice: 25 },
+    { id: "kitchen", name: "Kitchen", icon: Utensils, basePrice: 30 },
+    { id: "bedroom", name: "Bedroom", icon: Bed, basePrice: 20 },
+    { id: "bathroom", name: "Bathroom", icon: Bath, basePrice: 25 },
+    { id: "dining-room", name: "Dining Room", icon: Utensils, basePrice: 20 },
+    { id: "office", name: "Home Office", icon: Monitor, basePrice: 18 },
+    { id: "garage", name: "Garage", icon: Car, basePrice: 35 },
+    { id: "basement", name: "Basement", icon: Home, basePrice: 40 },
+    { id: "attic", name: "Attic", icon: Package, basePrice: 35 },
+    { id: "laundry", name: "Laundry Room", icon: Shirt, basePrice: 15 },
+    { id: "pantry", name: "Pantry/Store Room", icon: Package, basePrice: 12 },
+    { id: "garden", name: "Garden/Patio", icon: TreePine, basePrice: 30 },
+    { id: "balcony", name: "Balcony", icon: Flower, basePrice: 15 },
+    { id: "hallway", name: "Hallways", icon: Home, basePrice: 10 },
+    { id: "stairs", name: "Staircase", icon: Home, basePrice: 20 },
+    { id: "library", name: "Library/Study", icon: Book, basePrice: 22 },
   ]
 
   const additionalServices: Service[] = [
-    { id: 'deep-clean', name: 'Deep Cleaning', icon: Sparkles, price: 59.99 },
-    { id: 'carpet', name: 'Carpet Cleaning', icon: Home, price: 25 },
-    { id: 'windows', name: 'Window Cleaning', icon: Droplets, price: 30 },
-    { id: 'air-ducts', name: 'Air Duct Cleaning', icon: Wind, price: 45 }
+    { id: "deep-clean", name: "Deep Cleaning", icon: Sparkles, price: 59.99 },
+    { id: "carpet", name: "Carpet Cleaning", icon: Home, price: 25 },
+    { id: "windows", name: "Window Cleaning", icon: Droplets, price: 30 },
+    { id: "air-ducts", name: "Air Duct Cleaning", icon: Wind, price: 45 },
+    { id: "trash-removal", name: "Trash Removal", icon: Trash2, price: 20 },
   ]
 
   const handleServiceToggle = (service: Service) => {
     const isSelected = selectedServices.find((s: Service) => s.id === service.id)
     let newServices: Service[]
-    
+
     if (isSelected) {
       newServices = selectedServices.filter((s: Service) => s.id !== service.id)
     } else {
       newServices = [...selectedServices, service]
     }
-    
+
     setSelectedServices(newServices)
-    
+
     // Calculate total cost
     const total = newServices.reduce((sum: number, service: Service) => {
       return sum + (service.basePrice || service.price || 0)
     }, 0)
     setTotalCost(total)
+  }
+
+  const calculateEstimatedPrice = () => {
+    let basePrice = 0
+    let additionalPrice = 0
+
+    // Calculate base price based on selected services
+    basePrice = selectedServices.reduce((sum: number, service: Service) => {
+      return sum + (service.basePrice || 0)
+    }, 0)
+
+    // Calculate additional price based on selected service type
+    if (selectedService === "deep") {
+      additionalPrice = 59.99
+    } else if (selectedService === "move") {
+      additionalPrice = 100
+    } else if (selectedService === "post") {
+      additionalPrice = 150
+    }
+
+    // Calculate property size multiplier
+    let sizeMultiplier = 1
+    if (propertySize === "medium") {
+      sizeMultiplier = 1.2
+    } else if (propertySize === "large") {
+      sizeMultiplier = 1.5
+    }
+
+    // Calculate frequency multiplier
+    let frequencyMultiplier = 1
+    if (frequency === "biweekly") {
+      frequencyMultiplier = 0.85
+    } else if (frequency === "monthly") {
+      frequencyMultiplier = 0.75
+    } else if (frequency === "onetime") {
+      frequencyMultiplier = 1.25
+    }
+
+    const estimated = (basePrice + additionalPrice) * sizeMultiplier * frequencyMultiplier
+    setEstimatedPrice(estimated)
   }
 
   return (
@@ -71,8 +139,8 @@ function InteractiveCleaningCalculator() {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-[#012E71] mb-4">Advanced Smart Cleaning Calculator</h2>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-            Select the rooms and services you need to get an instant estimate for your cleaning requirements.
-            All listed prices are charged per hour.
+            Select the rooms and services you need to get an instant estimate for your cleaning requirements. All listed
+            prices are charged per hour.
           </p>
         </div>
 
@@ -82,19 +150,21 @@ function InteractiveCleaningCalculator() {
             <h3 className="text-2xl font-bold text-[#012E71] mb-8 text-center">Select Rooms to Clean</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
               {cleaningServices.map((service: Service) => (
-                <Card 
+                <Card
                   key={service.id}
                   className={`cursor-pointer transition-all duration-300 hover:shadow-lg ${
                     selectedServices.find((s: Service) => s.id === service.id)
-                      ? 'bg-[#012E71] text-white shadow-lg scale-105'
-                      : 'bg-white hover:bg-blue-50'
+                      ? "bg-[#012E71] text-white shadow-lg scale-105"
+                      : "bg-white hover:bg-blue-50"
                   }`}
                   onClick={() => handleServiceToggle(service)}
                 >
                   <CardContent className="p-4 text-center">
-                    <service.icon className={`w-8 h-8 mx-auto mb-2 ${
-                      selectedServices.find((s: Service) => s.id === service.id) ? 'text-white' : 'text-[#012E71]'
-                    }`} />
+                    <service.icon
+                      className={`w-8 h-8 mx-auto mb-2 ${
+                        selectedServices.find((s: Service) => s.id === service.id) ? "text-white" : "text-[#012E71]"
+                      }`}
+                    />
                     <h4 className="font-semibold text-sm mb-1">{service.name}</h4>
                     <p className="text-xs opacity-80">${service.basePrice}</p>
                   </CardContent>
@@ -108,19 +178,21 @@ function InteractiveCleaningCalculator() {
             <h3 className="text-2xl font-bold text-[#012E71] mb-8 text-center">Additional Services</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {additionalServices.map((service: Service) => (
-                <Card 
+                <Card
                   key={service.id}
                   className={`cursor-pointer transition-all duration-300 hover:shadow-lg ${
                     selectedServices.find((s: Service) => s.id === service.id)
-                      ? 'bg-[#012E71] text-white shadow-lg scale-105'
-                      : 'bg-white hover:bg-blue-50'
+                      ? "bg-[#012E71] text-white shadow-lg scale-105"
+                      : "bg-white hover:bg-blue-50"
                   }`}
                   onClick={() => handleServiceToggle(service)}
                 >
                   <CardContent className="p-6 text-center">
-                    <service.icon className={`w-10 h-10 mx-auto mb-3 ${
-                      selectedServices.find((s: Service) => s.id === service.id) ? 'text-white' : 'text-[#012E71]'
-                    }`} />
+                    <service.icon
+                      className={`w-10 h-10 mx-auto mb-3 ${
+                        selectedServices.find((s: Service) => s.id === service.id) ? "text-white" : "text-[#012E71]"
+                      }`}
+                    />
                     <h4 className="font-semibold text-sm mb-2">{service.name}</h4>
                     <p className="text-sm opacity-80">${service.price}</p>
                   </CardContent>
@@ -134,13 +206,11 @@ function InteractiveCleaningCalculator() {
             <CardContent className="p-8">
               <div className="text-center">
                 <h3 className="text-2xl font-bold text-[#012E71] mb-4">Your Cleaning Estimate</h3>
-                <div className="text-5xl font-bold text-[#012E71] mb-4">
-                  ${totalCost}
-                </div>
+                <div className="text-5xl font-bold text-[#012E71] mb-4">${totalCost}</div>
                 <p className="text-gray-600 mb-6">
-                  {selectedServices.length} service{selectedServices.length !== 1 ? 's' : ''} selected
+                  {selectedServices.length} service{selectedServices.length !== 1 ? "s" : ""} selected
                 </p>
-                
+
                 {selectedServices.length > 0 && (
                   <div className="mb-8">
                     <h4 className="text-lg font-semibold text-gray-800 mb-4">Selected Services:</h4>
@@ -158,18 +228,19 @@ function InteractiveCleaningCalculator() {
                 )}
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button 
-                    size="lg" 
+                  <Button
+                    size="lg"
                     className="bg-[#012E71] hover:bg-blue-800 text-white px-8 py-4"
                     disabled={selectedServices.length === 0}
                   >
                     <Calendar className="w-5 h-5 mr-2" />
                     Book This Service
                   </Button>
-                  <Button 
-                    size="lg" 
+                  
+                  <Button
+                    size="lg"
                     variant="outline"
-                    className="border-[#012E71] text-[#012E71] hover:bg-[#012E71] hover:text-white px-8 py-4"
+                    className="border-[#012E71] text-[#012E71] hover:bg-[#012E71] hover:text-white px-8 py-4 bg-transparent"
                     disabled={selectedServices.length === 0}
                   >
                     <Phone className="w-5 h-5 mr-2" />
@@ -183,6 +254,73 @@ function InteractiveCleaningCalculator() {
               </div>
             </CardContent>
           </Card>
+
+          {/* Interactive Quote Calculator */}
+          <div className="bg-white p-8 rounded-lg shadow-lg mt-12">
+            <h3 className="text-2xl font-bold mb-6 text-center">Interactive Quote Calculator</h3>
+            <div className="space-y-6">
+              <div>
+                <label className="block text-sm font-medium mb-2">Service Type</label>
+                <select
+                  value={selectedService}
+                  onChange={(e) => setSelectedService(e.target.value)}
+                  className="w-full p-3 border rounded-lg"
+                >
+                  <option value="">Select a service</option>
+                  <option value="regular">Regular Cleaning</option>
+                  <option value="deep">Deep Cleaning</option>
+                  <option value="move">Move-in/Move-out</option>
+                  <option value="post">Post-Construction</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium mb-2">Property Size</label>
+                <select
+                  value={propertySize}
+                  onChange={(e) => setPropertySize(e.target.value)}
+                  className="w-full p-3 border rounded-lg"
+                >
+                  <option value="">Select size</option>
+                  <option value="small">Small (1-2 bedrooms)</option>
+                  <option value="medium">Medium (3-4 bedrooms)</option>
+                  <option value="large">Large (5+ bedrooms)</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium mb-2">Frequency</label>
+                <select
+                  value={frequency}
+                  onChange={(e) => setFrequency(e.target.value)}
+                  className="w-full p-3 border rounded-lg"
+                >
+                  <option value="">Select frequency</option>
+                  <option value="weekly">Weekly</option>
+                  <option value="biweekly">Bi-weekly</option>
+                  <option value="monthly">Monthly</option>
+                  <option value="onetime">One-time</option>
+                </select>
+              </div>
+
+              {estimatedPrice && (
+                <div className="bg-blue-50 p-4 rounded-lg">
+                  <h4 className="font-semibold text-lg">Estimated Price: ${estimatedPrice}</h4>
+                  <p className="text-sm text-gray-600 mt-1">*Final price may vary based on specific requirements</p>
+                </div>
+              )}
+
+              <div className="flex gap-4">
+                <Button className="flex-1 bg-blue-600 hover:bg-blue-700" onClick={calculateEstimatedPrice}>
+                  Get Estimate
+                </Button>
+                <Button variant="outline" className="flex-1 bg-transparent">
+                  Book Now
+                </Button>
+                
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -191,30 +329,31 @@ function InteractiveCleaningCalculator() {
 
 // Main component type definitions
 interface PricingPlan {
-  name: string;
-  icon: any;
-  price: string;
-  unit: string;
-  description: string;
-  features: string[];
-  popular: boolean;
+  name: string
+  icon: any
+  price: string
+  unit: string
+  description: string
+  features: string[]
+  popular: boolean
 }
 
 interface CommercialPlan {
-  type: string;
-  size: string;
-  price: string;
-  unit: string;
-  features: string[];
+  type: string
+  size: string
+  price: string
+  unit: string
+  features: string[]
 }
 
 interface AdditionalService {
-  service: string;
-  price: string;
+  service: string
+  price: string
 }
 
 export default function PricingPage() {
   const [showComingSoonPopup, setShowComingSoonPopup] = useState<boolean>(false)
+  const [cleaningType, setCleaningType] = useState<string>("")
 
   const pricingPlans: PricingPlan[] = [
     {
@@ -314,14 +453,18 @@ export default function PricingPage() {
     { service: "Carpet Cleaning", price: "$25 per room" },
     { service: "Garage Cleaning", price: "$45" },
     { service: "Basement Cleaning", price: "$55" },
+    { service: "Trash Removal", price: "$20" },
   ]
 
-  const handleChoosePlan = () => {
+  const handleChoosePlan = (type = "residential") => {
+    setCleaningType(type)
     setShowComingSoonPopup(true)
   }
 
   const ComingSoonPopup = () => {
     if (!showComingSoonPopup) return null
+
+    const buttonText = cleaningType === "commercial" ? "Book Now" : "Contact Us"
 
     return (
       <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
@@ -332,29 +475,32 @@ export default function PricingPage() {
           >
             <X className="w-6 h-6" />
           </button>
-          
+
           <div className="p-8 text-center">
             <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <Clock className="w-8 h-8 text-[#012E71]" />
             </div>
             <h3 className="text-2xl font-bold text-[#012E71] mb-4">Coming Soon!</h3>
             <p className="text-gray-600 mb-6">
-              Our online booking system will be available soon. For now, please contact us directly to schedule your cleaning service.
+              Our online booking system will be available soon. For now, please contact us directly to schedule your
+              cleaning service.
             </p>
             <div className="flex flex-col gap-3">
               <Link href="/contact">
                 <Button className="w-full bg-[#012E71] hover:bg-blue-800 text-white">
                   <Phone className="w-4 h-4 mr-2" />
-                  Contact Us Now
+                  {buttonText}
                 </Button>
               </Link>
+              <Link href="/contact">
               <Button
                 variant="outline"
-                onClick={() => setShowComingSoonPopup(false)}
+                // onClick={() => setShowComingSoonPopup(false)}
                 className="w-full border-gray-300 text-gray-600 hover:bg-gray-50"
               >
-                Close
+                Email Us
               </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -364,9 +510,6 @@ export default function PricingPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      {/* <SharedHeader currentPage="pricing" /> */}
-
       {/* Coming Soon Popup */}
       <ComingSoonPopup />
 
@@ -426,7 +569,7 @@ export default function PricingPage() {
                     ))}
                   </ul>
                   <Button
-                    onClick={handleChoosePlan}
+                    onClick={() => handleChoosePlan("residential")}
                     className={`w-full ${
                       plan.popular
                         ? "bg-[#012E71] hover:bg-blue-800 text-white"
@@ -474,9 +617,8 @@ export default function PricingPage() {
                     ))}
                   </ul>
                   <Button
-                    onClick={handleChoosePlan}
-                    className="w-full border-[#012E71] text-[#012E71] hover:bg-[#012E71] hover:text-white bg-transparent"
-                    variant="outline"
+                    onClick={() => handleChoosePlan("commercial")}
+                    className="w-full bg-[#012E71] hover:bg-blue-800 text-white"
                   >
                     Get Quote
                   </Button>

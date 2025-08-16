@@ -209,9 +209,9 @@ const TextType: React.FC<TextTypeProps> = ({
 
   return (
     <Component
-      ref={containerRef as any}
+      ref={containerRef as React.RefObject<HTMLDivElement>}
       className={`inline-block whitespace-pre-wrap ${className}`}
-      {...props}
+      {...(props as React.HTMLAttributes<HTMLDivElement>)}
     >
       <span
         className="inline-block"

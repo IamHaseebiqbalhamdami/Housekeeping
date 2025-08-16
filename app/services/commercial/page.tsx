@@ -160,7 +160,9 @@ export default function CommercialServicesPage() {
                       </li>
                     ))}
                   </ul>
+                  <Link href={`/contact`}>
                   <Button className="w-full bg-[#012E71] hover:bg-blue-800 text-white">Get Quote</Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}
