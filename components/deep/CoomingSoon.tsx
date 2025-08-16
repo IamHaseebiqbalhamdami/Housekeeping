@@ -15,7 +15,7 @@ function CoomingSoon() {
           County.
         </p>
         <div className="bg-gray-50 p-8 rounded-lg mb-8">
-          <h3 className="text-2xl font-bold text-[#012E71] mb-4">Coming Soon:</h3>
+          <h3 className="text-2xl font-bold text-[#012E71] mb-4">Avaibale Now:</h3>
           <ul className="text-left max-w-2xl mx-auto space-y-3">
             <li className="flex items-center">
               <CheckCircle className="w-5 h-5 text-green-500 mr-3" />

@@ -21,7 +21,7 @@ export default function DeepCleaningServicesPage() {
       <HowItWorks/>
       <Testimonials/>
       <Pricing/>
-    <SpecialOffers/>
+ 
       <WhyChooseUs/>
       {/* Coming Soon Content */}
      <CoomingSoon/>

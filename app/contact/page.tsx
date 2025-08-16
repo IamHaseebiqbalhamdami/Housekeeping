@@ -125,16 +125,7 @@ export default function ContactPage() {
                       />
                     </div>
                     <div>
-  <label className="block text-sm font-medium text-gray-700 mb-2">
-    Address
-  </label>
-  <Input 
-    name="address" 
-    value={formData.address} 
-    onChange={handleChange} 
-    required 
-    className="h-10 sm:h-11"
-  />
+
 </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">

@@ -29,43 +29,44 @@ export default function BarrieAreaPage() {
   }
   const reviews = [
     {
-      name: "Jennifer Thompson",
+      name: "Ava Thompson",
       neighborhood: "Downtown Barrie",
       rating: 5,
       text: "HouseKeeping PRO has been cleaning our downtown condo for 3 years. They're always professional and reliable. The team knows our building well and works efficiently.",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face",
+      image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=100&h=100&fit=crop&crop=face", // Female portrait
       serviceImage: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400&h=300&fit=crop",
     },
     {
-      name: "Robert Chen",
+      name: "Liam Reynolds",
       neighborhood: "South Barrie",
       rating: 5,
       text: "Excellent service! They cleaned our 4-bedroom house before we moved in. Every room was spotless and they even cleaned inside all the appliances. Highly recommend!",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
+      image: "https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?w=100&h=100&fit=crop&crop=face", // Male portrait
       serviceImage: "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=400&h=300&fit=crop",
     },
     {
-      name: "Sarah Wilson",
+      name: "Chloe Harrison",
       neighborhood: "Allandale",
       rating: 5,
       text: "The monthly cleaning service is fantastic. The team arrives on time, works quietly while I work from home, and leaves everything perfect. Great value for money!",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
+      image: "https://images.unsplash.com/photo-1506869640319-fe1a24fd76dc?w=100&h=100&fit=crop&crop=face", // Female portrait
       serviceImage: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&h=300&fit=crop",
     },
   ]
+  
 
   const teamMembers = [
     {
-      name: "Margaret Thompson",
+      name: "Justin peters",
       role: "Barrie Area Manager",
-      experience: "26 years",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=300&fit=crop&crop=face",
+      experience: "6 years",
+      image: "/Newteam/2.jpg",
     },
     {
-      name: "David Rodriguez",
+      name: "Troy Vruitt",
       role: "Senior Team Lead",
       experience: "12 years",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face",
+      image: "/newteam/6.jpg",
     },
   ]
 

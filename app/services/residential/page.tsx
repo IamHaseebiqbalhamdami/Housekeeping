@@ -63,24 +63,24 @@ export default function ResidentialServicesPage() {
 
   const teamMembers = [
     {
-      name: "Sarah Johnson",
+      name: "Sarah wilson",
       role: "Residential Team Lead",
       experience: "8 years",
-      image: '/team/freepik__the-style-is-candid-image-photography-with-natural__91135.png',
+      image: '/Newteam/3.jpg',
       uniform: "Blue HouseKeeping PRO polo shirt with company logo",
     },
     {
-      name: "Maria Garcia",
+      name: "Ranjit Sambar",
       role: "Senior Cleaner",
       experience: "6 years",
-      image: "/team/freepik__the-style-is-candid-image-photography-with-natural__85731.png",
+      image: "/Newteam/1.jpg",
       uniform: "Blue HouseKeeping PRO polo shirt with company logo",
     },
     {
-      name: "Jennifer Lee",
+      name: "David Rodriguez",
       role: "Quality Inspector",
       experience: "5 years",
-      image: "/team/freepik__the-style-is-candid-image-photography-with-natural__91134.png",
+      image: "/newteam/2.jpg",
       uniform: "Blue HouseKeeping PRO polo shirt with company logo",
     },
   ]
@@ -92,7 +92,7 @@ export default function ResidentialServicesPage() {
       rating: 5,
       text: "The residential team is amazing! They've been cleaning our 3-bedroom home for 2 years. Always professional, thorough, and reliable.",
       image: "/team/freepik__the-style-is-candid-image-photography-with-natural__91134.png",
-      serviceImage: "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=400&h=300&fit=crop",
+      serviceImage: "https://d1bvpoagx8hqbg.cloudfront.net/259/c2632b6d372cb09925fe1345afea3334.jpg",
     },
     {
       name: "Robert Chen",

@@ -29,43 +29,44 @@ export default function MidlandAreaPage() {
   }
   const reviews = [
     {
-      name: "Emily Carter",
+      name: "Isabella Knight",
       neighborhood: "Downtown Midland",
       rating: 5,
-      text: "HouseKeeping PRO has been amazing for our condo in downtown Midland. Always punctual, reliable, and they leave everything spotless.",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face",
-      serviceImage: "https://images.unsplash.com/photo-1587560699334-cc4ff3d64d15?w=400&h=300&fit=crop",
+      text: "HouseKeeping PRO has transformed our condo! They’re incredibly thorough and reliable, and every corner shines. Truly exceptional service.",
+      image: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=100&h=100&fit=crop&crop=face", // Female portrait
+      serviceImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&h=300&fit=crop", // Elegant condo image
     },
     {
-      name: "Liam Thompson",
+      name: "Sebastian Hale",
       neighborhood: "Midland Point",
       rating: 5,
-      text: "We used their deep cleaning service before moving into our new home. Absolutely impressed! They even cleaned inside the cabinets and appliances.",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
-      serviceImage: "https://images.unsplash.com/photo-1598300042247-464d39dfed9c?w=400&h=300&fit=crop",
+      text: "Absolutely phenomenal deep cleaning! They left our house spotless and went above and beyond with the appliances and hidden corners. Highly recommend!",
+      image: "https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?w=100&h=100&fit=crop&crop=face", // Male portrait
+      serviceImage: "https://images.unsplash.com/photo-1572120360610-d971b9b639b5?w=400&h=300&fit=crop", // Luxury home image
     },
     {
-      name: "Sophia Martinez",
+      name: "Aurora Sinclair",
       neighborhood: "East End",
       rating: 5,
-      text: "I book weekly cleaning for my Airbnb property. The team is professional and reliable, and my guests always compliment the cleanliness.",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
-      serviceImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&h=300&fit=crop",
+      text: "Weekly cleaning for my Airbnb has never been easier. Guests always comment on the sparkling cleanliness, and the team is polite and professional.",
+      image: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=100&h=100&fit=crop&crop=face", // Female portrait
+      serviceImage: "https://images.unsplash.com/photo-1572120360611-6b2d7b0c9c2f?w=400&h=300&fit=crop", // Stylish home image
     },
   ]
+  
 
   const teamMembers = [
     {
-      name: "Olivia Johnson",
-      role: "Midland Area Manager",
-      experience: "20 years",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=300&fit=crop&crop=face",
+      name: "Daniel Canales",
+      role: "Barrie Area Manager",
+      experience: "5 years",
+      image: "/Newteam/2.jpg",
     },
     {
-      name: "Ethan Williams",
-      role: "Senior Cleaning Specialist",
+      name: "Matt Rudei",
+      role: "Senior Team Lead",
       experience: "10 years",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face",
+      image: "/newteam/6.jpg",
     },
   ]
 

@@ -44,7 +44,7 @@ export default function LocationPage() {
       description: "Professional cleaning services for Midland and Penetanguishene communities.",
       serviceYears: 20,
       clients: 250,
-      image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop",
+      image: "https://media.istockphoto.com/id/180827818/photo/midland-texas-skyline-cityscape-and-lake.jpg?s=612x612&w=0&k=20&c=aw5t1P9jKCFr2XOjA_KWSVCkKM_JsxjxqwHLCokEbaI=",
       services: ["Residential", "Commercial", "Seasonal"],
       href: "/areas/midland",
     },
@@ -114,9 +114,9 @@ export default function LocationPage() {
       description: "Historic CPR port-community turned seasonal hotspot with beaches, festivals, and growing tourism.",
       serviceYears: 6,
       clients: 100,
-      image: "", // could use a photo of Port McNicoll waterfront from online sources
+      image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/58/d1/7d/gazebo-and-playground.jpg?w=500&h=500&s=1", // could use a photo of Port McNicoll waterfront from online sources
       services: ["Cottage Cleaning", "Seasonal Rentals", "Event Readiness"],
-      href: "/areas/port-mcnicoll",
+      href: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/58/d1/7d/gazebo-and-playground.jpg?w=500&h=500&s=1",
     },
     {
       city: "Creemore",
@@ -134,7 +134,7 @@ export default function LocationPage() {
       description: "Picturesque township with 70 km of coastline, parks, beaches and outdoor-oriented service demand.",
       serviceYears: 10,
       clients: 160,
-      image: "", // add a Tiny image
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkUL209bz0nsny97_oj1e-dx-cqrKviFX3Hw&s", // add a Tiny image
       services: ["Cottage Cleaning", "Residential", "Seasonal Properties"],
       href: "/areas/tiny",
     },

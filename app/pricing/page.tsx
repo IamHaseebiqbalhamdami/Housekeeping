@@ -363,7 +363,7 @@ export default function PricingPage() {
       unit: "starting price",
       description: "Perfect for cleaning, move-ins, or special occasions",
       features: [
-        "Complete deep cleaning",
+        "Completey cleaning",
         "All rooms and bathrooms",
         "Kitchen appliances",
         "Baseboards and windowsills",

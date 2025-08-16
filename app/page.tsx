@@ -228,7 +228,7 @@ export default function HomePage() {
       title: "Office Cleaning",
       description: "Professional office cleaning services to maintain a healthy and productive work environment.",
       icon: Building2,
-      image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=300&fit=crop",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcYmoFZJDmwPo-YYMZRgx2HgB23n2iPPQysA&s",
       link: "/services/office",
     },
   ]

@@ -40,7 +40,7 @@ export default function AboutPage() {
       bio: "Leads our quality control initiatives and training programs for all cleaning professionals.",
     },
     {
-      name: "Michael Chen",
+      name: "Linda Grace",
       role: "Customer Relations Manager",
       experience: "8 years",
       image: "/Newteam/4.jpg",
@@ -171,14 +171,7 @@ export default function AboutPage() {
             </div>
             <div className="order-1 lg:order-2">
               <div className="relative">
-                <video
-                  className="w-full h-64 sm:h-80 lg:h-96 object-cover rounded-lg shadow-2xl"
-                  controls
-                  poster="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=600&h=400&fit=crop"
-                >
-                  <source src="https://res.cloudinary.com/dterqp7lk/video/upload/v1754918781/review_ajpjqt.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+              
                 <div className="absolute top-2 sm:top-4 left-2 sm:left-4">
                   <Image
                     src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-08-02%20at%2020.55.30_d31d3cc8.jpg-ltfbL4qxNsZJM19pu8YgBkJBiRmUlE.jpeg"

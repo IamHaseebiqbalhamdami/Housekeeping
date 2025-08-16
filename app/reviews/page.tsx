@@ -20,7 +20,7 @@ export default function ReviewsPage() {
   const reviews = [
     {
       id: 1,
-      name: "Eleanor Brooks",
+      name: "Nate Brooks",
       location: "Barrie, ON",
       service: "Residential",
       rating: 5,

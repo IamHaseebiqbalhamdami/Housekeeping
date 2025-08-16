@@ -29,43 +29,43 @@ export default function WasagaAreaPage() {
   }
   const reviews = [
     {
-      name: "Emma Johnson",
+      name: "Aurora Blake",
       neighborhood: "Beach Area 1",
       rating: 5,
-      text: "Fantastic service! Our cottage was spotless after their deep clean. Perfect for vacation homes in Wasaga.",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face",
-      serviceImage: "https://images.unsplash.com/photo-1616594039964-76b38e229a3c?w=400&h=300&fit=crop",
+      text: "Absolutely amazing! Our beach cottage has never looked better. The team is punctual, professional, and extremely thorough.",
+      image: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=100&h=100&fit=crop&crop=face", // Female portrait
+      serviceImage: "https://images.unsplash.com/photo-1505691723518-34d3ec8f3e8b?w=400&h=300&fit=crop", // Stylish beach house
     },
     {
-      name: "Daniel Parker",
+      name: "Julian Hayes",
       neighborhood: "Mosley Street",
       rating: 5,
-      text: "We book them every summer for our rental property. Always on time and leave the place looking amazing.",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
-      serviceImage: "https://images.unsplash.com/photo-1564540583246-934409427776?w=400&h=300&fit=crop",
+      text: "We’ve used their services for years for our summer rentals. Always spotless results and super friendly staff!",
+      image: "https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?w=100&h=100&fit=crop&crop=face", // Male portrait
+      serviceImage: "https://images.unsplash.com/photo-1560184897-1ed4a13b8a9f?w=400&h=300&fit=crop", // Modern home
     },
     {
-      name: "Sophia Lee",
+      name: "Isla Whitman",
       neighborhood: "Allenwood Beach",
       rating: 5,
-      text: "Professional, friendly team! They handled our Airbnb turnover perfectly, even during peak season.",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
-      serviceImage: "https://images.unsplash.com/photo-1584433144859-1fc3ab64a6f6?w=400&h=300&fit=crop",
+      text: "Professional, reliable, and thorough! Perfect for Airbnb turnovers, even during busy weekends. Highly recommend.",
+      image: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=100&h=100&fit=crop&crop=face", // Female portrait
+      serviceImage: "https://images.unsplash.com/photo-1572120360611-6b2d7b0c9c2f?w=400&h=300&fit=crop", // Cozy vacation home
     },
   ]
-
+  
   const teamMembers = [
     {
-      name: "Olivia Brown",
-      role: "Wasaga Area Manager",
-      experience: "15 years",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=300&fit=crop&crop=face",
+      name: "Amber Gall",
+      role: "Barrie Area Manager",
+      experience: "5 years",
+      image: "/Newteam/3.jpg",
     },
     {
-      name: "Liam Walker",
-      role: "Vacation Property Specialist",
-      experience: "8 years",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face",
+      name: "Anthony Smith",
+      role: "Senior Team Lead",
+      experience: "10 years",
+      image: "/newteam/6.jpg",
     },
   ]
 
