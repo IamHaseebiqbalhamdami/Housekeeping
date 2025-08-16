@@ -42,7 +42,7 @@ export default function SimcoeAreaPage() {
       rating: 5,
       text: "We booked a deep cleaning for our house and were completely impressed. Every corner was spotless, and the team was extremely professional.",
       image: "https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?w=100&h=100&fit=crop&crop=face", // Male portrait
-      serviceImage: "https://images.unsplash.com/photo-1572120360610-d971b9b639b5?w=400&h=300&fit=crop", // Luxury home
+      serviceImage: "https://i8x4h9z9.delivery.rocketcdn.me/wp-content/uploads/2014/10/modern-rustic-black-exterior-house-kerr-ritchie-house-exterior-studio-1.jpg", // Luxury home
     },
     {
       name: "Lillian Hart",
@@ -90,7 +90,7 @@ export default function SimcoeAreaPage() {
               Serving Simcoe and surrounding areas with reliable, professional cleaning services for homes and businesses.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              M<Link href={'/contact'}>
+              <Link href={'/contact'}>
 
               <Button size="lg" className="bg-white text-[#012E71] hover:bg-gray-100">
                 <Calendar className="w-5 h-5 mr-2" />

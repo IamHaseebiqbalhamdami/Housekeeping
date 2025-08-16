@@ -29,7 +29,7 @@ export default function MidlandAreaPage() {
   }
   const reviews = [
     {
-      name: "Isabella Knight",
+      name: "Isabell Knight",
       neighborhood: "Downtown Midland",
       rating: 5,
       text: "HouseKeeping PRO has transformed our condo! They’re incredibly thorough and reliable, and every corner shines. Truly exceptional service.",
@@ -41,8 +41,8 @@ export default function MidlandAreaPage() {
       neighborhood: "Midland Point",
       rating: 5,
       text: "Absolutely phenomenal deep cleaning! They left our house spotless and went above and beyond with the appliances and hidden corners. Highly recommend!",
-      image: "https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?w=100&h=100&fit=crop&crop=face", // Male portrait
-      serviceImage: "https://images.unsplash.com/photo-1572120360610-d971b9b639b5?w=400&h=300&fit=crop", // Luxury home image
+      image: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=100&h=100&fit=crop&crop=face", // Male portrait
+      serviceImage: "https://i8x4h9z9.delivery.rocketcdn.me/wp-content/uploads/2014/10/modern-rustic-black-exterior-house-kerr-ritchie-house-exterior-studio-1.jpg", // Luxury home image
     },
     {
       name: "Aurora Sinclair",
@@ -50,7 +50,7 @@ export default function MidlandAreaPage() {
       rating: 5,
       text: "Weekly cleaning for my Airbnb has never been easier. Guests always comment on the sparkling cleanliness, and the team is polite and professional.",
       image: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=100&h=100&fit=crop&crop=face", // Female portrait
-      serviceImage: "https://images.unsplash.com/photo-1572120360611-6b2d7b0c9c2f?w=400&h=300&fit=crop", // Stylish home image
+      serviceImage: "https://www.designlinesmagazine.com/media/2019/09/Modern-Nest-Designlines-01-930x744.jpg", // Stylish home image
     },
   ]
   

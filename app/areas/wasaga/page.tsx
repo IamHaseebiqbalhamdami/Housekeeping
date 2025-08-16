@@ -34,7 +34,7 @@ export default function WasagaAreaPage() {
       rating: 5,
       text: "Absolutely amazing! Our beach cottage has never looked better. The team is punctual, professional, and extremely thorough.",
       image: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=100&h=100&fit=crop&crop=face", // Female portrait
-      serviceImage: "https://images.unsplash.com/photo-1505691723518-34d3ec8f3e8b?w=400&h=300&fit=crop", // Stylish beach house
+      serviceImage: "https://i.pinimg.com/736x/7b/ae/50/7bae50d98359d8280000bc32ad255928.jpg", // Stylish beach house
     },
     {
       name: "Julian Hayes",
@@ -42,7 +42,7 @@ export default function WasagaAreaPage() {
       rating: 5,
       text: "We’ve used their services for years for our summer rentals. Always spotless results and super friendly staff!",
       image: "https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?w=100&h=100&fit=crop&crop=face", // Male portrait
-      serviceImage: "https://images.unsplash.com/photo-1560184897-1ed4a13b8a9f?w=400&h=300&fit=crop", // Modern home
+      serviceImage: "https://welshdesignstudio.com/wp-content/uploads/black-house-cedar-porch.jpg", // Modern home
     },
     {
       name: "Isla Whitman",
@@ -50,7 +50,7 @@ export default function WasagaAreaPage() {
       rating: 5,
       text: "Professional, reliable, and thorough! Perfect for Airbnb turnovers, even during busy weekends. Highly recommend.",
       image: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=100&h=100&fit=crop&crop=face", // Female portrait
-      serviceImage: "https://images.unsplash.com/photo-1572120360611-6b2d7b0c9c2f?w=400&h=300&fit=crop", // Cozy vacation home
+      serviceImage: "https://edwardgeorgelondon.com/wp-content/uploads/2024/11/Modern-black-facade-cedar-accents-house-exteriors-with-black-windows-greige-house-exteriors-black-windows-gray-stone-trim-683x1024.webp", // Cozy vacation home
     },
   ]
   
