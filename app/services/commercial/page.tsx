@@ -65,7 +65,7 @@ export default function CommercialServicesPage() {
       rating: 5,
       text: "HouseKeeping PRO has been cleaning our law office for 4 years. They're professional, reliable, and work around our schedule perfectly.",
       image: "https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?w=100&h=100&fit=crop&crop=face", // Male portrait
-      serviceImage: "https://images.unsplash.com/photo-1604014237744-df98734b2a4b?w=400&h=300&fit=crop", // Service image
+      serviceImage: "https://www.architectandinteriorsindia.com/cloud/2022/12/30/zGp1UtVF-Conference-1-1200x800.jpg", // Service image
     },
     {
       name: "James Turner",
@@ -73,8 +73,8 @@ export default function CommercialServicesPage() {
       location: "Orillia, ON",
       rating: 5,
       text: "Their medical office cleaning is exceptional. They understand the strict hygiene requirements and always exceed our expectations.",
-      image: "https://images.unsplash.com/photo-1600488995720-5b1e3a3c5a7d?w=100&h=100&fit=crop&crop=face", // Male portrait
-      serviceImage: "https://images.unsplash.com/photo-1588776814546-1ffcf47267d4?w=400&h=300&fit=crop", // Service image
+      image: "https://media.istockphoto.com/id/1336324740/photo/having-fun-at-a-garden-party.jpg?s=612x612&w=0&k=20&c=r5iNGwCyH-6ENsCVz7FuyDEJ-Pnokaz-af84Qa28-6E=", // Male portrait
+      serviceImage: "https://thumbs.dreamstime.com/b/empty-modern-hospital-corridor-clinic-hallway-interior-background-white-chairs-patients-waiting-doctor-visit-contemporary-208439059.jpg", // Service image
     },
   ];
   

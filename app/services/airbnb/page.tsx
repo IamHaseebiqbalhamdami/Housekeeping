@@ -60,7 +60,7 @@ export default function AirbnbServicesPage() {
       rating: 5,
       text: "HouseKeeping PRO has been managing my Airbnb cleaning for 2 years. My guests consistently mention how clean and welcoming the space is. 5-star reviews every time!",
       image: "https://media.sciencephoto.com/f0/01/22/50/f0012250-800px-wm.jpg",
-      serviceImage: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400&h=300&fit=crop",
+      serviceImage: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400&h=400&fit=crop",
     },
     {
       name: "Mark Chen",
@@ -69,7 +69,7 @@ export default function AirbnbServicesPage() {
       rating: 5,
       text: "The turnover cleaning is incredibly fast and thorough. They work around my booking schedule perfectly and always leave the place spotless.",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
-      serviceImage: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=400&h=300&fit=crop",
+      serviceImage: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=400&h=400&fit=crop",
     },
   ]
   const features = [
@@ -387,9 +387,6 @@ export default function AirbnbServicesPage() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
- 
     </div>
   )
 }
