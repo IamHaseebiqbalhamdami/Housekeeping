@@ -64,8 +64,8 @@ export default function CommercialServicesPage() {
       location: "Barrie, ON",
       rating: 5,
       text: "HouseKeeping PRO has been cleaning our law office for 4 years. They're professional, reliable, and work around our schedule perfectly.",
-      image: "https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?w=100&h=100&fit=crop&crop=face", // Male portrait
-      serviceImage: "https://www.architectandinteriorsindia.com/cloud/2022/12/30/zGp1UtVF-Conference-1-1200x800.jpg", // Service image
+      image: "https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?w=100&h=100&fit=crop&crop=face",
+      serviceImage: "https://www.architectandinteriorsindia.com/cloud/2022/12/30/zGp1UtVF-Conference-1-1200x800.jpg",
     },
     {
       name: "James Turner",
@@ -73,10 +73,12 @@ export default function CommercialServicesPage() {
       location: "Orillia, ON",
       rating: 5,
       text: "Their medical office cleaning is exceptional. They understand the strict hygiene requirements and always exceed our expectations.",
-      image: "https://media.istockphoto.com/id/1336324740/photo/having-fun-at-a-garden-party.jpg?s=612x612&w=0&k=20&c=r5iNGwCyH-6ENsCVz7FuyDEJ-Pnokaz-af84Qa28-6E=", // Male portrait
-      serviceImage: "https://thumbs.dreamstime.com/b/empty-modern-hospital-corridor-clinic-hallway-interior-background-white-chairs-patients-waiting-doctor-visit-contemporary-208439059.jpg", // Service image
+      image:
+        "https://media.istockphoto.com/id/1336324740/photo/having-fun-at-a-garden-party.jpg?s=612x612&w=0&k=20&c=r5iNGwCyH-6ENsCVz7FuyDEJ-Pnokaz-af84Qa28-6E=",
+      serviceImage:
+        "https://thumbs.dreamstime.com/b/empty-modern-hospital-corridor-clinic-hallway-interior-background-white-chairs-patients-waiting-doctor-visit-contemporary-208439059.jpg",
     },
-  ];
+  ]
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -225,56 +227,67 @@ export default function CommercialServicesPage() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {reviews.map((review, index) => (
-              <Card key={index} className="shadow-xl border-0 overflow-hidden">
-                <div className="grid md:grid-cols-2">
-                  <div className="relative">
-                    <Image
-                      src={review.serviceImage || "/placeholder.svg"}
-                      alt="Commercial service in progress"
-                      width={400}
-                      height={300}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute top-4 left-4">
-                      <Image
-                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-08-02%20at%2020.55.30_d31d3cc8.jpg-ltfbL4qxNsZJM19pu8YgBkJBiRmUlE.jpeg"
-                        alt="HouseKeeping PRO Logo"
-                        width={80}
-                        height={30}
-                        className="h-8 w-auto bg-white/90 p-1 rounded"
-                      />
-                    </div>
-                  </div>
-                  <CardContent className="p-6">
-                    <div className="flex mb-4">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                      ))}
-                    </div>
-                    <p className="text-gray-700 mb-4 italic">"{review.text}"</p>
-                    <div className="flex items-center">
-                      <Image
-                        src={review.image || "/placeholder.svg"}
-                        alt={review.name}
-                        width={50}
-                        height={50}
-                        className="rounded-full mr-3"
-                      />
-                      <div>
-                        <h4 className="font-bold text-[#012E71]">{review.name}</h4>
-                        <p className="text-gray-600 text-sm">{review.company}</p>
-                        <p className="text-gray-600 text-sm flex items-center">
-                          <MapPin className="w-3 h-3 mr-1" />
-                          {review.location}
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </div>
-              </Card>
-            ))}
+  {reviews.map((review, index) => (
+    <Card key={index} className="shadow-xl border-0 overflow-hidden h-full">
+      <div className="grid md:grid-cols-2 h-full">
+        {/* Image side */}
+        <div className="relative h-full">
+          <Image
+            src={review.serviceImage || "/placeholder.svg"}
+            alt="Commercial service in progress"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute top-4 left-4">
+            <Image
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-08-02%20at%2020.55.30_d31d3cc8.jpg-ltfbL4qxNsZJM19pu8YgBkJBiRmUlE.jpeg"
+              alt="HouseKeeping PRO Logo"
+              width={80}
+              height={30}
+              className="h-8 w-auto bg-white/90 p-1 rounded"
+            />
           </div>
+        </div>
+
+        {/* Content side */}
+        <CardContent className="p-6 flex flex-col justify-between">
+          <div>
+            <div className="flex mb-4">
+              {[...Array(5)].map((_, i) => (
+                <Star
+                  key={i}
+                  className="w-5 h-5 text-yellow-400 fill-current"
+                />
+              ))}
+            </div>
+            <p className="text-gray-700 mb-4 italic">
+              "{review.text}"
+            </p>
+          </div>
+
+          <div className="flex items-center mt-auto">
+            <Image
+              src={review.image || "/placeholder.svg"}
+              alt={review.name}
+              width={50}
+              height={50}
+              className="rounded-full mr-3"
+            />
+            <div>
+              <h4 className="font-bold text-[#012E71]">{review.name}</h4>
+              <p className="text-gray-600 text-sm">{review.company}</p>
+              <p className="text-gray-600 text-sm flex items-center">
+                <MapPin className="w-3 h-3 mr-1" />
+                {review.location}
+              </p>
+            </div>
+          </div>
+        </CardContent>
+      </div>
+    </Card>
+  ))}
+</div>
+
         </div>
       </section>
 
