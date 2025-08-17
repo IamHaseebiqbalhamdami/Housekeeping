@@ -50,7 +50,7 @@ export default function ResidentialServicesPage() {
       duration: "4-6 hours",
       features: ["Inside appliances", "Baseboards & windows", "Light fixtures", "Cabinet interiors"],
       image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&h=300&fit=crop",
-    },
+          },
     {
       title: "Move-In/Move-Out",
       description: "Complete cleaning for your new home or preparing your old one for sale.",
@@ -58,6 +58,7 @@ export default function ResidentialServicesPage() {
       duration: "5-8 hours",
       features: ["Empty home cleaning", "All surfaces sanitized", "Appliance cleaning", "Final inspection"],
       image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
+      
     },
   ]
 
@@ -92,7 +93,8 @@ export default function ResidentialServicesPage() {
       rating: 5,
       text: "The residential team is amazing! They've been cleaning our 3-bedroom home for 2 years. Always professional, thorough, and reliable.",
       image: "https://d1bvpoagx8hqbg.cloudfront.net/259/c2632b6d372cb09925fe1345afea3334.jpg",
-      serviceImage: "https://d1bvpoagx8hqbg.cloudfront.net/259/c2632b6d372cb09925fe1345afea3334.jpg",
+      serviceImage:"https://images.unsplash.com/photo-1605146769289-440113cc3d00?fm=jpg&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FuYWRhJTIwaG91c2V8ZW58MHx8MHx8fDA%3D&ixlib=rb-4.1.0&q=60&w=3000",
+      
     },
     {
       name: "Robert Chen",
@@ -100,7 +102,7 @@ export default function ResidentialServicesPage() {
       rating: 5,
       text: "Exceptional deep cleaning service! They cleaned our entire house before we moved in. Every corner was spotless.",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
-      serviceImage: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&h=300&fit=crop",
+      serviceImage: "https://peterfourlas.ca/wp-content/uploads/2025/02/106686.canada.jpg",
     },
   ]
 
