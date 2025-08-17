@@ -444,7 +444,312 @@
 // }
 // export default SplashScreen
 
+// "use client"
+// import { useEffect, useState } from "react"
+// import { motion, AnimatePresence } from "framer-motion"
+
+// export default function SplashScreen() {
+//   const [loading, setLoading] = useState(true)
+
+//   useEffect(() => {
+//     const timer = setTimeout(() => setLoading(false), 3500) // 3.5s splash
+//     return () => clearTimeout(timer)
+//   }, [])
+
+//   return (
+//     <AnimatePresence>
+//       {loading && (
+//         <motion.div
+//           key="splash"
+//           initial={{ opacity: 0 }}
+//           animate={{ opacity: 1 }}
+//           exit={{ opacity: 0, transition: { duration: 1 } }}
+//           className="fixed inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-blue-100 via-blue-200 to-blue-300 z-50"
+//         >
+//           {/* Brand Text Animation */}
+//           <motion.h1
+//             initial={{ scale: 0.8, opacity: 0 }}
+//             animate={{ scale: 1, opacity: 1 }}
+//             transition={{ duration: 1, ease: "easeOut" }}
+//             className="text-5xl md:text-6xl font-extrabold text-blue-900 tracking-wide"
+//           >
+//             House Keeping <span className="text-blue-700">Pro</span>
+//           </motion.h1>
+
+//           {/* Tagline */}
+//           <motion.p
+//             initial={{ y: 20, opacity: 0 }}
+//             animate={{ y: 0, opacity: 1 }}
+//             transition={{ delay: 0.6, duration: 0.8 }}
+//             className="mt-3 text-lg text-gray-700 italic"
+//           >
+//             Simplifying Home Care Management
+//           </motion.p>
+
+//           {/* Wave Loader */}
+//           <motion.div
+//             className="flex space-x-2 mt-10"
+//             initial={{ opacity: 0 }}
+//             animate={{ opacity: 1 }}
+//             transition={{ delay: 1 }}
+//           >
+//             {[...Array(3)].map((_, i) => (
+//               <motion.span
+//                 key={i}
+//                 className="w-3 h-3 bg-blue-700 rounded-full"
+//                 animate={{ y: [0, -10, 0] }}
+//                 transition={{
+//                   repeat: Infinity,
+//                   duration: 0.6,
+//                   delay: i * 0.2,
+//                 }}
+//               />
+//             ))}
+//           </motion.div>
+//         </motion.div>
+//       )}
+//     </AnimatePresence>
+//   )
+// }
+// "use client"
+
+// import { useEffect, useState } from "react"
+// import { motion, AnimatePresence } from "framer-motion"
+
+// export default function SplashScreen() {
+//   const [loading, setLoading] = useState(true)
+
+//   useEffect(() => {
+//     const timer = setTimeout(() => setLoading(false), 3500) // 3.5s splash
+//     return () => clearTimeout(timer)
+//   }, [])
+
+//   return (
+//     <AnimatePresence>
+//       {loading && (
+//         <motion.div
+//           key="splash"
+//           initial={{ opacity: 0 }}
+//           animate={{ opacity: 1 }}
+//           exit={{ opacity: 0, transition: { duration: 1 } }}
+//           className="fixed inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-blue-50 via-blue-200 to-blue-400 z-50"
+//         >
+//           {/* Floating Glow Circle Background */}
+//           <motion.div
+//             className="absolute w-72 h-72 bg-blue-300 rounded-full blur-3xl opacity-30"
+//             animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
+//             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+//           />
+//           <motion.div
+//             className="absolute w-96 h-96 bg-blue-500 rounded-full blur-3xl opacity-20"
+//             animate={{ scale: [1.2, 0.9, 1.2], opacity: [0.2, 0.4, 0.2] }}
+//             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+//           />
+
+//           {/* Brand Text Animation */}
+//           <motion.h1
+//             initial={{ scale: 0.7, opacity: 0 }}
+//             animate={{ scale: 1, opacity: 1 }}
+//             transition={{ duration: 1.2, ease: "easeOut" }}
+//             className="text-5xl md:text-6xl font-extrabold text-blue-900 tracking-wide relative z-10"
+//           >
+//             House Keeping <span className="text-blue-700">Pro</span>
+//           </motion.h1>
+
+//           {/* Tagline */}
+//           <motion.p
+//             initial={{ y: 20, opacity: 0 }}
+//             animate={{ y: 0, opacity: 1 }}
+//             transition={{ delay: 0.6, duration: 0.8 }}
+//             className="mt-3 text-lg md:text-xl text-gray-800 italic z-10"
+//           >
+//             Simplifying Home Care Management
+//           </motion.p>
+
+//           {/* Modern Loader (pulse ring + bouncing dots) */}
+//           <motion.div
+//             className="relative flex justify-center items-center mt-12 z-10"
+//             initial={{ opacity: 0 }}
+//             animate={{ opacity: 1 }}
+//             transition={{ delay: 1 }}
+//           >
+//             {/* Pulse Ring */}
+//             <motion.div
+//               className="absolute w-16 h-16 border-4 border-blue-600 rounded-full"
+//               animate={{ scale: [1, 1.5, 1], opacity: [0.8, 0.2, 0.8] }}
+//               transition={{ repeat: Infinity, duration: 2 }}
+//             />
+
+//             {/* Bouncing dots */}
+//             <div className="flex space-x-2">
+//               {[...Array(3)].map((_, i) => (
+//                 <motion.span
+//                   key={i}
+//                   className="w-3 h-3 bg-blue-700 rounded-full"
+//                   animate={{ y: [0, -10, 0] }}
+//                   transition={{
+//                     repeat: Infinity,
+//                     duration: 0.6,
+//                     delay: i * 0.2,
+//                   }}
+//                 />
+//               ))}
+//             </div>
+//           </motion.div>
+//         </motion.div>
+//       )}
+//     </AnimatePresence>
+//   )
+// }
+
+// "use client"
+
+// import { useEffect, useState } from "react"
+// import { motion, AnimatePresence } from "framer-motion"
+
+// export default function SplashScreen() {
+//   const [loading, setLoading] = useState(true)
+
+//   useEffect(() => {
+//     const timer = setTimeout(() => setLoading(false), 3500)
+//     return () => clearTimeout(timer)
+//   }, [])
+
+//   return (
+//     <AnimatePresence>
+//       {loading && (
+//         <motion.div
+//           key="splash"
+//           initial={{ opacity: 0 }}
+//           animate={{ opacity: 1 }}
+//           exit={{ opacity: 0, transition: { duration: 1 } }}
+//           className="fixed inset-0 flex flex-col items-center justify-center bg-gradient-to-tr from-blue-900 via-blue-700 to-blue-500 overflow-hidden z-50"
+//         >
+//           {/* Moving gradient streaks */}
+//           <motion.div
+//             className="absolute inset-0"
+//             animate={{
+//               backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+//             }}
+//             transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+//             style={{
+//               backgroundImage:
+//                 "linear-gradient(120deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%)",
+//               backgroundSize: "200% 200%",
+//             }}
+//           />
+
+//           {/* Glass effect card */}
+//           <motion.div
+//             initial={{ scale: 0.9, opacity: 0 }}
+//             animate={{ scale: 1, opacity: 1 }}
+//             transition={{ duration: 1, ease: "easeOut" }}
+//             className="relative z-10 backdrop-blur-xl bg-white/10 px-10 py-8 rounded-2xl shadow-lg flex flex-col items-center"
+//           >
+//             {/* Brand Text */}
+//             <motion.h1
+//               initial={{ opacity: 0, y: 20 }}
+//               animate={{ opacity: 1, y: 0 }}
+//               transition={{ duration: 1 }}
+//               className="text-5xl md:text-6xl font-extrabold text-white tracking-wider"
+//             >
+//               House Keeping <span className="text-blue-300">Pro</span>
+//             </motion.h1>
+
+//             {/* Tagline */}
+//             <motion.p
+//               initial={{ opacity: 0, y: 10 }}
+//               animate={{ opacity: 1, y: 0 }}
+//               transition={{ delay: 0.6, duration: 0.8 }}
+//               className="mt-3 text-lg text-blue-100 italic"
+//             >
+//               Simplifying Home Care Management
+//             </motion.p>
+
+//             {/* Circular rotating loader */}
+//             <motion.div
+//               className="mt-10 w-16 h-16 border-4 border-blue-300 border-t-transparent rounded-full"
+//               animate={{ rotate: 360 }}
+//               transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
+//             />
+//           </motion.div>
+//         </motion.div>
+//       )}
+//     </AnimatePresence>
+//   )
+// }
+
+
+// "use client"
+
+// import { useEffect, useState } from "react"
+// import { motion, AnimatePresence } from "framer-motion"
+
+// export default function SplashScreen() {
+//   const [loading, setLoading] = useState(true)
+
+//   useEffect(() => {
+//     const timer = setTimeout(() => setLoading(false), 3500)
+//     return () => clearTimeout(timer)
+//   }, [])
+
+//   return (
+//     <AnimatePresence>
+//       {loading && (
+//         <motion.div
+//           key="splash"
+//           initial={{ opacity: 0 }}
+//           animate={{ opacity: 1 }}
+//           exit={{ opacity: 0, transition: { duration: 1 } }}
+//           className="fixed inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-blue-900 via-blue-700 to-blue-500 z-50"
+//         >
+//           {/* Logo with glowing loader ring */}
+//           <motion.div
+//             initial={{ scale: 0.8, opacity: 0 }}
+//             animate={{ scale: 1, opacity: 1 }}
+//             transition={{ duration: 1, ease: "easeOut" }}
+//             className="relative flex items-center justify-center"
+//           >
+//             {/* Loader ring */}
+//             <motion.div
+//               className="absolute w-32 h-32 border-4 border-blue-300 border-t-transparent rounded-full"
+//               animate={{ rotate: 360 }}
+//               transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
+//             />
+//             {/* Logo */}
+//             <img
+//               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-08-02%20at%2020.55.30_d31d3cc8.jpg-ltfbL4qxNsZJM19pu8YgBkJBiRmUlE.jpeg"
+//               alt="House Keeping Pro Logo"
+//               className="w-24 h-24 rounded-full shadow-lg"
+//             />
+//           </motion.div>
+
+//           {/* Brand Name */}
+//           <motion.h1
+//             initial={{ y: 20, opacity: 0 }}
+//             animate={{ y: 0, opacity: 1 }}
+//             transition={{ delay: 0.6, duration: 0.8 }}
+//             className="mt-6 text-4xl md:text-5xl font-extrabold text-white tracking-wide"
+//           >
+//             House Keeping <span className="text-blue-300">Pro</span>
+//           </motion.h1>
+
+//           {/* Tagline */}
+//           <motion.p
+//             initial={{ y: 15, opacity: 0 }}
+//             animate={{ y: 0, opacity: 1 }}
+//             transition={{ delay: 1, duration: 0.8 }}
+//             className="mt-3 text-lg text-blue-100 italic"
+//           >
+//             Simplifying Home Care Management
+//           </motion.p>
+//         </motion.div>
+//       )}
+//     </AnimatePresence>
+//   )
+// }
 "use client"
+
 import { useEffect, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
@@ -452,7 +757,7 @@ export default function SplashScreen() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 3500) // 3.5s splash
+    const timer = setTimeout(() => setLoading(false), 4000) // 4s splash
     return () => clearTimeout(timer)
   }, [])
 
@@ -464,52 +769,77 @@ export default function SplashScreen() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0, transition: { duration: 1 } }}
-          className="fixed inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-blue-100 via-blue-200 to-blue-300 z-50"
+          className="fixed inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-blue-900 via-blue-700 to-blue-500 overflow-hidden z-50"
         >
-          {/* Brand Text Animation */}
-          <motion.h1
+          {/* Floating particles */}
+          {[...Array(25)].map((_, i) => (
+            <motion.span
+              key={i}
+              className="absolute w-2 h-2 bg-white/20 rounded-full"
+              initial={{
+                x: Math.random() * window.innerWidth,
+                y: Math.random() * window.innerHeight,
+                opacity: 0,
+              }}
+              animate={{
+                y: [null, -50],
+                opacity: [0, 1, 0],
+              }}
+              transition={{
+                repeat: Infinity,
+                duration: 6 + Math.random() * 4,
+                delay: Math.random() * 2,
+              }}
+            />
+          ))}
+
+          {/* Logo + Loader */}
+          <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="text-5xl md:text-6xl font-extrabold text-blue-900 tracking-wide"
+            className="relative flex items-center justify-center"
           >
-            House Keeping <span className="text-blue-700">Pro</span>
+            {/* Dual rotating rings */}
+            <motion.div
+              className="absolute w-40 h-40 border-4 border-blue-300 border-t-transparent rounded-full"
+              animate={{ rotate: 360 }}
+              transition={{ repeat: Infinity, duration: 2.5, ease: "linear" }}
+            />
+            <motion.div
+              className="absolute w-28 h-28 border-4 border-blue-500 border-b-transparent rounded-full"
+              animate={{ rotate: -360 }}
+              transition={{ repeat: Infinity, duration: 3.5, ease: "linear" }}
+            />
+            {/* Logo */}
+            <img
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-08-02%20at%2020.55.30_d31d3cc8.jpg-ltfbL4qxNsZJM19pu8YgBkJBiRmUlE.jpeg"
+              alt="House Keeping Pro Logo"
+              className="w-24 h-24 rounded-full shadow-xl relative z-10"
+            />
+          </motion.div>
+
+          {/* Brand Name */}
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 1 }}
+            className="mt-6 text-5xl md:text-6xl font-extrabold text-white tracking-wide"
+          >
+            House Keeping <span className="text-blue-300">Pro</span>
           </motion.h1>
 
           {/* Tagline */}
           <motion.p
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
-            className="mt-3 text-lg text-gray-700 italic"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.2, duration: 1 }}
+            className="mt-3 text-lg text-blue-100 italic"
           >
             Simplifying Home Care Management
           </motion.p>
-
-          {/* Wave Loader */}
-          <motion.div
-            className="flex space-x-2 mt-10"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1 }}
-          >
-            {[...Array(3)].map((_, i) => (
-              <motion.span
-                key={i}
-                className="w-3 h-3 bg-blue-700 rounded-full"
-                animate={{ y: [0, -10, 0] }}
-                transition={{
-                  repeat: Infinity,
-                  duration: 0.6,
-                  delay: i * 0.2,
-                }}
-              />
-            ))}
-          </motion.div>
         </motion.div>
       )}
     </AnimatePresence>
   )
 }
-
-
