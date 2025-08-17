@@ -77,8 +77,6 @@ export default function CommercialServicesPage() {
       serviceImage: "https://thumbs.dreamstime.com/b/empty-modern-hospital-corridor-clinic-hallway-interior-background-white-chairs-patients-waiting-doctor-visit-contemporary-208439059.jpg", // Service image
     },
   ];
-  
-
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
