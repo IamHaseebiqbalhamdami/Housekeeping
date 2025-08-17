@@ -323,61 +323,7 @@ export default function BarrieAreaPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-black text-white py-16">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-08-02%20at%2020.55.30_d31d3cc8.jpg-ltfbL4qxNsZJM19pu8YgBkJBiRmUlE.jpeg"
-                alt="HouseKeeping PRO Logo"
-                width={180}
-                height={60}
-                className="h-12 w-auto mb-4 brightness-0 invert"
-              />
-              <p className="text-gray-300 mb-4">Serving Barrie for 26 years with professional cleaning services.</p>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Barrie Services</h3>
-              <ul className="space-y-2 text-gray-300">
-                <li>Residential Cleaning</li>
-                <li>Commercial Cleaning</li>
-                <li>Airbnb Cleaning</li>
-                <li>Deep Cleaning</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Neighborhoods</h3>
-              <ul className="space-y-2 text-gray-300">
-                <li>Downtown Barrie</li>
-                <li>Allandale</li>
-                <li>South Barrie</li>
-                <li>All Barrie Areas</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Contact</h3>
-              <div className="space-y-2 text-gray-300">
-                <div className="flex items-center">
-                  <Phone className="w-4 h-4 mr-2" />
-                  (705) 555-0123
-                </div>
-                <div className="flex items-center">
-                  <Mail className="w-4 h-4 mr-2" />
-                  barrie@housekeepingpro.ca
-                </div>
-                <div className="flex items-center">
-                  <MapPin className="w-4 h-4 mr-2" />
-                  Barrie, Ontario
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 HouseKeeping PRO. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+  
     </div>
   )
 }

@@ -91,7 +91,7 @@ export default function ResidentialServicesPage() {
       location: "Barrie, ON",
       rating: 5,
       text: "The residential team is amazing! They've been cleaning our 3-bedroom home for 2 years. Always professional, thorough, and reliable.",
-      image: "/team/freepik__the-style-is-candid-image-photography-with-natural__91134.png",
+      image: "https://d1bvpoagx8hqbg.cloudfront.net/259/c2632b6d372cb09925fe1345afea3334.jpg",
       serviceImage: "https://d1bvpoagx8hqbg.cloudfront.net/259/c2632b6d372cb09925fe1345afea3334.jpg",
     },
     {
@@ -269,7 +269,7 @@ export default function ResidentialServicesPage() {
                     alt={member.name}
                     width={300}
                     height={300}
-                    className="w-full h-64 object-contain group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-64 object-fitwidth group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#012E71]/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
