@@ -46,14 +46,14 @@ export default function CommercialServicesPage() {
       name: "Sarah Wilson",
       role: "Senior Commercial Cleaner",
       experience: "7 years",
-      image: "/Newteam/3.jpg",
+      image: "/teamOrignal/WhatsApp Image 2025-08-19 at 21.07.50_6ee3a9f0.jpg",
       uniform: "Navy HouseKeeping PRO polo shirt with company logo",
     },
     {
       name: "Linda Grace",
       role: "Quality Supervisor",
       experience: "8 years",
-      image: "/Newteam/4.jpg",
+      image: "/teamOrignal/WhatsApp Image 2025-08-19 at 21.07.50_82cd11c8.jpg",
       uniform: "Navy HouseKeeping PRO polo shirt with company logo",
     },
   ]
@@ -76,7 +76,7 @@ export default function CommercialServicesPage() {
       image:
         "https://media.istockphoto.com/id/1336324740/photo/having-fun-at-a-garden-party.jpg?s=612x612&w=0&k=20&c=r5iNGwCyH-6ENsCVz7FuyDEJ-Pnokaz-af84Qa28-6E=",
       serviceImage:
-        "https://thumbs.dreamstime.com/b/empty-modern-hospital-corridor-clinic-hallway-interior-background-white-chairs-patients-waiting-doctor-visit-contemporary-208439059.jpg",
+        "https://img.freepik.com/free-photo/computer-with-covid19-illustration-screen-standing-desk-empty-office-room-global-pandemic-modern-hospital-room-equipped-with-professional-medical-instruments-virus-cell-image_482257-38407.jpg",
     },
   ]
   return (

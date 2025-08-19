@@ -60,13 +60,13 @@ export default function SimcoeAreaPage() {
       name: "Violanda ibeet",
       role: "Barrie Area Manager",
       experience: "5 years",
-      image: "/Newteam/3.jpg",
+      image: "/teamOrignal/WhatsApp Image 2025-08-19 at 21.07.52_77efddd0.jpg",
     },
     {
       name: "skyler mohfit",
       role: "Senior Team Lead",
       experience: "10 years",
-      image: "/newteam/6.jpg",
+      image: "/teamOrignal/WhatsApp Image 2025-08-19 at 21.07.53_7cf30b32.jpg",
     },
   ]
 

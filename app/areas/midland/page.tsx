@@ -57,15 +57,15 @@ export default function MidlandAreaPage() {
 
   const teamMembers = [
     {
-      name: "Daniel Canales",
+      name: "Justin peters",
       role: "Barrie Area Manager",
-      experience: "5 years",
-      image: "/Newteam/2.jpg",
+      experience: "6 years",
+      image: "/teamOrignal/WhatsApp Image 2025-08-19 at 21.07.53_7cf30b32.jpg",
     },
     {
-      name: "Matt Rudei",
+      name: "Troy Vruitt",
       role: "Senior Team Lead",
-      experience: "10 years",
+      experience: "12 years",
       image: "/newteam/6.jpg",
     },
   ]

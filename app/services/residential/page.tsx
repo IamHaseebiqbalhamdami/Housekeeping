@@ -67,14 +67,7 @@ export default function ResidentialServicesPage() {
       name: "Sarah wilson",
       role: "Residential Team Lead",
       experience: "8 years",
-      image: '/Newteam/3.jpg',
-      uniform: "Blue HouseKeeping PRO polo shirt with company logo",
-    },
-    {
-      name: "Ranjit Sambar",
-      role: "Senior Cleaner",
-      experience: "6 years",
-      image: "/Newteam/1.jpg",
+      image: '/teamOrignal/WhatsApp Image 2025-08-19 at 21.07.50_6ee3a9f0.jpg',
       uniform: "Blue HouseKeeping PRO polo shirt with company logo",
     },
     {
@@ -82,6 +75,13 @@ export default function ResidentialServicesPage() {
       role: "Quality Inspector",
       experience: "5 years",
       image: "/newteam/2.jpg",
+      uniform: "Blue HouseKeeping PRO polo shirt with company logo",
+    },
+    {
+      name: "Michael Anderson",
+      role: "Senior Cleaner",
+      experience: "6 years",
+      image: "/teamOrignal/WhatsApp Image 2025-08-19 at 21.07.51_3706b184.jpg",
       uniform: "Blue HouseKeeping PRO polo shirt with company logo",
     },
   ]
@@ -93,7 +93,7 @@ export default function ResidentialServicesPage() {
       rating: 5,
       text: "The residential team is amazing! They've been cleaning our 3-bedroom home for 2 years. Always professional, thorough, and reliable.",
       image: "https://d1bvpoagx8hqbg.cloudfront.net/259/c2632b6d372cb09925fe1345afea3334.jpg",
-      serviceImage:"https://images.unsplash.com/photo-1605146769289-440113cc3d00?fm=jpg&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FuYWRhJTIwaG91c2V8ZW58MHx8MHx8fDA%3D&ixlib=rb-4.1.0&q=60&w=3000",
+      serviceImage:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXmhyh46KmrP8q-agnCi2dsrTauQt0k9X8Gw&s",
       
     },
     {
@@ -101,7 +101,7 @@ export default function ResidentialServicesPage() {
       location: "Oro-Medonte, ON",
       rating: 5,
       text: "Exceptional deep cleaning service! They cleaned our entire house before we moved in. Every corner was spotless.",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
+      image: "https://media.istockphoto.com/id/1445597021/photo/black-man-phone-and-social-media-in-city-reading-text-message-or-communication-on-social.jpg?s=612x612&w=0&k=20&c=B7pEc-0pgtUw33hz9P5-row1Go3YwwHacUJrE-lCNgA=",
       serviceImage: "https://peterfourlas.ca/wp-content/uploads/2025/02/106686.canada.jpg",
     },
   ]

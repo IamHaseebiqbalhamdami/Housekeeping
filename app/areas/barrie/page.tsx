@@ -60,7 +60,7 @@ export default function BarrieAreaPage() {
       name: "Justin peters",
       role: "Barrie Area Manager",
       experience: "6 years",
-      image: "/Newteam/2.jpg",
+      image: "/teamOrignal/WhatsApp Image 2025-08-19 at 21.07.53_7cf30b32.jpg",
     },
     {
       name: "Troy Vruitt",
