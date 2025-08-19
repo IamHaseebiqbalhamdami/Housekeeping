@@ -451,7 +451,6 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-
         {/* Process & Methodology Section */}
         <section className="py-16 lg:py-24 bg-gradient-to-b from-white to-gray-50 relative">
   <div className="container mx-auto px-6 lg:px-12 relative z-10">

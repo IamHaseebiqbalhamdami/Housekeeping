@@ -74,7 +74,7 @@ export default function ResidentialServicesPage() {
       name: "David Rodriguez",
       role: "Quality Inspector",
       experience: "5 years",
-      image: "/newteam/2.jpg",
+      image: "/Newteam/2.jpg",
       uniform: "Blue HouseKeeping PRO polo shirt with company logo",
     },
     {
