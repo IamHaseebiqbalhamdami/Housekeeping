@@ -453,68 +453,95 @@ export default function HomePage() {
         </section>
 
         {/* Process & Methodology Section */}
-        <section className="py-12 sm:py-16 lg:py-20 bg-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12 sm:mb-16">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#012E71] mb-3 sm:mb-4">
-                Our Proven Process
-              </h2>
-              <p className="text-base sm:text-lg lg:text-xl text-gray-700 max-w-3xl mx-auto">
-                A systematic approach that ensures consistent, high-quality results every time
-              </p>
-            </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-              {[
-                {
-                  icon: Target,
-                  title: "Assessment",
-                  description: "We evaluate your space and discuss your specific needs to create a customized cleaning plan.",
-                  number: 1
-                },
-                {
-                  icon: Lightbulb,
-                  title: "Planning",
-                  description: "Our team develops a detailed cleaning strategy using professional-grade equipment and products.",
-                  number: 2
-                },
-                {
-                  icon: Truck,
-                  title: "Execution",
-                  description: "Trained professionals arrive on time and complete the job with attention to every detail.",
-                  number: 3
-                },
-                {
-                  icon: CheckCircle,
-                  title: "Quality Check",
-                  description: "Final inspection ensures everything meets our high standards before we leave your property.",
-                  number: 4
-                }
-              ].map((tech, index) => (
-                <Card key={index} className="bg-white/10 backdrop-blur-sm border-white/20 p-4 sm:p-6 lg:p-8 hover:bg-white/20 transition-all duration-500 hover:-translate-y-2">
-                  <tech.icon className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-white mx-auto mb-4 sm:mb-6" />
-                  <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-center">{tech.title}</h3>
-                  <p className="text-sm sm:text-base text-white/90 leading-relaxed text-center">{tech.description}</p>
-                </Card>
-              ))}
-            </div>
-            <div className="mt-8 sm:mt-12 text-center">
-              <div className="inline-flex flex-wrap items-center justify-center gap-4 sm:gap-6 lg:gap-8 bg-white/10 backdrop-blur-sm rounded-full px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
-                <div className="flex items-center space-x-2">
-                  <Clock3 className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400" />
-                  <span className="text-xs sm:text-sm">Real-time Tracking</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <ThumbsUp className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
-                  <span className="text-xs sm:text-sm">Quality Guarantee</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400" />
-                  <span className="text-xs sm:text-sm">100% Secure</span>
-                </div>
-              </div>
-            </div>
+        <section className="py-16 lg:py-24 bg-gradient-to-b from-white to-gray-50 relative">
+  <div className="container mx-auto px-6 lg:px-12 relative z-10">
+    {/* Heading */}
+    <div className="text-center mb-14 lg:mb-20">
+      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#012E71] mb-4">
+        Our Proven Process
+      </h2>
+      <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto">
+        A step-by-step approach that guarantees consistent, reliable, and high-quality results every time.
+      </p>
+    </div>
+
+    {/* Process Cards */}
+    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      {[
+        {
+          icon: Target,
+          title: "Assessment",
+          description:
+            "We evaluate your space and discuss your specific needs to create a customized cleaning plan.",
+          number: 1,
+        },
+        {
+          icon: Lightbulb,
+          title: "Planning",
+          description:
+            "Our team develops a detailed cleaning strategy using professional-grade equipment and products.",
+          number: 2,
+        },
+        {
+          icon: Truck,
+          title: "Execution",
+          description:
+            "Trained professionals arrive on time and complete the job with precision and attention to detail.",
+          number: 3,
+        },
+        {
+          icon: CheckCircle,
+          title: "Quality Check",
+          description:
+            "Final inspection ensures everything meets our high standards before we leave your property.",
+          number: 4,
+        },
+      ].map((step, index) => (
+        <Card
+          key={index}
+          className="relative bg-white shadow-md rounded-2xl p-6 lg:p-8 border border-gray-100 hover:shadow-xl transition-all duration-500 hover:-translate-y-2 group"
+        >
+          {/* Number Badge */}
+          <div className="absolute -top-4 left-6 bg-[#012E71] text-white w-10 h-10 flex items-center justify-center rounded-full text-lg font-bold shadow-lg">
+            {step.number}
           </div>
-        </section>
+
+          {/* Icon */}
+          <div className="flex justify-center mb-5">
+            <step.icon className="w-14 h-14 text-[#012E71] group-hover:scale-110 transition-transform duration-300" />
+          </div>
+
+          {/* Content */}
+          <h3 className="text-lg lg:text-xl font-bold text-gray-800 mb-3 text-center">
+            {step.title}
+          </h3>
+          <p className="text-sm lg:text-base text-gray-600 leading-relaxed text-center">
+            {step.description}
+          </p>
+        </Card>
+      ))}
+    </div>
+
+    {/* Bottom Features */}
+    <div className="mt-12 lg:mt-16 text-center">
+      <div className="inline-flex flex-wrap items-center justify-center gap-6 bg-white shadow-md rounded-full px-6 lg:px-10 py-4 border border-gray-100">
+        <div className="flex items-center space-x-2">
+          <Clock3 className="w-5 h-5 text-yellow-500" />
+          <span className="text-sm font-medium text-gray-700">Real-time Tracking</span>
+        </div>
+        <div className="flex items-center space-x-2">
+          <ThumbsUp className="w-5 h-5 text-green-500" />
+          <span className="text-sm font-medium text-gray-700">Quality Guarantee</span>
+        </div>
+        <div className="flex items-center space-x-2">
+          <Shield className="w-5 h-5 text-blue-500" />
+          <span className="text-sm font-medium text-gray-700">100% Secure</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
         {/* Service Areas Section */}
         <section className="py-12 sm:py-16 lg:py-20 bg-white">
