@@ -76,7 +76,7 @@ export default function BarrieAreaPage() {
       <section className="relative py-20 bg-gradient-to-r from-[#012E71] to-blue-800 text-white">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1200&h=800&fit=crop"
+            src="/images/barrie mainsection.jpeg"
             alt="Barrie cityscape"
             fill
             className="object-cover opacity-20"

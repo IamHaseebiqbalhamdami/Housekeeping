@@ -4,9 +4,10 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { MapPin, Star, Calendar, Phone } from "lucide-react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation"
+
 export default function OrilliaAreaPage() {
   const neighborhoods = [
     "Downtown Orillia",
@@ -16,15 +17,25 @@ export default function OrilliaAreaPage() {
     "Couchiching Beach",
     "Atherley",
   ]
-  const [isMobile, setIsMobile] = useState(false);
-  const router = useRouter();
+
+  const [isMobile, setIsMobile] = useState(false)
+  const router = useRouter()
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768)
+    checkMobile()
+    window.addEventListener("resize", checkMobile)
+    return () => window.removeEventListener("resize", checkMobile)
+  }, [])
+
   const handleClick = () => {
     if (isMobile) {
-      window.location.href = "tel:6475348050";
+      window.location.href = "tel:6475348050"
     } else {
-      router.push("/contact");
+      router.push("/contact")
     }
   }
+
   const reviews = [
     {
       name: "David Chen",
@@ -46,11 +57,9 @@ export default function OrilliaAreaPage() {
 
   return (
     <div className="min-h-screen bg-white">
-    
-
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-r from-[#012E71] to-blue-800 text-white">
-        <div className="absolute inset-0">
+        <div className=" inset-0 relative">
           <Image
             src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=800&fit=crop"
             alt="Orillia lakefront"
@@ -66,11 +75,11 @@ export default function OrilliaAreaPage() {
               businesses, and residential homes.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href={'/contact'}>
-              <Button size="lg" className="bg-white text-[#012E71] hover:bg-gray-100">
-                <Calendar className="w-5 h-5 mr-2" />
-                Book in Orillia
-              </Button>
+              <Link href="/contact">
+                <Button size="lg" className="bg-white text-[#012E71] hover:bg-gray-100">
+                  <Calendar className="w-5 h-5 mr-2" />
+                  Book in Orillia
+                </Button>
               </Link>
               <Button
                 size="lg"
@@ -79,9 +88,7 @@ export default function OrilliaAreaPage() {
                 className="border-white text-white hover:bg-white hover:text-[#012E71] bg-transparent"
               >
                 <Phone className="w-5 h-5 mr-2" />
-                Call 
-  (647) 534-8050
-
+                Call (647) 534-8050
               </Button>
             </div>
           </div>
@@ -144,29 +151,28 @@ export default function OrilliaAreaPage() {
               Real reviews from satisfied customers throughout Orillia
             </p>
           </div>
-
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {reviews.map((review, index) => (
               <Card key={index} className="shadow-xl border-0 overflow-hidden">
                 <div className="grid md:grid-cols-2">
-                  <div className="relative">
-                    <Image
-                      src={review.serviceImage || "/placeholder.svg"}
-                      alt="Cleaning service in Orillia"
-                      width={400}
-                      height={300}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute top-4 left-4">
-                      <Image
-                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-08-02%20at%2020.55.30_d31d3cc8.jpg-ltfbL4qxNsZJM19pu8YgBkJBiRmUlE.jpeg"
-                        alt="HouseKeeping PRO Logo"
-                        width={80}
-                        height={30}
-                        className="h-8 w-auto bg-white/90 p-1 rounded"
-                      />
-                    </div>
-                  </div>
+                <div className="relative w-full h-64 md:h-full">
+  <Image
+    src={review.serviceImage || "/placeholder.svg"}
+    alt="Cleaning service in Orillia"
+    fill
+    className="object-cover"
+  />
+  <div className="absolute top-4 left-4">
+    <Image
+      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-08-02%20at%2020.55.30_d31d3cc8.jpg-ltfbL4qxNsZJM19pu8YgBkJBiRmUlE.jpeg"
+      alt="HouseKeeping PRO Logo"
+      width={80}
+      height={30}
+      className="h-8 w-auto bg-white/90 p-1 rounded"
+    />
+  </div>
+</div>
+
                   <CardContent className="p-6">
                     <div className="flex mb-4">
                       {[...Array(5)].map((_, i) => (
@@ -207,13 +213,12 @@ export default function OrilliaAreaPage() {
               Join 300+ satisfied clients throughout Orillia who trust HouseKeeping PRO for their cleaning needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-             <Link href={'/contact'}>
-              <Button size="lg" className="bg-white text-[#012E71] hover:bg-gray-100 px-8 py-4">
-                <Calendar className="w-5 h-5 mr-2" />
-                Book Orillia Service
-              </Button>
-             </Link>     
-
+              <Link href="/contact">
+                <Button size="lg" className="bg-white text-[#012E71] hover:bg-gray-100 px-8 py-4">
+                  <Calendar className="w-5 h-5 mr-2" />
+                  Book Orillia Service
+                </Button>
+              </Link>
               <Button
                 size="lg"
                 variant="outline"
@@ -221,9 +226,7 @@ export default function OrilliaAreaPage() {
                 className="border-white text-white hover:bg-white hover:text-[#012E71] px-8 py-4 bg-transparent"
               >
                 <Phone className="w-5 h-5 mr-2" />
-                Call 
-  (647) 534-8050
-
+                Call (647) 534-8050
               </Button>
             </div>
           </div>
