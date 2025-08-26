@@ -153,52 +153,57 @@ export default function OrilliaAreaPage() {
           </div>
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {reviews.map((review, index) => (
-              <Card key={index} className="shadow-xl border-0 overflow-hidden">
-                <div className="grid md:grid-cols-2">
+              <Card key={index} className="shadow-xl border-0 overflow-hidden h-full">
+              <div className="grid md:grid-cols-2 h-full">
+                {/* Image column */}
                 <div className="relative w-full h-64 md:h-full">
-  <Image
-    src={review.serviceImage || "/placeholder.svg"}
-    alt="Cleaning service in Orillia"
-    fill
-    className="object-cover"
-  />
-  <div className="absolute top-4 left-4">
-    <Image
-      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-08-02%20at%2020.55.30_d31d3cc8.jpg-ltfbL4qxNsZJM19pu8YgBkJBiRmUlE.jpeg"
-      alt="HouseKeeping PRO Logo"
-      width={80}
-      height={30}
-      className="h-8 w-auto bg-white/90 p-1 rounded"
-    />
-  </div>
-</div>
-
-                  <CardContent className="p-6">
+                  <Image
+                    src={review.serviceImage || "/placeholder.svg"}
+                    alt="Cleaning service in Orillia"
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute top-4 left-4">
+                    <Image
+                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-08-02%20at%2020.55.30_d31d3cc8.jpg-ltfbL4qxNsZJM19pu8YgBkJBiRmUlE.jpeg"
+                      alt="HouseKeeping PRO Logo"
+                      width={80}
+                      height={30}
+                      className="h-8 w-auto bg-white/90 p-1 rounded"
+                    />
+                  </div>
+                </div>
+            
+                {/* Content column */}
+                <CardContent className="p-6 h-full flex flex-col justify-between">
+                  <div>
                     <div className="flex mb-4">
                       {[...Array(5)].map((_, i) => (
                         <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
                       ))}
                     </div>
                     <p className="text-gray-700 mb-4 italic">"{review.text}"</p>
-                    <div className="flex items-center">
-                      <Image
-                        src={review.image || "/placeholder.svg"}
-                        alt={review.name}
-                        width={50}
-                        height={50}
-                        className="rounded-full mr-3"
-                      />
-                      <div>
-                        <h4 className="font-bold text-[#012E71]">{review.name}</h4>
-                        <p className="text-gray-600 text-sm flex items-center">
-                          <MapPin className="w-3 h-3 mr-1" />
-                          {review.neighborhood}
-                        </p>
-                      </div>
+                  </div>
+                  <div className="flex items-center mt-4">
+                    <Image
+                      src={review.image || "/placeholder.svg"}
+                      alt={review.name}
+                      width={50}
+                      height={50}
+                      className="rounded-full mr-3"
+                    />
+                    <div>
+                      <h4 className="font-bold text-[#012E71]">{review.name}</h4>
+                      <p className="text-gray-600 text-sm flex items-center">
+                        <MapPin className="w-3 h-3 mr-1" />
+                        {review.neighborhood}
+                      </p>
                     </div>
-                  </CardContent>
-                </div>
-              </Card>
+                  </div>
+                </CardContent>
+              </div>
+            </Card>
+            
             ))}
           </div>
         </div>
