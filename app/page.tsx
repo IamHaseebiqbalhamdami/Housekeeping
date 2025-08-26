@@ -270,7 +270,7 @@ export default function HomePage() {
     <>
       {showSplash && <SplashScreen onComplete={handleSplashComplete} />}
       <div className="min-h-screen bg-white">
-        {/* Hero Slider Section */}
+        {/* Hero Slider Section */} 
         <HeroSlider />
 
         <section className="py-12 sm:py-16 bg-gray-50">

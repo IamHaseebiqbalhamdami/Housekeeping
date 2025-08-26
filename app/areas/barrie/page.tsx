@@ -69,7 +69,6 @@ export default function BarrieAreaPage() {
       image: "/newteam/6.jpg",
     },
   ]
-
   return (
     <div className="min-h-screen bg-white">
 
