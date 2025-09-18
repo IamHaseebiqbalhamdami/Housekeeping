@@ -60,7 +60,7 @@ export default function BarrieAreaPage() {
       name: "Justin peters",
       role: "Barrie Area Manager",
       experience: "6 years",
-      image: "/Newteam/2.jpg",
+      image: "/teamOrignal/WhatsApp Image 2025-08-19 at 21.07.53_7cf30b32.jpg",
     },
     {
       name: "Troy Vruitt",
@@ -69,7 +69,6 @@ export default function BarrieAreaPage() {
       image: "/newteam/6.jpg",
     },
   ]
-
   return (
     <div className="min-h-screen bg-white">
 
@@ -77,7 +76,7 @@ export default function BarrieAreaPage() {
       <section className="relative py-20 bg-gradient-to-r from-[#012E71] to-blue-800 text-white">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1200&h=800&fit=crop"
+            src="/images/barrie mainsection.jpeg"
             alt="Barrie cityscape"
             fill
             className="object-cover opacity-20"

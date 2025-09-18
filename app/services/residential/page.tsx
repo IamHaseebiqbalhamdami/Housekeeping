@@ -50,7 +50,7 @@ export default function ResidentialServicesPage() {
       duration: "4-6 hours",
       features: ["Inside appliances", "Baseboards & windows", "Light fixtures", "Cabinet interiors"],
       image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&h=300&fit=crop",
-    },
+          },
     {
       title: "Move-In/Move-Out",
       description: "Complete cleaning for your new home or preparing your old one for sale.",
@@ -58,6 +58,7 @@ export default function ResidentialServicesPage() {
       duration: "5-8 hours",
       features: ["Empty home cleaning", "All surfaces sanitized", "Appliance cleaning", "Final inspection"],
       image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
+      
     },
   ]
 
@@ -66,21 +67,21 @@ export default function ResidentialServicesPage() {
       name: "Sarah wilson",
       role: "Residential Team Lead",
       experience: "8 years",
-      image: '/Newteam/3.jpg',
-      uniform: "Blue HouseKeeping PRO polo shirt with company logo",
-    },
-    {
-      name: "Ranjit Sambar",
-      role: "Senior Cleaner",
-      experience: "6 years",
-      image: "/Newteam/1.jpg",
+      image: '/teamOrignal/WhatsApp Image 2025-08-19 at 21.07.50_6ee3a9f0.jpg',
       uniform: "Blue HouseKeeping PRO polo shirt with company logo",
     },
     {
       name: "David Rodriguez",
       role: "Quality Inspector",
       experience: "5 years",
-      image: "/newteam/2.jpg",
+      image: "/Newteam/2.jpg",
+      uniform: "Blue HouseKeeping PRO polo shirt with company logo",
+    },
+    {
+      name: "Michael Anderson",
+      role: "Senior Cleaner",
+      experience: "6 years",
+      image: "/teamOrignal/WhatsApp Image 2025-08-19 at 21.07.51_3706b184.jpg",
       uniform: "Blue HouseKeeping PRO polo shirt with company logo",
     },
   ]
@@ -92,15 +93,16 @@ export default function ResidentialServicesPage() {
       rating: 5,
       text: "The residential team is amazing! They've been cleaning our 3-bedroom home for 2 years. Always professional, thorough, and reliable.",
       image: "https://d1bvpoagx8hqbg.cloudfront.net/259/c2632b6d372cb09925fe1345afea3334.jpg",
-      serviceImage: "https://d1bvpoagx8hqbg.cloudfront.net/259/c2632b6d372cb09925fe1345afea3334.jpg",
+      serviceImage:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXmhyh46KmrP8q-agnCi2dsrTauQt0k9X8Gw&s",
+      
     },
     {
       name: "Robert Chen",
       location: "Oro-Medonte, ON",
       rating: 5,
       text: "Exceptional deep cleaning service! They cleaned our entire house before we moved in. Every corner was spotless.",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
-      serviceImage: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&h=300&fit=crop",
+      image: "https://media.istockphoto.com/id/1445597021/photo/black-man-phone-and-social-media-in-city-reading-text-message-or-communication-on-social.jpg?s=612x612&w=0&k=20&c=B7pEc-0pgtUw33hz9P5-row1Go3YwwHacUJrE-lCNgA=",
+      serviceImage: "https://peterfourlas.ca/wp-content/uploads/2025/02/106686.canada.jpg",
     },
   ]
 
@@ -150,7 +152,7 @@ export default function ResidentialServicesPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <Card
                 key={index}
@@ -242,7 +244,7 @@ export default function ResidentialServicesPage() {
           </div>
         </div>
       )}
-          </div>
+          </div> 
         </div>
       </section>
 
@@ -303,55 +305,66 @@ export default function ResidentialServicesPage() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {reviews.map((review, index) => (
-              <Card key={index} className="shadow-xl border-0 overflow-hidden">
-                <div className="grid md:grid-cols-2">
-                  <div className="relative">
-                    <Image
-                      src={review.serviceImage || "/placeholder.svg"}
-                      alt="Service in progress"
-                      width={400}
-                      height={300}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute top-4 left-4">
-                      <Image
-                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-08-02%20at%2020.55.30_d31d3cc8.jpg-ltfbL4qxNsZJM19pu8YgBkJBiRmUlE.jpeg"
-                        alt="HouseKeeping PRO Logo"
-                        width={80}
-                        height={30}
-                        className="h-8 w-auto bg-white/90 p-1 rounded"
-                      />
-                    </div>
-                  </div>
-                  <CardContent className="p-6">
-                    <div className="flex mb-4">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                      ))}
-                    </div>
-                    <p className="text-gray-700 mb-4 italic">"{review.text}"</p>
-                    <div className="flex items-center">
-                      <Image
-                        src={review.image || "/placeholder.svg"}
-                        alt={review.name}
-                        width={50}
-                        height={50}
-                        className="rounded-full mr-3"
-                      />
-                      <div>
-                        <h4 className="font-bold text-[#012E71]">{review.name}</h4>
-                        <p className="text-gray-600 text-sm flex items-center">
-                          <MapPin className="w-3 h-3 mr-1" />
-                          {review.location}
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </div>
-              </Card>
-            ))}
+  {reviews.map((review, index) => (
+    <Card key={index} className="shadow-xl border-0 overflow-hidden h-full">
+      <div className="grid md:grid-cols-2 h-full">
+        {/* Image side */}
+        <div className="relative h-full">
+          <Image
+            src={review.serviceImage || "/placeholder.svg"}
+            alt="Service in progress"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute top-4 left-4">
+            <Image
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-08-02%20at%2020.55.30_d31d3cc8.jpg-ltfbL4qxNsZJM19pu8YgBkJBiRmUlE.jpeg"
+              alt="HouseKeeping PRO Logo"
+              width={80}
+              height={30}
+              className="h-8 w-auto bg-white/90 p-1 rounded"
+            />
           </div>
+        </div>
+
+        {/* Content side */}
+        <CardContent className="p-6 flex flex-col justify-between">
+          <div>
+            <div className="flex mb-4">
+              {[...Array(5)].map((_, i) => (
+                <Star
+                  key={i}
+                  className="w-5 h-5 text-yellow-400 fill-current"
+                />
+              ))}
+            </div>
+            <p className="text-gray-700 mb-4 italic">
+              "{review.text}"
+            </p>
+          </div>
+
+          <div className="flex items-center mt-auto">
+            <Image
+              src={review.image || "/placeholder.svg"}
+              alt={review.name}
+              width={50}
+              height={50}
+              className="rounded-full mr-3"
+            />
+            <div>
+              <h4 className="font-bold text-[#012E71]">{review.name}</h4>
+              <p className="text-gray-600 text-sm flex items-center">
+                <MapPin className="w-3 h-3 mr-1" />
+                {review.location}
+              </p>
+            </div>
+          </div>
+        </CardContent>
+      </div>
+    </Card>
+  ))}
+</div>
+
         </div>
       </section>
 

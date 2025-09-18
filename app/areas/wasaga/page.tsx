@@ -34,7 +34,7 @@ export default function WasagaAreaPage() {
       rating: 5,
       text: "Absolutely amazing! Our beach cottage has never looked better. The team is punctual, professional, and extremely thorough.",
       image: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=100&h=100&fit=crop&crop=face", // Female portrait
-      serviceImage: "https://i.pinimg.com/736x/7b/ae/50/7bae50d98359d8280000bc32ad255928.jpg", // Stylish beach house
+      serviceImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9A0gycVSnzxk93sosSqw2MNl3flpWBYk00A&s", // Stylish beach house
     },
     {
       name: "Julian Hayes",
@@ -65,7 +65,7 @@ export default function WasagaAreaPage() {
       name: "Anthony Smith",
       role: "Senior Team Lead",
       experience: "10 years",
-      image: "/newteam/6.jpg",
+      image: "/teamOrignal/WhatsApp Image 2025-08-19 at 21.07.53_dc8fed8e.jpg",
     },
   ]
 

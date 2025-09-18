@@ -40,7 +40,7 @@ export default function AirbnbServicesPage() {
       name: "James Bennett",
       role: "Airbnb Specialist",
       experience: "5 years",
-      image: "/Newteam/5.jpg",
+      image: "/teamOrignal/WhatsApp Image 2025-08-19 at 21.07.51_21075b27.jpg",
       uniform: "Green HouseKeeping PRO polo shirt with company logo",
     },
     {
