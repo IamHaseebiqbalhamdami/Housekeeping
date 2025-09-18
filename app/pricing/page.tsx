@@ -363,7 +363,7 @@ export default function PricingPage() {
       unit: "starting price",
       description: "Perfect for cleaning, move-ins, or special occasions",
       features: [
-        "Completey cleaning",
+        "Complete cleaning",
         "All rooms and bathrooms",
         "Kitchen appliances",
         "Baseboards and windowsills",
@@ -746,7 +746,7 @@ export default function PricingPage() {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Get Started?</h2>
             <p className="text-xl mb-8 opacity-90">
-              Get your free quote today and experience 26 years of cleaning excellence across Simcoe County.
+              Get your free quote today and experience 6 years of cleaning excellence across Simcoe County.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
